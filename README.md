@@ -1,4 +1,4 @@
-# Templates for App Creator 24
+# Templates for AppCreator24
 
 This design uses HTML and CSS.
 
