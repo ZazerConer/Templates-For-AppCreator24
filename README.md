@@ -9,5 +9,4 @@ Yes, you can use this template without any hesitation.
 # See demo below
 
 Video and page TV
-
-https://rawcdn.githubusercontent.com/ZazerConer/Demo/main/test/index.html
+curl -i https://git.io -F "url=https://raw.githubusercontent.com/ZazerConer/Demo/main/test/index.html?token=GHSAT0AAAAAABSUK2AX2XHMQYUPPYABWEKUYTIORAA" -F "code=DEMO"
