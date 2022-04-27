@@ -2,13 +2,13 @@
 
 This design uses HTML and CSS.
 
-# About AppCreator24
+## About AppCreator24
 
 Many app makers want to create their own android apps, but don’t have an interesting idea or design on their apps. 
 
 But not on this AppCreator24, it makes it easy for you to create your own applications without programming code that is very difficult for you to remember. 
 
-# Advantages of applications you can create: 
+## Advantages of applications you can create: 
 
 1. Blogs 
 
@@ -20,7 +20,7 @@ But not on this AppCreator24, it makes it easy for you to create your own applic
 
 5. And much more.
 
-Site : https://www.appcreator24.com
+## https://www.appcreator24.com
 
 # Is this template free?
 
@@ -34,6 +34,6 @@ Page Video/TV :
 
 2. https://bit.ly/dEmO202
 
-# Buy Me a Coffee
+## Buy Me a Coffee
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/zaidzer9k)
