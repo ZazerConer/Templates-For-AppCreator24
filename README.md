@@ -1,4 +1,4 @@
-# Templates for AppCreator24
+## Templates for AppCreator24
 
 This design uses HTML and CSS.
 
@@ -22,11 +22,11 @@ But not on this AppCreator24, it makes it easy for you to create your own applic
 
 ## https://www.appcreator24.com
 
-# Is this template free?
+## Is this template free?
 
 Yes, you can use this template without any hesitation.
 
-# See demo below
+## See demo below
 
 Page Video/TV : 
 
