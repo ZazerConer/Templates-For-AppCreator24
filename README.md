@@ -26,6 +26,10 @@ But not on this AppCreator24, it makes it easy for you to create your own applic
 
 Yes, you can use this template without any hesitation.
 
+You can place this template on the HTML code section (AppCreator24).
+
+Using HTML code is more interesting because you can change what you like to look great.
+
 ## See demo below
 
 Page Video/TV : 
