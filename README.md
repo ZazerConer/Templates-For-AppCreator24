@@ -10,7 +10,7 @@ But not on this AppCreator24, it makes it easy for you to create your own applic
 
 ## Advantages of applications you can create: 
 
-1. Blogs 
+1. Blog
 
 2. Website 
 
