@@ -36,10 +36,7 @@ Using HTML code is more interesting because you can change what you like to look
 
 - https://bit.ly/dEmO201
 
-$ curl -i https://git.io -F "url=https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Page-Video-TV/Template2.html" 
--F "code=Source Code"
-HTTP/1.1 201 Created
-Location: https://git.io/Source Code
+$ curl -H https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Page-Video-TV/Template2.html
 
 - [Demo 2]
 (https://bit.ly/dEmO202).
