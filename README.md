@@ -10,17 +10,17 @@ But not on this AppCreator24, it makes it easy for you to create your own applic
 
 ## Advantages of applications you can create: 
 
-1. Blog
+- _Blog_
 
-2. Website 
+- _Website_
 
-3. Music 
+- _Music_ 
 
-4. Video 
+- _Video_
 
-5. And much more.
+- _And much more.._
 
-### https://www.appcreator24.com
+#### Go here https://www.appcreator24.com
 
 ## Is this template free?
 
@@ -30,21 +30,19 @@ You can place this template on the HTML code section (AppCreator24).
 
 Using HTML code is more interesting because you can change what you like to look great.
 
-## See demo below
+**See demo below**
 
-#### Page Video/TV : 
+**_Page Video/TV :_**
 
-1. https://bit.ly/dEmO201
+- https://bit.ly/dEmO201
 
-2. https://bit.ly/dEmO202
+- https://bit.ly/dEmO202
 
-3. https://bit.ly/dEmO203
+- https://bit.ly/dEmO203
 
-#### Website/ Blog page :
+**_Website/ Blog page :_**
 
-1. https://bit.ly/dEmO204
-
-
+- https://bit.ly/dEmO204
 
 ## Buy Me a Coffee
 
