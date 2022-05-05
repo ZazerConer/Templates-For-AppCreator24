@@ -46,6 +46,8 @@ Using HTML code is easier and more interesting because you can create things you
 
 - Demo **_https://bit.ly/dEmO204_**
 
+<br>
+
 ## Buy Me a Coffee
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/zaidzer9k)
