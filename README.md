@@ -40,6 +40,12 @@ Using HTML code is more interesting because you can change what you like to look
 
 3. https://bit.ly/dEmO203
 
+### Website/ Blog page
+
+1. https://bit.ly/dEmO204
+
+
+
 ## Buy Me a Coffee
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/zaidzer9k)
