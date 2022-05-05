@@ -28,7 +28,7 @@ Yes, you can use this template without any hesitation.
 
 You can place this template on the HTML code section (AppCreator24).
 
-Using HTML code is more interesting because you can create what you like to look great own your apps.
+Using HTML code is easier and more interesting because you can create things you like to create on your app with your own design.
 
 **See demo below.**
 
