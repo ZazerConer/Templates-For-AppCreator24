@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 <title>Page-Video-List</title>
 
-<!-- Change to your favorite color -->
+<!-- Change to your favorite color, go to this link 
+(https://www.w3schools.com/w3css/w3css_color_themes.asp) -->
 <!-- You can add the background image, example 
 (copy) > background-image: url(link.png); < put in body (style) -->
-
-<style type="text/css">
+<style>
+/* Body style */
 body {background-color: #212121;
-font-size: 100%}
+font-size: 100%;
+width: 100%;
+height: 100%;
+margin: 0}
+
+/* Image style */
 img {width: 100px;
 height: 100px;
 max-width: 100%;
 margin: 10px;
 border-radius: 10px}
+
+/* Font style */
 p {color: lightgrey}
 a {color: lightgrey;
 outline: none;
@@ -26,24 +35,26 @@ h3 {color: grey;
 background-color: #424242;
 color: lightgrey;
 padding: 10px 20px 10px 20px}
+
+/* Button for image style */
 button {background-color: #212121;
 padding: 5px 10px;
 outline: none;
 border-radius: 5px}
-button.c1 {background-color: #fff;
+button.btn {background-color: #fff;
 margin: 20px;
 padding: 0px;
 -webkit-tap-highlight-color: lightblue}
-.back {font-size: 15px;
-margin: 20px;
-float: right;
--webkit-tap-highlight-color: lightblue} 
+
+/* Next & Back div style */
 .next {font-size: 15px;
 margin: 20px;
-float: left;
+float: right;
 -webkit-tap-highlight-color: lightblue}
-th {float: left;
-margin: 2px}
+.back {font-size: 15px;
+margin: 20px;
+float: left;
+-webkit-tap-highlight-color: lightblue} 
 </style>
 
 </head>
@@ -51,94 +62,81 @@ margin: 2px}
 
 <center>
 <header>
-<h3>Create 1-2-3 & more page</h3> <!-- Change title -->
+<h3>Create More Page</h3> <!-- Change title -->
 </header>
 
 <!-- List of videos with logo image -->
-<!-- You can use the link to tag a video on AppCreator24 (Reference) -->
-<!-- Example <a href="go:A"> and the link go directly to video -->
+<!-- You can use the link for target a page in "Reference" (AppCreator24) -->
+<!-- Example <a href="go:Vid1"> and the link go directly to the section "Video1" -->
 <!-- You can also use this link to go to other section pages -->
+<button class="btn">
+<a href="go:#">
+<img src="link.png"></a>
+</button>
+<button class="btn">
+<a href="go:#">
+<img src="link.png"></a>
+</button>
+<button class="btn">
+<a href="go:#">
+<img src="link.png"></a>
+</button>
+<button class="btn">
+<a href="go:#">
+<img src="link.png"></a>
+</button>
+<button class="btn">
+<a href="go:#">
+<img src="link.png"></a>
+</button>
+<button class="btn">
+<a href="go:#">
+<img src="link.png"></a>
+</button>
+<button class="btn">
+<a href="go:#">
+<img src="link.png"></a>
+</button>
+<button class="btn">
+<a href="go:#">
+<img src="link.png"></a>
+</button>
+<button class="btn">
+<a href="go:#">
+<img src="link.png"></a>
+</button>
+<button class="btn">
+<a href="go:#">
+<img src="link.png"></a>
+</button>
+<button class="btn">
+<a href="go:#">
+<img src="link.png"></a>
+</button>
+<button class="btn">
+<a href="go:#">
+<img src="link.png"></a>
+</button>
 
-<button class="c1">
-<a href="link.mp4">
-<img src="link.png"></a>
-</button>
-<button class="c1">
-<a href="link.mp4">
-<img src="link.png"></a>
-</button>
-<button class="c1">
-<a href="link.mp4">
-<img src="link.png"></a>
-</button>
-<button class="c1">
-<a href="link.mp4">
-<img src="link.png"></a>
-</button>
-<button class="c1">
-<a href="link.mp4">
-<img src="link.png"></a>
-</button>
-<button class="c1">
-<a href="link.mp4">
-<img src="link.png"></a>
-</button>
-<button class="c1">
-<a href="link.mp4">
-<img src="link.png"></a>
-</button>
-<button class="c1">
-<a href="link.mp4">
-<img src="link.png"></a>
-</button>
-<button class="c1">
-<a href="link.mp4">
-<img src="link.png"></a>
-</button>
-<button class="c1">
-<a href="link.mp4">
-<img src="link.png"></a>
-</button>
-<button class="c1">
-<a href="link.mp4">
-<img src="link.png"></a>
-</button>
-<button class="c1">
-<a href="link.mp4">
-<img src="link.png"></a>
-</button>
-
-<div style="border-top: 2px solid darkgrey;width: 100%;margin-top: 20px;margin-bottom: 20px"></div>
+<!-- Break line -->
+<hr style="margin-top:20px;margin-bottom:20px">
 </center>
 
-<!-- Next page -->
-<div class="back">
-<button>
-<a href="link.next">Next</a>
-</button>
-</div>
-
-<!-- Back page -->
+<!-- Target page in "Reference" -->
+<!-- Tag a name "Next & Back" same on target page -->
+<!-- You can rename the tag to your own page -->
+<!-- Example <a href="go:Page1"> -->
 <div class="next">
 <button>
-<a href="link.back">Back</a>
+<a href="go:#">Next</a> <!-- Next page -->
 </button>
 </div>
 
-<!-- Add my credit in small text at the bottom left/right, > Design by ZazerConer's < -->
-<!-- If you don't want it to show on your page, you can remove it (footer) -->
-
-<center>
-<footer>
-<div style="margin-top:100px">
-<table>
-<th><h5 style="color: darkgrey">Design by</h5></th>
-<th><h4 style="color: dodgerblue">ZazerConer's</h4></th>
-</table>
+<div class="back">
+<button>
+<a href="go:#">Back</a> <!-- Back page -->
+</button>
 </div>
-<h3><a href="https://github.com/ZazerConer">Github</a></h3>
-</footer>
-</center>
 
 </body>
 </html>
