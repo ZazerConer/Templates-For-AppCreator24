@@ -46,7 +46,7 @@ Using HTML code is easier and more interesting because you can create things you
 
 - Demo **_https://bit.ly/dEmO204_**
 
-<br>
+<br/>
 
 ## Buy Me a Coffee
 
