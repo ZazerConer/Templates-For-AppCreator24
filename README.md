@@ -36,17 +36,22 @@ Using HTML code is easier and more interesting because you can create things you
 
 **_Page Video/TV :_**
 
-- Demo 1 **_https://bit.ly/dEmO201_**
+- Demo 1 **_https://bit.ly/dEmO201_** 
 
-- Demo 2 **_https://bit.ly/dEmO202_**
+- Demo 2 **_https://bit.ly/dEmO202_** 
+:bookmark_tabs: [Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Page-Video-TV/Template2.html)
 
 - Demo 3 **_https://bit.ly/dEmO203_**
+:bookmark_taps: [Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Page-Video-TV/Template3.html)
 
 **_Website/ Blog page :_**
 
 - Demo **_https://bit.ly/dEmO204_**
+:bookmark_tabs: [Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Website-Blog-Page/Template1.html)
 
-<br/>
+<br>
+
+<hr>
 
 ## Buy Me a Coffee
 
