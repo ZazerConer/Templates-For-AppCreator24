@@ -1,6 +1,8 @@
 ## Templates for AppCreator24
 
-This design uses HTML and CSS.
+**This design uses HTML and CSS.**
+
+Custom templates on your design.
 
 ## About AppCreator24
 
@@ -8,7 +10,7 @@ Many app makers want to create their own android apps, but don’t have an inter
 
 But not on this AppCreator24, it makes it easy for you to create your own applications without programming code that is very difficult for you to remember. 
 
-## Advantages of applications you can create: 
+## Advantages of applications you can create : 
 
 - _Blog_
 
@@ -34,15 +36,15 @@ Using HTML code is easier and more interesting because you can create things you
 
 **_Page Video/TV :_**
 
-- Demo 1 _https://bit.ly/dEmO201_
+- Demo 1 **_https://bit.ly/dEmO201_**
 
-- Demo 2 _https://bit.ly/dEmO202_
+- Demo 2 **_https://bit.ly/dEmO202_**
 
-- Demo 3 _https://bit.ly/dEmO203_
+- Demo 3 **_https://bit.ly/dEmO203_**
 
 **_Website/ Blog page :_**
 
-- Demo _https://bit.ly/dEmO204_
+- Demo **_https://bit.ly/dEmO204_**
 
 ## Buy Me a Coffee
 
