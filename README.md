@@ -42,7 +42,7 @@ Using HTML code is easier and more interesting because you can create things you
 :bookmark_tabs: [Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Page-Video-TV/Template2.html)
 
 - Demo 3 **_https://bit.ly/dEmO203_**
-:bookmark_taps: [Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Page-Video-TV/Template3.html)
+:bookmark_tabs: [Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Page-Video-TV/Template3.html)
 
 **_Website/ Blog page :_**
 
