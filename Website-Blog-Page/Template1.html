@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<title>Website/Blog-Page</title>
+
+<!-- Change to your favorite color, go to this link 
+(https://www.w3schools.com/w3css/w3css_color_themes.asp) -->
+<!-- You can add the background image, example 
+(copy) > background-image: url(link.png); < put in body (style) -->
+<style>
+/* Body style */
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+body {background-color: #fff;
+font-family: rubik;
+font-size: 100%;
+max-width: 100%;
+margin: 0}
+
+/* Font style */
+a {outline: none;
+text-decoration: none}
+
+/* Image style */
+img {width: 50%;
+max-width: 100%;
+border: 2px solid lightgrey;
+border-radius: 10px;
+margin-top: 20px;
+margin: 20px}
+
+/* Video style */
+video {width: 70%;
+max-width: 100%;
+border: 2px solid lightgrey;
+border-radius: 10px;
+controlsList: nodownload;
+margin: 10px;
+margin-top: 10px;
+outline: none}
+
+/* Header & footer style */
+header {
+padding: 15px 0px;
+background-color: inherit;
+color: #fff;
+width: 100%;
+text-align: center;
+box-shadow: 0px 6px 15px 0px rgba(0,0,0,1.8)}
+footer {overflow: hidden;
+position: relative;
+padding-top: 40px;
+bottom: 0;
+width: 100%;
+margin-top: 100px}
+
+/* Sticky bar style css + script */
+#navbar {overflow: hidden;
+background-color: #232f34}
+.sticky {position: fixed;
+top: 0;
+width: 100%}
+
+/* Second text style */
+.cb {padding:0px 10px 0px 10px;
+margin-top: 35%}
+
+/* Image div style */
+.t1 {background-color: #232f34;
+color: #fff;
+padding-right: 5px;
+padding-left: 5px;
+padding-bottom: 15px;
+margin-bottom: 10px;
+margin-top: 10px;
+box-shadow: 0px 6px 15px 0px rgba(0,0,0,1.8);
+text-align: center}
+
+/* Video div style */
+.t2 {background-color: inherit;
+padding-top: 5px;
+box-shadow: 0px 6px 15px 0px rgba(0,0,0,1.8)}
+
+/* Drop menu style css + script */
+.collapsible {color: #fff;
+background-color: #232f34;
+font-size: 30px;
+padding: 5px 10px 5px 12px;
+cursor: pointer;
+border: none;
+float: right;
+text-align: center;
+-webkit-tap-highlight-color: transparent;
+outline: none} 
+.content {color: #fff;
+display: none;
+background-color: #232f34;
+width: 100%;
+margin-bottom: 15px;
+text-align: center;
+float: right;
+box-shadow: 0px 6px 15px 0px rgba(0,0,0,1.8)}
+
+/* Dark mode style css + script */
+:root {--main-color: #ECEFF1;  /* Light theme */
+--icon-background: orange}  /* Icon switch color */
+body {transition:  background 0.3s;
+background: var(--main-color);
+var(--header-color)}
+body.dark {transition: 0.3s;
+--main-color: #37474F;  /* Dark theme */
+border-radius: 10px;
+--icon-background: #292821;  /* Icon switch changes color */
+color: #fff}
+.dark {opacity: 15}
+.mode-switch {height:0px;
+background-color:transparent;
+border-radius: 10px;
+position:relative;
+cursor: pointer;
+-webkit-tap-highlight-color: transparent;
+margin-right: 30px;
+padding: 8px 6px 0px 0px;
+float: right}
+.mode-switch::before {content: '\f185';
+position:absolute;
+left: -1px;
+right: -1px;
+transform: translateY(-50%);
+font-family: "Font Awesome 5 Free";
+width: 30px;
+height: 30px;
+line-height: 30px;
+background: var(--icon-background);
+border-radius: 50%;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+color: #fff;
+transition: 0.3s}
+.mode-switch.active::before {content: '\f186';
+color: lightgrey;
+font-family: "Font Awesome 5 Free";
+left: 100%;
+transform: translate(-50%,-50%) rotate(360deg)}
+
+/* Icon social style */
+.wrapper .icon {position:relative;
+display: inline-block;
+font-size: 20px;
+align-items: center;
+cursor: pointer;
+transition: all 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+color: grey;
+text-decoration: none}
+.wrapper .tooltip {position:relative;
+opacity: 0;
+pointer-events: none;
+transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)}
+.wrapper .tooltip::before {position:absolute;
+transform: translate(-50%) rotate(45deg);
+transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)}
+.wrapper .icon:hover .tooltip {opacity: 1;
+visibility: visible;
+pointer-events: auto}
+/* Icon hover color */
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before 
+{color: #2196F3}
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before 
+{color: #03A9F4}
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before 
+{color: #E91E63}
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before 
+{color: #607D8B}
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before 
+{color: #F44336}
+
+/* Credit style */
+.credit {position: fixed;
+right: 3%;
+bottom: 25%;
+text-shadow: 1px 1px 0px #000000}
+th {float: left}
+</style>
+
+</head>
+<body>
+
+<div id="navbar">
+<header>
+<div class="mode-switch"></div> 
+
+<h2>Demo Website/Blog Page</h2> <!-- Rename title -->
+
+<button type="button" class="collapsible">&#9868;</button>
+<div class="content"><div class="dropdown">
+
+<!-- You can use the link for target a page in "Reference" (AppCreator24) -->
+<!-- Example <a href="go:Page1"> and the link go directly to the section "PAGE 1" -->
+<!-- You can also use this link to go to other section pages -->
+<p><a style="color: #fff;text-decoration:none;"
+href="go:#">PAGE 1</a></p>
+
+<p><a style="color: #fff;text-decoration:none" 
+href="go:#">PAGE 2</a></p>
+
+<p><a style="color: #fff;text-decoration:none" 
+href="go:#">PAGE 3</a></p>
+
+<p><a style="color: #fff;text-decoration:none" 
+href="go:#">PAGE 4</a></p>
+
+<p><a style="color: #fff;text-decoration:none" 
+href="go:#">PAGE 5</a></p>
+</div>
+</div>
+</header>
+</div>
+
+<center>
+<div class="cb">
+<p><b>This is an example of a commonly used website template design.</b></p>
+<p><b>Many more designs you can make here.</b></p>
+<p><b>The example here I designed for a website/blog about nature.</b></p>
+</div>
+
+<div class="t1"> 
+<img src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+<p>To look more attractive, you can change the font of text, background color/image to your own design.</p>
+</div>
+
+<div class="t2"> 
+<video controls poster="https://images.pexels.com/videos/1550080/free-video-1550080.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+<source src="https://vod-progressive.akamaized.net/exp=1651256059~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4585%2F11%2F297927791%2F1135811445.mp4~hmac=9adae9fe3c51c34128c0bc592186282d42b8483e0fd2222820cc611f2b1dc3a9/vimeo-prod-skyfire-std-us/01/4585/11/297927791/1135811445.mp4?download=1&filename=Pexels+Videos+1550080.mp4"></a>
+</video>
+<video controls poster="https://images.pexels.com/videos/1093662/free-video-1093662.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+<source src="https://vod-progressive.akamaized.net/exp=1651255285~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3994%2F10%2F269971860%2F1002284847.mp4~hmac=167faf1bfd18bdd888722f2439f760164d49cc2106779944e32e0d96eb5c613e/vimeo-prod-skyfire-std-us/01/3994/10/269971860/1002284847.mp4?download=1&filename=Pexels+Videos+1093662.mp4"></a>
+</video>
+</div>
+
+<div class="t1"> 
+<img src="https://images.pexels.com/photos/2406949/pexels-photo-2406949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+<p>Make sure you already have an idea of what you want for your website/blog later.</p>
+</div>
+
+<div class="t2"> 
+<video controls poster="https://images.pexels.com/videos/2334654/free-video-2334654.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+<source src="https://vod-progressive.akamaized.net/exp=1651256225~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2405%2F13%2F337026530%2F1336526853.mp4~hmac=882f8dab8e74dbaf4ce8892fd8e41aba142f460be6eba3b1ff2a9ff11d86be9d/vimeo-prod-skyfire-std-us/01/2405/13/337026530/1336526853.mp4?download=1&filename=Pexels+Videos+2334654.mp4"></a>
+</video>
+<video controls poster="https://images.pexels.com/videos/3697686/pexels-photo-3697686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+<source src="https://vod-progressive.akamaized.net/exp=1651256498~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2984%2F15%2F389922078%2F1648045880.mp4~hmac=228ea6944594ed680230c3fa1ba8b0a9e2a0be9722da39dd0ae21b90e3a9c35c/vimeo-prod-skyfire-std-us/01/2984/15/389922078/1648045880.mp4?download=1&filename=production+ID%3A3697686.mp4"></a>
+</video>
+</div>
+</center>
+
+<center>
+<footer>
+<!-- Icon social -->
+<div class="wrapper">
+<a href="#" class="icon facebook">
+<div class="tooltip">Facebook</div>
+<span><i class="fab fa-facebook-f"></i></span>
+</a>
+<a href="#" class="icon twitter">
+<div class="tooltip">Twitter</div>
+<span><i class="fab fa-twitter"></i></span>
+</a>
+<a href="#" class="icon instagram">
+<div class="tooltip">Instagram</div>
+<span><i class="fab fa-instagram"></i></span>
+</a>
+<a href="#" class="icon github">
+<div class="tooltip">Github</div>
+<span><i class="fab fa-github"></i></span>
+</a>
+<a href="#" class="icon youtube">
+<div class="tooltip">Youtube</div>
+<span><i class="fab fa-youtube"></i></span>
+</a>
+</div>
+
+<!-- Copyright -->
+<p>Copyright &copy; 2022 Your Website/Blog Name.</p>
+<p>All Rights Reserved</p>
+</footer>
+
+<!-- Drop Menu -->
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+for (i = 0; i < coll.length; i++) {
+coll[i].addEventListener("click", function() {
+this.classList.toggle("active");
+var content = this.nextElementSibling;
+if (content.style.display === "block") {
+content.style.display = "none";
+} else {
+content.style.display = "block";
+}
+});
+}
+</script>
+
+<!-- Sticky bar -->
+<script>
+window.onscroll = function() {myFunction()};
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+function myFunction() {
+if (window.pageYOffset >= sticky) {
+navbar.classList.add("sticky")
+} else {
+navbar.classList.remove("sticky");
+}
+}
+</script>
+
+<!-- Dark Mode Switch -->
+<script>
+const mode = document.querySelector('.mode-switch')
+mode.addEventListener('click',()=>{
+mode.classList.toggle('active')
+document.body.classList.toggle('dark')
+})
+</script>
+</body>
+</html>
