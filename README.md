@@ -50,9 +50,3 @@ Using HTML code is easier and more interesting because you can create things you
 :bookmark_tabs: [Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Website-Blog-Page/Template1.html)
 
 <br>
-
-<hr>
-
-## Buy Me a Coffee
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/zaidzer9k)
