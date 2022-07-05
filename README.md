@@ -34,7 +34,7 @@ Using HTML code is easier and more interesting because you can create things you
 
 <hr>
 
-### See demo below.
+### See demo below
 
 **_Page Video/TV :_**
 
