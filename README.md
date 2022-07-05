@@ -40,7 +40,7 @@ Using HTML code is easier and more interesting because you can create things you
 
 **_Page Video/TV :_**
 
-- Demo 1 **_https://bit.ly/dEmO201_** 
+- **[Demo 1](https://bit.ly/dEmO201)** 
 
 - **[Demo 2](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/templates2.html)** 
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Video-Playlist/Template2.html)**
@@ -50,7 +50,7 @@ Using HTML code is easier and more interesting because you can create things you
 
 **_Website/ Blog page :_**
 
-- Demo **_https://bit.ly/dEmO204_**
+- **[Demo](https://bit.ly/dEmO204)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Website-Blog-Page/Template1.html)**
 
 <br>
