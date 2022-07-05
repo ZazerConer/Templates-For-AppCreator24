@@ -32,6 +32,8 @@ You can place this template on the HTML code section (AppCreator24).
 
 Using HTML code is easier and more interesting because you can create things you like to create on your app with your own design.
 
+<hr>
+
 **See demo below.**
 
 **_Page Video/TV :_**
@@ -39,14 +41,14 @@ Using HTML code is easier and more interesting because you can create things you
 - Demo 1 **_https://bit.ly/dEmO201_** 
 
 - Demo 2 **_https://bit.ly/dEmO202_** 
-:bookmark_tabs: [Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Page-Video-TV/Template2.html)
+:bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Page-Video-TV/Template2.html)**
 
-- **[Demo 3](https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/templates3.html)**
-:bookmark_tabs: [Source Code](https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/Video-Playlist/Template3.html)
+- **[Demo 3](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/templates3.html)**
+:bookmark_tabs: **[Source Code](https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/Video-Playlist/Template3.html)**
 
 **_Website/ Blog page :_**
 
 - Demo **_https://bit.ly/dEmO204_**
-:bookmark_tabs: [Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Website-Blog-Page/Template1.html)
+:bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Website-Blog-Page/Template1.html)**
 
 <br>
