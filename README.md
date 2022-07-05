@@ -24,6 +24,8 @@ But not on this AppCreator24, it makes it easy for you to create your own applic
 
 #### Go here https://www.appcreator24.com
 
+<br>
+
 ## Is this template free?
 
 Yes, you can use this template without any hesitation.
