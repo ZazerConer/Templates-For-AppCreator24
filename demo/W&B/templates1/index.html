@@ -1,1 +1,313 @@
-Test
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<noscript><link rel="stylesheet" href="$CSS&display=swap"></noscript>
+<link rel="stylesheet" href="css/style.css">
+<title>Website/Blog-Page</title>
+
+<style>
+* {margin: 0;
+padding: 0;
+box-sizing: border-box;}
+body {background: #fff;
+font-family: Arial,sans-serif;
+font-size: 100%;
+width: 100%;
+height: 100%;
+text-align: center;}
+
+a {outline: none;
+text-decoration: none;
+cursor: pointer;}
+
+img {border: 3px solid #ccc;
+border-radius: 10px;
+margin-top: 20px;
+margin: 20px}
+
+iframe {width: 350px;
+height: 200px;
+border: 2px solid #ccc;
+border-radius: 10px;
+margin: 10px;
+outline: none}
+
+header {padding: 15px;
+background: inherit;
+color: #fff;
+width: 100%;
+text-align: center;}
+footer {overflow: hidden;
+position: relative;
+padding-top: 40px;
+width: 100%;
+margin-top: 100px}
+
+#navbar {overflow: hidden;
+background: #232f34;
+box-shadow: 0px 4px 13px 0px rgba(0,0,0,1.15);}
+
+.vb {background: #232f34;
+padding-top: 15px;
+padding-bottom: 15px;
+box-shadow: 0px 6px 15px 0px rgba(0,0,0,1.8);}
+
+.collapsible {color: #fff;
+background: #232f34;
+font-size: 28px;
+padding: 10px 5px;
+border: none;
+float: right;
+text-align: center;
+-webkit-tap-highlight-color: transparent;
+outline: none;
+transition: linear 0.4s;} 
+.content {color: #fff;
+display: none;
+background: #232f34;
+width: 100%;
+margin-top: 55px;
+text-align: center;}
+
+:root {--main-color: #ECEFF1;
+--icon-background: orange} 
+body {transition:  background 0.3s;
+background: var(--main-color);
+var(--header-color)}
+/* Dark theme */
+body.dark {transition: 0.3s;
+--main-color: #37474F;
+border-radius: 10px;
+--icon-background: #292821;
+color: #fff}
+.dark {opacity: 1}
+
+.mode-switch {height: 0px;
+background: transparent;
+border-radius: 10px;
+position: relative;
+cursor: pointer;
+-webkit-tap-highlight-color: transparent;
+margin: 5px 26px 0px 0px;
+padding: 8px 4px 0px 0px;
+float: right}
+.mode-switch::before {content: '\f185';
+position: absolute;
+left: -1px;
+right: -1px;
+transform: translateY(-50%);
+font-family: "Font Awesome 5 Free";
+width: 30px;
+height: 30px;
+line-height: 33.5px;
+background: var(--icon-background);
+border-radius: 50%;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+color: #fff;
+transition: 0.3s}
+.mode-switch.active::before {content: '\f186';
+color: lightgrey;
+font-family: "Font Awesome 5 Free";
+left: 100%;
+transform: translate(-50%,-50%) rotate(360deg)}
+
+.wrapper .icon {position:relative;
+display: inline-block;
+font-size: 20px;
+align-items: center;
+transition: all 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+color: grey;
+text-decoration: none;
+outline: none;
+-webkit-tap-highlight-color: transparent}
+.wrapper .tooltip {position:relative;
+opacity: 0;
+pointer-events: none;
+transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)}
+.wrapper .tooltip::before {position:absolute;
+transform: translate(-50%) rotate(45deg);
+transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)}
+.wrapper .icon:hover .tooltip {opacity: 1;
+visibility: visible;
+pointer-events: auto}
+/* Icon hover color */
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before 
+{color: #2196F3;}
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before 
+{color: #03A9F4;}
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before 
+{color: #E91E63;}
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before 
+{color: #607D8B;}
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before 
+{color: #F44336;}
+
+.credits {position: fixed;
+display: flex;
+right: 3%;
+bottom: 25%;
+text-shadow: 1px 1px 0px #000000}
+</style>
+
+</head>
+<body>
+
+<div id="navbar">
+<header>
+<div class="mode-switch"></div> 
+
+<h2>Demo Website/Blog Page</h2>
+
+<br>
+<button type="button" class="collapsible">☰</button>
+<div class="content"><div class="dropdown">
+<hr><br>
+
+<!-- You can use the link for target a page in "Reference" (AppCreator24) -->
+<!-- Example <a href="go:Page1"> and the link go directly to the section "PAGE 1" -->
+<!-- You can also use this link to go to other section pages -->
+
+<br>
+<p><a style="color: #fff;text-decoration:none;"
+href="#">PAGE 1</a></p>
+<br>
+<p><a style="color: #fff;text-decoration:none" 
+href="#">PAGE 2</a></p>
+<br>
+<p><a style="color: #fff;text-decoration:none" 
+href="#">PAGE 3</a></p>
+<br>
+<p><a style="color: #fff;text-decoration:none" 
+href="#">PAGE 4</a></p>
+<br>
+<p><a style="color: #fff;text-decoration:none" 
+href="#">PAGE 5</a></p>
+</div>
+</div>
+</header>
+<br>
+</div>
+
+<br><br>
+<div style="padding:10px;">
+<p><b>This is an example of a commonly used website template design.</b></p>
+<p><b>Many more designs you can make here.</b></p>
+<br>
+<p><b>The example here I designed for a website/blog about nature.</b></p>
+</div>
+<br><hr>
+
+<img style="width:290px;height:375px;box-shadow: 0px 4px 13px 0px rgba(0,0,0,1.15);box-shadow: 0px 4px 10px 0px rgba(0,0,0,1.8);" 
+src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+<p style="padding:15px">To look more attractive, you can change the text font, background/image color or you can also add whatever content you have and design it your own way.</p>
+<br><br>
+
+<div class="vb"> 
+<iframe src="https://geo.dailymotion.com/player/x8ag8.html?video=x8ca6f7" allowfullscreen
+frameborder="0">
+</iframe>
+<iframe src="https://geo.dailymotion.com/player/x8ag8.html?video=x8ca6in" allowfullscreen
+frameborder="0">
+</iframe>
+</div>
+
+<br>
+<img style="width:300px;height:200px;box-shadow: 0px 4px 13px 0px rgba(0,0,0,1.15);box-shadow: 0px 4px 10px 0px rgba(0,0,0,1.8);" 
+src="https://images.pexels.com/photos/2406949/pexels-photo-2406949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+<p style="padding:15px">Make sure you already have an idea of what you want for your website/blog later. If you do not have an idea, just search on google it is already listed with various ideas and designs that you maybe interested.</p>
+<br>
+
+<div class="vb"> 
+<iframe src="https://geo.dailymotion.com/player/x8ag8.html?video=x8cabtb" allowfullscreen
+frameborder="0">
+</iframe>
+<iframe src="https://geo.dailymotion.com/player/x8ag8.html?video=x8ca6f7" allowfullscreen
+frameborder="0">
+</iframe>
+</div>
+
+<footer>
+<!-- Social icon-->
+<div class="wrapper">
+<a href="#" class="icon facebook">
+<div class="tooltip">Facebook</div>
+<span><i class="fab fa-facebook-f"></i></span>
+</a>
+<a href="#" class="icon twitter">
+<div class="tooltip">Twitter</div>
+<span><i class="fab fa-twitter"></i></span>
+</a>
+<a href="#" class="icon instagram">
+<div class="tooltip">Instagram</div>
+<span><i class="fab fa-instagram"></i></span>
+</a>
+<a href="#" class="icon github">
+<div class="tooltip">Github</div>
+<span><i class="fab fa-github"></i></span>
+</a>
+<a href="#" class="icon youtube">
+<div class="tooltip">Youtube</div>
+<span><i class="fab fa-youtube"></i></span>
+</a>
+</div>
+<br><br>
+
+<!-- Copyright -->
+<p>Copyright &copy; 2022 Your Website/Blog Name.</p>
+<p>All Rights Reserved</p>
+<br>
+</footer>
+
+<div class="credits"> 
+<h5 style="color:gold">Design by</h5>
+<h4 style="color:#FF5722">ZazerConer's
+<a style="color:dodgerblue;text-decoration:none" 
+href="https://github.com/ZazerConer/Templates-For-App-Creator-24"><b>Github</b></a></h4>
+</div>
+
+<script src="js/script.js"></script>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+for (i = 0; i < coll.length; i++) {
+coll[i].addEventListener("click", function() {
+this.classList.toggle("active");
+var content = this.nextElementSibling;
+if (content.style.display === "block") {
+content.style.display = "none";
+} else {
+content.style.display = "block";
+}
+});
+}
+</script>
+
+<script>
+const mode = document.querySelector('.mode-switch')
+mode.addEventListener('click',()=>{
+mode.classList.toggle('active')
+document.body.classList.toggle('dark')
+})
+</script>
+
+</body>
+</html>
