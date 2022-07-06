@@ -14,7 +14,6 @@ content.style.display = "block";
 }
 
 // Dark Mode Switch.
-<script>
 const mode = document.querySelector('.mode-switch')
 mode.addEventListener('click',()=>{
 mode.classList.toggle('active')
