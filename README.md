@@ -50,7 +50,7 @@ Using HTML code is easier and more interesting because you can create things you
 
 **_Website/ Blog page :_**
 
-- **[Demo](https://bit.ly/dEmO204)**
+- **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/WEBL/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Website-Blog-Page/Template1.html)**
 
 <br>
