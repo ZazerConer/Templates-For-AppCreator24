@@ -158,3 +158,6 @@ pointer-events: auto}
 .wrapper .youtube:hover .tooltip,
 .wrapper .youtube:hover .tooltip::before 
 {color: #F44336;}
+
+.cpr a {color: grey;
+font-size: 15px;}
