@@ -69,13 +69,14 @@ width: 100%;
 margin-top: 55px;
 text-align: center;}
 
-/* Dark switch mode */
+/* Dark mode switch */
 /* Light theme */
 :root {--main-color: #ECEFF1; /* Background color */
 --icon-background: orange}  /* Icon switch color */
 body {transition:  background 0.3s;
 background: var(--main-color);
 var(--header-color)}
+
 /* Dark theme */
 body.dark {transition: 0.3s;
 --main-color: #37474F; /* Background color */
@@ -83,6 +84,7 @@ border-radius: 10px;
 --icon-background: #292821; /* Icon switch color */
 color: #fff}
 .dark {opacity: 1}
+
 /* Icon switch color changes */
 .mode-switch {height: 0px;
 background-color: transparent;
