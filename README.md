@@ -48,7 +48,16 @@ Using HTML code is easier and more interesting because you can create things you
 - **[Demo 3](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/templates3.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Video-Playlist/Template3.html)**
 
-**_Website/ Blog page :_**
+<br>
+
+**_Movie Page :_**
+
+_ **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/MOPG/templates1/index.html)**
+:bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Movie-Page/Template1)**
+
+<br>
+
+**_Website/Blog page :_**
 
 - **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/WEBL/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Website-Blog-Page/Template1)**
