@@ -52,7 +52,7 @@ Using HTML code is easier and more interesting because you can create things you
 
 **_Movie Page :_**
 
-_ **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/MOPG/templates1/index.html)**
+- **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/MOPG/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Movie-Page/Template1)**
 
 <br>
