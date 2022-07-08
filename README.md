@@ -38,7 +38,7 @@ Using HTML code is easier and more interesting because you can create things you
 
 ### See demo below
 
-**_Page Video/TV :_**
+**_Video/TV Page :_**
 
 - **[Demo 1](https://bit.ly/dEmO201)** 
 
