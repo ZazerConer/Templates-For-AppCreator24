@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<noscript><link rel="stylesheet" href="$CSS&display=swap"></noscript>
+<title>Demo-Movie-Page</title>
+
+<style>
+* {padding: 0;
+margin: 0;
+box-sizing: border-box;}
+body {background: #37474F;
+font-family: Arial,sans-serif;
+font-size: 100%;
+text-align: center;
+width: 100%;
+height: 100%;}
+
+.title {color: #fff;
+font-size: 25px;
+display: inline-block;
+margin-top: 10px;
+margin-right: 53px;
+padding: 10px;
+border-radius: 7px;}
+a {outline: none;
+text-decoration: none;
+-webkit-tap-highlight-color: transparent}
+p {color: #fff;
+margin-top: 30px}
+h2 :active {background: #ccc;
+padding: 2px 7px;
+border-radius: 3px;
+opacity: 0.8;}
+h3 :active {background: #ccc;
+padding: 2px 7px;
+border-radius: 3px;
+opacity: 0.8;}
+.page {color: #fff;
+background: #A1887F;
+border-radius: 3px;
+padding: 4px 10px;
+display: inline-block;
+opacity: 1;}
+
+img {width: 120px;
+height: 165px;
+margin: 7px;
+background: #fff;
+border: 2px solid #ccc;
+border-radius: 10px;
+box-shadow: 0px 3px 10px 1px rgba(0,0,0,1.9)}
+img:hover {background: #ccc;
+padding: 3px;
+display: inline-block;
+border-radius: 10px;
+opacity: 0.9;}
+#imgshow {width: 220px;
+height: 130px;
+align-items: left;
+border: 2px solid #ccc;
+border-radius: 7px;
+box-shadow: none;}
+
+#navbar {overflow: hidden;
+position:relative;
+padding-bottom: 1rem;
+background-color: transparent}
+
+.collapsible {color: #fff;
+font-size: 27px;
+margin: 16px;
+border: none;
+float: left;
+padding: 0px 5px;
+text-align: center;
+-webkit-tap-highlight-color: transparent;
+outline: none;}
+.content {color: #fff;
+display: none;
+background-color: #37474F;
+width: 100%;
+margin-top: 24px;
+text-align: center;
+z-index: 100;}
+button {background-color: transparent;
+border: none;
+outline: none;
+-webkit-tap-highlight-color: transparent}
+button:active {background-color: #454545;
+border-radius: 3px;
+display: inline-block;
+opacity: 0.5}
+
+.dropbtn {color: white;
+font-size: 25px;
+padding: 0 8px 7px 8px;
+margin-right: 10px;
+font-weight: 500;
+border: none;
+border-radius: 50px;
+-webkit-tap-highlight-color: transparent}
+.dropup {position: relative;
+float: right;
+padding: 5px 0 10px 0;
+display: inline-block;}
+.dropup-content {display: none;
+position: absolute;
+bottom: 52px;
+background: #232f34;
+min-width: 130px;
+border-radius: 10px 0 0 0;
+text-align: center;
+right: 1%;
+z-index: 1;
+transition: ease-in-out 0.4s;}
+.dropup-content a {color: #fff;
+display: grid;}
+.dropup-content a:hover {background: #ccc;
+padding: 5px 13px;
+display: inline-block;
+margin-bottom: 7px;
+border-radius: 3px;
+opacity: 0.8;}
+.dropup:hover .dropup-content {display: block;}
+.dropup:hover .dropbtn {background-color: #455A64;
+border-radius: 50px;
+transition: ease 0.3s;
+opacity: 0.8;}
+
+footer {background: #232f34;
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;}
+
+.credits {display: flex;
+float: left;
+margin: 15px 0 0 20px;
+text-shadow: 1px 1px 0px #000000}
+</style>
+
+</head>
+<body>
+
+<div id="navbar">
+
+<p class="title">Demo Movie Page</p>
+
+<button type="button" class="collapsible">&#9776;</button>
+<div class="content"><div class="dropdown">
+
+<br>
+<h2><a style="color:#fff;" href="#">HOME</a></h2>
+<br>
+<h3 class="page">&#9662; Genre</h3>
+<br><br>
+<h3><a style="color:#fff;" href="#">Action</a>
+</h3>
+<br>
+<h3><a style="color:#fff;" href="#">Comedy</a>
+</h3>
+<br>
+<h3><a style="color:#fff;" href="#">Fantasy</a>
+</h3>
+<br>
+<h3><a style="color:#fff;" href="#">Horror</a>
+</h3>
+<br>
+<h3><a style="color:#fff;" href="#">Mystery</a>
+</h3>
+<br>
+<h3><a style="color:#fff;" href="#">Romance</a>
+</h3>
+<br>
+<h3><a style="color:#fff;" href="#">Thriller</a>
+</h3>
+<br>
+<h3><a style="color:#fff;" href="#">Sci-Fi</a>
+</h3>
+<br><br>
+</div>
+</div>
+</div>
+
+<marquee scrollamount="3"> 
+<div style="display:flex:margin-left:20px;"> 
+<img id="imgshow" src="https://i.imgur.com/BXNZPGQ.jpeg">
+<img id="imgshow" src="https://i.imgur.com/8OJv4dJ.jpeg">
+<img id="imgshow" src="https://i.imgur.com/PKG9Irw.jpeg">
+<img id="imgshow" src="https://i.imgur.com/ok8qtDw.jpeg">
+<img id="imgshow" src="https://i.imgur.com/sKhs4Cq.jpeg">
+<img id="imgshow" src="https://i.imgur.com/kJjMrQg.jpeg">
+<img id="imgshow" src="https://i.imgur.com/VWAwtze.jpeg">
+<img id="imgshow" src="https://i.imgur.com/BXNZPGQ.jpeg">
+<img id="imgshow" src="https://i.imgur.com/8OJv4dJ.jpeg">
+<img id="imgshow" src="https://i.imgur.com/PKG9Irw.jpeg">
+<img id="imgshow" src="https://i.imgur.com/ok8qtDw.jpeg">
+<img id="imgshow" src="https://i.imgur.com/sKhs4Cq.jpeg">
+<img id="imgshow" src="https://i.imgur.com/kJjMrQg.jpeg">
+<img id="imgshow" src="https://i.imgur.com/VWAwtze.jpeg">
+</div>
+</marquee>
+<br>
+<hr>
+
+<p style="color:#ccc;float:left;margin-left:25px">Movies of 2021</p> 
+<br><br><br><br>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/XcSpMrB.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/tJ0Mfnt.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/oVqj9Xu.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/NFx3my6.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/4IdvSgo.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/ECERp95.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/L2yEBWR.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/SLqbcyZ.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/E0NODG3.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/SANSQW8.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/NuYH6yc.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/AiAd0mQ.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/BrGJPkH.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/PGxcCAW.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/Z3fqXoR.jpeg">
+</a>
+
+<a href="#" title="Name">
+<img src="https://i.imgur.com/DGkTdjB.jpeg">
+</a>
+
+<br><br><br><br><br><br>
+
+<footer>
+<div class="credits"> 
+<p>
+<h4 style="color:#ccc">Design by</h4>
+<h3 style="color:gold">ZazerConer's
+<a style="color:dodgerblue;text-decoration:none;-webkit-tap-highlight-color: lightblue"
+href="https://github.com/ZazerConer"><b>Github</b></a></h3>
+</p>
+</div>
+
+<div class="dropup">
+<button class="dropbtn">&#9650;</button>
+<div class="dropup-content">
+<br>
+<h4 class="page">&#9662; Year</h4>
+<br><br>
+<a href="#">2022</a>
+<br>
+<a href="#">2021</a>
+<br>
+<a href="#">2020</a>
+<br>
+<a href="#">2019</a>
+<br>
+<a href="#">2018</a>
+<br>
+</div>
+</div>
+</footer>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+for (i = 0; i < coll.length; i++) {
+coll[i].addEventListener("click", function() {
+this.classList.toggle("active");
+var content = this.nextElementSibling;
+if (content.style.display === "block") {
+content.style.display = "none";
+} else {
+content.style.display = "block";
+}
+});
+}
+</script>
+
+</body>
+</html>
