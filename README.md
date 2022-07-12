@@ -57,7 +57,7 @@ Feel free to change the html code in your own way to look more attractive.
 Video Player with Header & Footer.
 
 - **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/VIPL/templates1/Page2.html)**
-:bookmark-tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Video-Player/Template1)**
+:bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Video-Player/Template1)**
 
 <br>
 
