@@ -22,7 +22,7 @@ But not on this AppCreator24, it makes it easy for you to create your own applic
 
 - _And much more.._
 
-#### Go here https://www.appcreator24.com
+#### Go here : https://www.appcreator24.com
 
 <br>
 
@@ -33,6 +33,8 @@ Yes, you can use this template without any hesitation.
 You can place this template on the HTML code section (AppCreator24).
 
 Using HTML code is easier and more interesting because you can create things you like to create on your app with your own design.
+
+Feel free to change the html code in your own way to look more attractive.
 
 <hr>
 
@@ -47,6 +49,15 @@ Using HTML code is easier and more interesting because you can create things you
 
 - **[Demo 3](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/templates3.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Video-Playlist/Template3.html)**
+
+<br>
+
+**_Video Player :_**
+
+Video Player with Header & Footer.
+
+- **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/VIPL/templates1/Page2.html)
+:bookmark-tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Video-Player/Template1)
 
 <br>
 
