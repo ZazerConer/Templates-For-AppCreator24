@@ -24,7 +24,7 @@ But not on this AppCreator24, it makes it easy for you to create your own applic
 
 #### Go here : https://www.appcreator24.com
 
-<br>
+<hr>
 
 ## Is this template free?
 
