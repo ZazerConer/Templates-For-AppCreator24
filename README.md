@@ -61,6 +61,15 @@ Video Player with Header & Footer.
 
 <br>
 
+**_Audio Player : _**
+
+Radio/Music Player with Playlist (M-Player).
+
+- **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/MUPL/templates1/index.html)**
+:bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Music-Player/Template1)**
+
+<br>
+
 **_Movie Page :_**
 
 - **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/MOPG/templates1/index.html)**
