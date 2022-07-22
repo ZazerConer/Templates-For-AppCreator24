@@ -61,7 +61,7 @@ Video Player with Header & Footer.
 
 <br>
 
-**_Audio Player : _**
+**_Audio Player :_**
 
 Radio/Music Player with Playlist (M-Player).
 
