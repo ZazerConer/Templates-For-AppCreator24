@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="content-use-license" content="https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/LICENSE">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radio/Music-Player(M-Player)</title>
 
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Navigation bar -->
+<nav id="main-nav">
+
+<ul>
+<!-- Menu list left (Music genre) -->
+<li><a href="#">Genre<span class="arrow">&#x25BC;</span></a>
+<ul class="submenu">
+<!-- 1st list -->
+<li><a href="#">Pop</a></li>
+<li><a href="#">Rock</a></li>
+<li><a href="#">Hip Hop</a></li>
+<li><a href="#">Latin</a></li>
+<li><a href="#">R&B</a></li>
+<li><a href="#">Jazz</a></li>
+<li><a href="#">Metal</a></li>
+<!-- Another option -->
+<li><a href="#">Others<span class="arrow">&#x25B6;</span></a>
+<ul class="submenu-2">
+<!-- 2nd list -->
+<li><a href="#">Folk/Acoustic</a></li>
+<li><a href="#">Blues</a></li>
+<li><a href="#">Country</a></li>
+<li><a href="#">Classical</a></li>
+</ul></li>
+</ul></li>
+
+<!-- Title center -->
+<!-- The name of your App or Title page -->
+<li><p class="title">Title</p></li>
+
+<!-- Menu list right (Information) -->
+<li><a href="#">More<span class="arrow">&#x25BC;</span></a>
+<ul class="submenu">
+<!-- Put your app information and name it as the title on each page -->
+<!-- Example: About the app, Contact us, your official website and anything else you want to put -->
+<li><a href="#">Page 1</a></li>
+<li><a href="#">Page 2</a></li>
+<li><a href="#">Page 3</a></li>
+<li><a href="#">Page 4</a></li>
+<li><a href="#">Page 5</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<!-- Load item -->
+<div class="load">
+
+<!-- App Logo -->
+<img class="load-logo" src="Logo.png">
+
+<!-- Waves of Animation -->
+<div class="load-animat"> 
+<!-- Start -->
+<span></span><span></span>
+<span></span><span></span>
+<span></span><span></span>
+<span></span><span></span>
+<span></span><span></span>
+<!-- End -->
+</div>
+</div>
+
+<!-- Player -->
+<div class="Play">
+<!-- Play/Pause button -->
+<button id="Play" disabled>
+<span id="PlayIco" class="btn">▶️</span>
+</button>
+</div>
+
+<!-- Footer -->
+<footer>
+
+<!-- Audio player (tag) -->
+<audio id="myPlay" controls autoplay 
+controlsList="nodownload"
+playertype="playlist"
+delivery-type="Radio,HLS,Stream"
+playlist="true"
+pl-playSelected="true"
+pl-audioCount="true"
+inPlayer="true"
+metadata="true"
+html-default="true"
+click2play="click">
+</audio>
+
+<!-- Parameter for Audio player (tag) -->
+<!-- This parameter depends on the browser device you are using --> 
+<!-- Support browser (Chrome: Yes - Firefox: No - IE7+: Yes - Safari: No - Opera: No) -->
+</footer>
+
+<!-- Container list -->
+<div id="Wrap">
+<!-- Playlist -->
+<div id="List">
+</div>
+</div>
+
+<script src="script.js"></script>
