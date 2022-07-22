@@ -1,0 +1,221 @@
+/* https://github.com/ZazerConer/Templates-For-App-Creator-24 */
+/* Radio/Music-Player (M-Player) */
+
+/* Body style */
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;}
+body {background: #191919;
+width: 100%;
+height: 100%;
+font-family: Tahoma,Arial,sans-serif;
+font-size: 100%;
+text-align: center;}
+
+/*-------------------------*/
+
+/* Navigation bar */
+#main-nav {position: fixed;
+top: 0;
+left: 0;
+right: 0;
+width: 100%;
+z-index: 3;}
+#main-nav a {color: #f6f7f8;
+background: #673AB7;
+height: 50px;
+font-weight: bold;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+transition: background 0.4s;
+-webkit-tap-highlight-color: transparent;}
+#main-nav a:hover {background: #7E57C2;}
+#main-nav ul {list-style: none;
+display: flex;}
+#main-nav li {width: 100%;
+text-align: center;
+position: relative;}
+#main-nav li:hover .submenu > li 
+{display: block;
+flex-direction: column;
+top: 0;}
+
+/* Menu list */
+.submenu li {display: none;
+position: absolute;
+top: 0;}
+.submenu {display: flex;
+flex-direction: column;
+position: absolute;
+width: 100%;
+background: #7E57C2;}
+.submenu li {position: relative;}
+.submenu li:hover .submenu-2 li
+{display: block;}
+.submenu-2 li {display: none;}
+.submenu-2 {position: absolute;
+display: flex;
+flex-direction: column;
+top: 0;
+left: 100%;
+width: 130px;}
+.arrow {margin-left: 8px;
+color: #eee;
+font-size: 12px;}
+
+/* Title center */
+.title {color: #f6f7f8;
+background: #673AB7;
+height: 50px;
+font-size: 18px;
+font-weight: bold;
+display: flex;
+align-items: center;
+justify-content: center;}
+
+/* ------------------------------*/
+
+/* Load item */
+.load {position: fixed;
+margin: 55px 0;
+height: 50px;
+padding: 5px;
+display: flex;
+align-content: center;
+justify-items: center;
+align-items: center;}
+
+/* App Logo */
+.load-logo {position: relative;
+width: 55px;
+height: 55px;
+margin: 5px;
+border: none;
+border-radius: 3px;}
+
+/* Waves of Animation */
+.load-animat {width: 80px;
+height: 40px;
+display: flex;
+align-items: center;
+margin-left: 10px;}
+.load span {width: 4px;
+height: 37px;
+margin: 2px;
+border-radius: 10px;
+background: linear-gradient(#5E35B1, #9575CD, #26C6DA, #9575CD, #5E35B1);
+animation: wavePattern 1.1s linear infinite;}
+.load span:nth-child(2)
+{animation-delay: 0.1s;}
+.load span:nth-child(3)
+{animation-delay: 0.2s;}
+.load span:nth-child(4)
+{animation-delay: 0.3s;}
+.load span:nth-child(5)
+{animation-delay: 0.4s;}
+.load span:nth-child(6)
+{animation-delay: 0.5s;}
+.load span:nth-child(7)
+{animation-delay: 0.6s;}
+.load span:nth-child(8)
+{animation-delay: 0.7s;}
+.load span:nth-child(9)
+{animation-delay: 0.8s;}
+.load span:nth-child(10)
+{animation-delay: 0.9s;}
+@keyframes wavePattern{
+0% {transform: scale(0)}
+50% {transform: scale(1)}
+100% {transform: scale(0)}}
+
+/*-------------------------*/
+
+/* Play/Pause button */
+#Play {padding: 5px;
+box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+border: none;
+border-radius: 10px;
+outline: none;
+float: right;
+-webkit-tap-highlight-color: transparent}
+#Play:active {background: inherit;
+opacity: 0;
+transition: linear 0.2s;}
+.btn {font-size: 300%;
+color: #fff;
+border: none;
+outline: none;
+padding: 0;
+border-radius: 5px;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
+.Play {position: fixed;
+top: 50%;
+left: 25%;
+transform: translate(-50%, -50%);
+background: none;
+margin-right: 80%;}
+
+/*-------------------------*/
+
+/* Container list */
+#Wrap {width: 50%;
+padding: 10px;
+margin: 45px 0 60px 0;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+background: none;
+z-index: 0;
+float: right;}
+
+/* Playlist */
+#List {width: 100%;
+justify-items: center;
+text-align: center;
+overflow: scroll;}
+.Row {display: block;
+color: #f6f7f8;
+font-size: 13px;
+font-weight: 500;
+border: 1px solid #fff;
+border-radius: 8px;
+margin: 5px;
+padding: 8px 5px;
+z-index: 1;
+background: #4527A0;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
+.Row.now {color: #4527A0;
+background: #fff;
+opacity: 0.9;
+border: 2px solid #4527A0;}
+.Row.now:hover {color: #4527A0;
+background: #fff;
+opacity: 0.9;
+border: 2px solid #4527A0;
+transition: linear all 0.3s;}
+
+/*-------------------------*/
+
+/* Footer */
+footer {position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+width: 100%;
+height: 55px;
+z-index: 3;
+background: #eeeeee;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
+
+/* Audio player */
+audio {position: relative;
+width: 100%;
+border: none;
+outline: none;}
+audio::-webkit-media-controls-panel
+{-webkit-appearance: none;
+background: #eeeeee;}
+audio::-webkit-media-controls-play-button
+{display: none !important;}
