@@ -1,8 +1,8 @@
-// https://github.com/ZazerConer/Templates-For-App-Creator-24.
+// https://github.com/ZazerConer/Templates-For-AppCreator24.
 // Radio/Music-Player (M-Player).
 
 window.addEventListener("DOMContentLoaded", () => {
-// Player Init.
+// Player init.
 // Playlist - change to your own!
 let playlist = [
 {name: "<b>Title-Song</b><p>Artist-Name</p>", src: "Audio.mp3"},
@@ -74,10 +74,10 @@ adoPlay(0, true);
 // Play/Pause button.
 // Auto set Play/Pause icon.
 audio.addEventListener("play", () => {
-PlayIco.innerHTML = "⏸︎";
+PlayIco.innerHTML = "pause";
 });
 audio.addEventListener("pause", () => {
-PlayIco.innerHTML = "▶️";
+PlayIco.innerHTML = "play_arrow";
 });
 
 // Click to Play/Pause.
