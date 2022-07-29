@@ -1,6 +1,6 @@
 ## Templates for AppCreator24
 
-**This design uses HTML and CSS.**
+**This design uses HTML CSS and JavaScript.**
 
 Custom templates on your design.
 
