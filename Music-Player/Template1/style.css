@@ -1,4 +1,4 @@
-/* https://github.com/ZazerConer/Templates-For-App-Creator-24 */
+/* https://github.com/ZazerConer/Templates-For-AppCreator24 */
 /* Radio/Music-Player (M-Player) */
 
 /* Body style */
@@ -133,22 +133,26 @@ animation: wavePattern 1.1s linear infinite;}
 /*-------------------------*/
 
 /* Play/Pause button */
-#Play {padding: 5px;
+#Play {padding: 3px;
 box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 border: none;
-border-radius: 10px;
+border-radius: 7px;
 outline: none;
 float: right;
 -webkit-tap-highlight-color: transparent}
 #Play:active {background: inherit;
-opacity: 0;
+opacity: 4;
 transition: linear 0.2s;}
-.btn {font-size: 300%;
+.material-icons {width: 45px;
+height: 45px;
+color: #f6f7f8;
+font-size: 290%;
+padding: 5px 5px 9px 4px;
 color: #fff;
 border: none;
 outline: none;
-padding: 0;
 border-radius: 5px;
+background: #4527A0;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 .Play {position: fixed;
 top: 50%;
