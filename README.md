@@ -34,7 +34,7 @@ You can place this template on the HTML code section (AppCreator24).
 
 Using HTML code is easier and more interesting because you can create things you like to create on your app with your own design.
 
-Feel free to change the html code in your own way to look more attractive.
+Feel free to change the html code with your own design to make it look more attractive.
 
 <hr>
 
@@ -58,6 +58,11 @@ Video Player with Header & Footer.
 
 - **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/VIPL/templates1/Page2.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Video-Player/Template1)**
+
+Video Player with Playlist (Landscape/Portrait).
+
+- **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-AppCreator24/main/demo/VIPL/templates2/live-demo.html)**
+:bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-AppCreator24/tree/main/Video-Player/Template2)**
 
 <br>
 
