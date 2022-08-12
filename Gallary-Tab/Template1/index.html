@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="content-use-license" content="https://github.com/ZazerConer/Templates-For-AppCreator24/blob/main/LICENSE">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>Video-Gallery</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Tabs -->
+<div class="container">
+<div class="tabs">
+<h3 class="active">Gallery 1</h3><h3>Gallery 2</h3><h3>Gallery 3</h3>
+</div>
+
+<!-- Gallery content -->
+<div class="tab-content">
+
+<!-- Gallery 1 -->
+<div class="active">
+<h4>Title 1</h4>
+<video muted class="ga-vid" poster="Image.png"
+src="Video.mp4" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+</div>
+
+<!-- Gallery 2 -->
+<div>
+<h4>Title 2</h4>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>7
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+</div>
+
+<!-- Gallery 3 -->
+<div>
+<h4>Title 3</h4>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="#"
+src="#" onclick="myFunction(this);"></video>
+</div>
+
+<!---------------------------------------------->
+
+<!-- The expanding video container -->
+<div class="vid-container">
+<!-- Close the video -->
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<!-- Play/Pause button -->
+<button id="Play" disabled>
+<span id="PlayIcons" class="material-icons">play_arrow</span>
+</button>
+<!-- Expanded video -->
+<video id="expandedVid" controls autoplay muted controlsList="nodownload"></video>
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
