@@ -1,0 +1,123 @@
+/* https://github.com/ZazerConer/Templates-For-AppCreator24 */
+/* Video Gallery */
+
+/* Body style */
+* {padding: 0;
+margin: 0;
+box-sizing: border-box;}
+body {background: #0d47a1;
+font-family: Verdana,Arial,sans-serif;
+font-size: 100%;
+width: 100%;
+height: 100%;
+text-align: center;}
+
+/*--------------------------------------------*/
+
+/* Tabs */
+.container {position: absolute;
+top: 0;
+width: 100%;}
+.tabs {display: grid;
+grid-template-columns: repeat(3, 1fr);}
+.tabs .active {color: #1565c0;
+text-shadow: 0 1px 0 #fff;
+background: linear-gradient(#fafafa,#f5f5f5,#eeeeee,#e0e0e0,#bdbdbd);}
+h3 {color: #fff;
+font-size: 16px;
+text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.6);
+background: linear-gradient(#2196f3,#1e88e5,#1976d2,#1565c0,#0D47a1);
+text-align: center;
+border-left: 0.5px solid #fafafa;
+border-right: 0.5px solid #fafafa;
+border-bottom: 0.5px solid #fafafa;
+padding: 10px 0;
+font-weight: 400;}
+/* Gallery content */
+.tab-content {background: linear-gradient(#1e88e5,#1976d2,#1565c0,#0d47a1);
+padding: 30px 0 100px 0;
+height: 100%;}
+.tab-content h4 {color: #fff;
+font-size: 22px;
+font-weight: 500;
+margin-bottom: 20px;
+text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.6);}
+.tab-content div {display: none;}
+.tab-content .active {display: block;}
+
+/*--------------------------------------------*/
+
+/* Video gallery */
+.ga-vid {width: 45%;
+margin: 5px;
+border: 3px solid #eeeeee;
+border-radius: 8px;
+z-index: 0;
+box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;}
+.ga-vid:hover {background: #ddd;
+opacity: 0.7}
+/* The expanding video container */
+/* Positioning is needed to position the close button */
+.vid-container {position: fixed;
+top: 50%;
+left: 50%;
+width: 90%;
+transform: translate(-50%, -50%);
+margin: auto;
+z-index: 100;
+display: none;}
+/* Closable button outside the video container */
+.closebtn {position: absolute;
+bottom: 100%;
+right: 0;
+color: #fff;
+font-size: 38px;
+padding: 0 10px;
+border-radius: 50%;
+z-index: 3;
+text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.4);}
+.closebtn:active {background: #1976d2;
+color: #eeeeee;}
+/* Play/Pause button at the border position of the video container */
+button {position: absolute;
+top: 98%;
+right: 44%;
+align-items: center;
+padding: 3px 10px;
+border: none;
+border-radius: 0 0 5px 5px;
+line-height: 18px;
+background: #e0e0e0;
+outline: none;
+z-index: 3;}
+button:active {color: #eeeeee;
+transition: linear 0.2s;}
+/* Play/Pause button icons */
+.material-icons {color: #1976d2;
+font-size: 30px;
+text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.4);}
+/* Hide the Play controls button on the video */
+video::-webkit-media-controls-overlay-play-button 
+{-webkit-appearance: none;
+display: none !important;}
+/* Show video container with border */
+video {border: 5px solid #e0e0e0;
+border-radius: 5px;
+padding: 0;
+background: #fafafa;}
+/* Show the container and cover it with a background (box-shadow) */
+#expandedVid {width: 100%;
+box-shadow: 0 0 0 100000px rgba(0,0,0,.8);
+-webkit-box-shadow: 0 0 0 100000px rgba(0,0,0,.8);
+-moz-box-shadow: 0 0 0 100000px rgba(0,0,0,.8);}
+
+/*--------------------------------------------*/
+
+/* Minimum width for mobile screen size (Smartphone/Tablet) */
+@media only screen and (min-width: 500px)
+and (orientation: landscape) {
+h3 {font-size: 20px;}
+.tab-content h4 {font-size: 26px;}
+.ga-vid {width: 30%;}
+.vid-container {width: 60%;}
+}
