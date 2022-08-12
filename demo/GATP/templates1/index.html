@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="content-use-license" content="https://github.com/ZazerConer/Templates-For-AppCreator24/blob/main/LICENSE">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>Video-Gallery</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* https://github.com/ZazerConer/Templates-For-AppCreator24 */
+/* Video Gallery */
+
+/* Body style */
+* {padding: 0;
+margin: 0;
+box-sizing: border-box;}
+body {background: #0d47a1;
+font-family: Verdana,Arial,sans-serif;
+font-size: 100%;
+width: 100%;
+height: 100%;
+text-align: center;}
+
+/*--------------------------------------------*/
+
+/* Tabs */
+.container {position: absolute;
+top: 0;
+width: 100%;}
+.tabs {display: grid;
+grid-template-columns: repeat(3, 1fr);}
+.tabs .active {color: #1565c0;
+text-shadow: 0 1px 0 #fff;
+background: linear-gradient(#fafafa,#f5f5f5,#eeeeee,#e0e0e0,#bdbdbd);}
+h3 {color: #fff;
+font-size: 16px;
+text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.6);
+background: linear-gradient(#2196f3,#1e88e5,#1976d2,#1565c0,#0D47a1);
+text-align: center;
+border-left: 0.5px solid #fafafa;
+border-right: 0.5px solid #fafafa;
+border-bottom: 0.5px solid #fafafa;
+padding: 10px 0;
+font-weight: 400;}
+/* Gallery content */
+.tab-content {background: linear-gradient(#1e88e5,#1976d2,#1565c0,#0d47a1);
+padding: 30px 0 180px 0;
+height: 100%;}
+.tab-content h4 {color: #fff;
+font-size: 22px;
+font-weight: 500;
+margin-bottom: 20px;
+text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.6);}
+.tab-content div {display: none;}
+.tab-content .active {display: block;}
+
+/*--------------------------------------------*/
+
+/* Video gallery */
+.ga-vid {width: 45%;
+margin: 5px;
+border: 3px solid #eeeeee;
+border-radius: 8px;
+z-index: 0;
+box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;}
+.ga-vid:hover {background: #ddd;
+opacity: 0.7}
+/* The expanding video container */
+/* Positioning is needed to position the close button */
+.vid-container {position: fixed;
+top: 50%;
+left: 50%;
+width: 90%;
+transform: translate(-50%, -50%);
+margin: auto;
+z-index: 100;
+display: none;}
+/* Closable button outside the video container */
+.closebtn {position: absolute;
+bottom: 100%;
+right: 0;
+color: #fff;
+font-size: 38px;
+padding: 0 10px;
+border-radius: 50%;
+z-index: 3;
+text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.4);}
+.closebtn:active {background: #1976d2;
+color: #eeeeee;}
+/* Play/Pause button at the border position of the video container */
+button {position: absolute;
+top: 98%;
+right: 44%;
+align-items: center;
+padding: 3px 10px;
+border: none;
+border-radius: 0 0 5px 5px;
+line-height: 18px;
+background: #e0e0e0;
+outline: none;
+z-index: 3;}
+button:active {color: #eeeeee;
+transition: linear 0.2s;}
+/* Play/Pause button icons */
+.material-icons {color: #1976d2;
+font-size: 30px;
+text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.4);}
+/* Hide the Play controls button on the video */
+video::-webkit-media-controls-overlay-play-button 
+{-webkit-appearance: none;
+display: none !important;}
+/* Show video container with border */
+video {border: 5px solid #e0e0e0;
+border-radius: 5px;
+padding: 0;
+background: #fafafa;}
+/* Show the container and cover it with a background (box-shadow) */
+#expandedVid {width: 100%;
+box-shadow: 0 0 0 100000px rgba(0,0,0,.8);
+-webkit-box-shadow: 0 0 0 100000px rgba(0,0,0,.8);
+-moz-box-shadow: 0 0 0 100000px rgba(0,0,0,.8);}
+
+/*--------------------------------------------*/
+
+/* Minimum width for mobile screen size (Smartphone/Tablet) */
+@media only screen and (min-width: 500px)
+and (orientation: landscape) {
+h3 {font-size: 20px;}
+.tab-content h4 {font-size: 26px;}
+.ga-vid {width: 30%;}
+.vid-container {width: 60%;}
+}
+
+/*--------------------------------------------*/
+
+.github {position: fixed;
+bottom: 20px;
+right: 5px;
+color: #eeeeee;
+margin: 20px;}
+
+.credits {position: fixed;
+bottom: 0;
+right: 0;
+margin: 18px;
+display: flex;
+text-shadow: 0 1px 1px #404040;}
+
+.istock {position: fixed;
+bottom: 0;
+left: 0;
+margin: 20px;
+display: flex;
+text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.4);}
+</style>
+
+</head>
+<body>
+
+<!-- Tabs -->
+<div class="container">
+<div class="tabs">
+<h3 class="active">Gallery 1</h3><h3>Gallery 2</h3><h3>Gallery 3</h3>
+</div>
+
+<!-- Gallery content -->
+<div class="tab-content">
+<!-- Gallery 1 -->
+<div class="active">
+<h4>Travel & Adventure</h4>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/young-girl-with-map-holding-boyfriends-hand-showing-the-way-video-id820922644?s=640x640"
+src="https://media.istockphoto.com/videos/young-girl-with-map-holding-boyfriends-hand-showing-the-way-video-id820922644" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/woman-on-road-trip-sitting-in-convertible-and-taking-photos-video-id954980050?s=640x640"
+src="https://media.istockphoto.com/videos/woman-on-road-trip-sitting-in-convertible-and-taking-photos-video-id954980050" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/aerial-view-of-couple-stand-up-paddling-video-id905751012?s=640x640"
+src="https://media.istockphoto.com/videos/aerial-view-of-couple-stand-up-paddling-video-id905751012" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/the-couple-walking-in-mountains-on-the-sunny-background-slow-motion-video-id1151616183?s=640x640"
+src="https://media.istockphoto.com/videos/the-couple-walking-in-mountains-on-the-sunny-background-slow-motion-video-id1151616183" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/rider-in-a-yellow-whitewater-kayak-dropping-a-waterfall-video-id994594020?s=640x640"
+src="https://media.istockphoto.com/videos/rider-in-a-yellow-whitewater-kayak-dropping-a-waterfall-video-id994594020" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/beautiful-young-woman-in-a-swimsuit-holding-surfboard-walks-on-the-video-id883880678?s=640x640"
+src="https://media.istockphoto.com/videos/beautiful-young-woman-in-a-swimsuit-holding-surfboard-walks-on-the-video-id883880678" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/cycling-at-sunset-video-id1219559746?s=640x640"
+src="https://media.istockphoto.com/videos/cycling-at-sunset-video-id1219559746" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/be-up-for-new-adventures-video-id1210498650?s=640x640"
+src="https://media.istockphoto.com/videos/be-up-for-new-adventures-video-id1210498650" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/the-couple-with-camping-backpacks-walking-to-the-mountain-top-slow-video-id1151597371?s=640x640"
+src="https://media.istockphoto.com/videos/the-couple-with-camping-backpacks-walking-to-the-mountain-top-slow-video-id1151597371" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/two-campers-resting-in-the-trunk-of-the-car-in-mountains-video-id1179790832?s=640x640"
+src="https://media.istockphoto.com/videos/two-campers-resting-in-the-trunk-of-the-car-in-mountains-video-id1179790832" onclick="myFunction(this);"></video>
+</div>
+
+<!-- Gallery 2 -->
+<div>
+<h4>Nature</h4>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/aerial-view-coastline-of-la-digue-island-seychelles-video-id810787448?s=640x640"
+src="https://media.istockphoto.com/videos/aerial-view-coastline-of-la-digue-island-seychelles-video-id810787448" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/ha-long-bay-by-air-26-drone-flight-over-ha-long-bay-vietnam-26-video-id1291737803?s=640x640"
+src="https://media.istockphoto.com/videos/ha-long-bay-by-air-26-drone-flight-over-ha-long-bay-vietnam-26-video-id1291737803" onclick="myFunction(this);"></video>7
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/calm-surface-of-a-lake-in-the-forest-reflecting-the-beautiful-mount-video-id864526000?s=640x640"
+src="https://media.istockphoto.com/videos/calm-surface-of-a-lake-in-the-forest-reflecting-the-beautiful-mount-video-id864526000" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/aerial-flight-with-drone-over-the-famous-skogar-waterfall-iceland-video-id1031669488?s=640x640"
+src="https://media.istockphoto.com/videos/aerial-flight-with-drone-over-the-famous-skogar-waterfall-iceland-video-id1031669488" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/aerial-view-bangioc-waterfall-in-cao-bang-province-vietnam-video-id953506218?s=640x640"
+src="https://media.istockphoto.com/videos/aerial-view-bangioc-waterfall-in-cao-bang-province-vietnam-video-id953506218" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/north-clear-creek-falls-video-id472840821?s=640x640"
+src="https://media.istockphoto.com/videos/north-clear-creek-falls-video-id472840821" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/magical-seljalandsfoss-waterfall-in-iceland-video-id1149210954?s=640x640"
+src="https://media.istockphoto.com/videos/magical-seljalandsfoss-waterfall-in-iceland-video-id1149210954" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/landscape-of-clear-stream-video-id699620004?s=640x640"
+src="https://media.istockphoto.com/videos/landscape-of-clear-stream-video-id699620004" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/sunny-spring-forest-cinemagraph-video-id899940002?s=640x640"
+src="https://media.istockphoto.com/videos/sunny-spring-forest-cinemagraph-video-id899940002" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/idyllic-nature-pathway-in-plitvice-national-park-croatia-video-id1341931414?s=640x640"
+src="https://media.istockphoto.com/videos/idyllic-nature-pathway-in-plitvice-national-park-croatia-video-id1341931414" onclick="myFunction(this);"></video>
+</div>
+
+<!-- Gallery 3 -->
+<div>
+<h4>Animals</h4>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/roe-deer-running-in-snow-covered-rural-field-video-id1087294522?s=640x640"
+src="https://media.istockphoto.com/videos/roe-deer-running-in-snow-covered-rural-field-video-id1087294522" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/group-of-african-giraffes-at-sunset-video-id472670309?s=640x640"
+src="https://media.istockphoto.com/videos/group-of-african-giraffes-at-sunset-video-id472670309" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/large-young-female-siberian-tiger-runs-directly-against-the-camera-video-id1296400636?s=640x640"
+src="https://media.istockphoto.com/videos/large-young-female-siberian-tiger-runs-directly-against-the-camera-video-id1296400636" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/gorgeous-pink-flamingos-on-the-lake-lot-of-flamingos-spend-the-winter-video-id1307710425?s=640x640"
+src="https://media.istockphoto.com/videos/gorgeous-pink-flamingos-on-the-lake-lot-of-flamingos-spend-the-winter-video-id1307710425" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/title-brown-bear-with-her-two-yearling-cubs-catches-a-sockeye-salmon-video-id1331521367?s=640x640"
+src="https://media.istockphoto.com/videos/title-brown-bear-with-her-two-yearling-cubs-catches-a-sockeye-salmon-video-id1331521367" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/chasing-the-herd-across-the-plain-video-id540464346?s=640x640"
+src="https://media.istockphoto.com/videos/chasing-the-herd-across-the-plain-video-id540464346" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/flamingos-video-id1053670106?s=640x640"
+src="https://media.istockphoto.com/videos/flamingos-video-id1053670106" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/mama-whale-raising-her-young-calf-video-id1206093753?s=640x640"
+src="https://media.istockphoto.com/videos/mama-whale-raising-her-young-calf-video-id1206093753" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/elephants-video-id472793571?s=640x640"
+src="https://media.istockphoto.com/videos/elephants-video-id472793571" onclick="myFunction(this);"></video>
+<video muted class="ga-vid" poster="https://media.istockphoto.com/videos/1080i-wild-horses-video-id135906026?s=640x640"
+src="https://media.istockphoto.com/videos/1080i-wild-horses-video-id135906026" onclick="myFunction(this);"></video>
+</div>
+
+<!---------------------------------------------->
+
+<!-- The expanding video container -->
+<div class="vid-container">
+<!-- Close the video -->
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<!-- Play/Pause button -->
+<button id="Play" disabled>
+<span id="PlayIcons" class="material-icons">play_arrow</span>
+</button>
+<!-- Expanded video -->
+<video id="expandedVid" controls autoplay muted controlsList="nodownload"></video>
+</div>
+</div>
+
+<!---------------------------------------------->
+
+<svg class="github" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+</svg>
+
+<div class="credits">
+<h5 style="color:#ddd">Design by</h5>
+<h4 style="color:#ffc107;">ZazerConer's
+<a style="color:#ff7043;text-decoration:none;cursor:pointer;"
+href="https://github.com/ZazerConer/Templates-For-App-Creator-24"><b>Github</b>
+</a></h4>
+</div>
+
+<div class="istock"> 
+<h5 style="color:#f5f5f5;">Video on&nbsp;</h5>
+<h4><a style="color:#fff;background:#000;padding:2px 5px 2px 3px;border-radius:3px;text-decoration:none;cursor:pointer;" target="_blank" href="https://www.istockphoto.com">&nbsp;iStock</a></h4>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+// https://github.com/ZazerConer/Templates-For-AppCreator24.
+// Video Gallery.
+
+// Select document "tabs".
+let tabs = document.querySelectorAll(".tabs h3");
+let tabContents = document.querySelectorAll(".tab-content div");
+// Click to activate/remove a tab.
+tabs.forEach((tab, index) => {
+tab.addEventListener("click", () => {
+// Remove "active" when clicking on another tab and switching to other content.
+tabContents.forEach((content) => {
+content.classList.remove("active");
+});
+tabs.forEach((tab) => {
+tab.classList.remove("active");
+});
+// Current tab (active).
+tabContents[index].classList.add("active");
+tabs[index].classList.add("active");
+});
+});
+
+//----------------------------------------------//
+
+// Click the image and show up the container.
+function myFunction(vids) {
+// Get the expanded video.
+var expandVid = document.getElementById("expandedVid");
+// Use the same src in the expanded video as the video being clicked on from the grid.
+expandVid.src = vids.src;
+// Show the container element (hidden with CSS).
+expandVid.parentElement.style.display = "block";
+}
+
+// Load content.
+window.addEventListener("DOMContentLoaded", () => {
+// Get element id (Play/Pause button).
+const video = document.getElementById("expandedVid"),
+PlayIcons = document.getElementById("PlayIcons"),
+Play = document.getElementById("Play");
+// Auto set Play/Pause button icons.
+video.addEventListener("play", () => {
+PlayIcons.innerHTML = "pause";
+});
+video.addEventListener("pause", () => {
+PlayIcons.innerHTML = "play_arrow"	;
+});
+// Click to Play/Pause.
+Play.addEventListener("click", () => {
+if (video.paused) { video.play(); 
+}
+else { video.pause(); }
+});
+// Enable/Disable controls.
+video.addEventListener("canplay", () => {
+Play.disabled = false;
+});
+video.addEventListener("waiting", () => {
+Play.disabled = true;
+});
+});
+</script>
+
+</body>
+</html>
