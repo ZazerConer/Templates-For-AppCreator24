@@ -77,9 +77,9 @@ Radio/Music Player with Playlist (M-Player).
 
 <br>
 
-**_Gallary Tab :_**
+**_Gallery Tab :_**
 
-Video Gallary.
+Video Gallery.
 
 - **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-AppCreator24/main/demo/GATP/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-AppCreator24/tree/main/Gallary-Tab/Template1)**
