@@ -36,9 +36,11 @@ Using HTML code is easier and more interesting because you can create things you
 
 Feel free to change the html code with your own design to make it look more attractive.
 
+If you want more templates for your app **[Here](https://www.w3schools.com/w3css/w3css_templates.asp)**
+
 <hr>
 
-### See demo below
+## See demo below
 
 **_Video/TV Page :_**
 
@@ -72,6 +74,15 @@ Radio/Music Player with Playlist (M-Player).
 
 - **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/MUPL/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Music-Player/Template1)**
+
+<br>
+
+**_Gallary Tab :_**
+
+Video Gallary.
+
+- **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-AppCreator24/main/demo/GATP/templates1/index.html)**
+:bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-AppCreator24/tree/main/Gallary-Tab/Template1)**
 
 <br>
 
