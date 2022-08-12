@@ -6,15 +6,9 @@
 <meta http-equiv="content-use-license" content="https://github.com/ZazerConer/Templates-For-AppCreator24/blob/main/LICENSE">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<title>Video-Gallery</title>
-
-<link rel="stylesheet" href="style.css">
+<title>Demo-Video-Gallery</title>
 
 <style>
-/* https://github.com/ZazerConer/Templates-For-AppCreator24 */
-/* Video Gallery */
-
-/* Body style */
 * {padding: 0;
 margin: 0;
 box-sizing: border-box;}
@@ -27,7 +21,6 @@ text-align: center;}
 
 /*--------------------------------------------*/
 
-/* Tabs */
 .container {position: absolute;
 top: 0;
 width: 100%;}
@@ -46,7 +39,6 @@ border-right: 0.5px solid #fafafa;
 border-bottom: 0.5px solid #fafafa;
 padding: 10px 0;
 font-weight: 400;}
-/* Gallery content */
 .tab-content {background: linear-gradient(#1e88e5,#1976d2,#1565c0,#0d47a1);
 padding: 30px 0 180px 0;
 height: 100%;}
@@ -60,7 +52,6 @@ text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.6);}
 
 /*--------------------------------------------*/
 
-/* Video gallery */
 .ga-vid {width: 45%;
 margin: 5px;
 border: 3px solid #eeeeee;
@@ -69,8 +60,6 @@ z-index: 0;
 box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;}
 .ga-vid:hover {background: #ddd;
 opacity: 0.7}
-/* The expanding video container */
-/* Positioning is needed to position the close button */
 .vid-container {position: fixed;
 top: 50%;
 left: 50%;
@@ -79,7 +68,6 @@ transform: translate(-50%, -50%);
 margin: auto;
 z-index: 100;
 display: none;}
-/* Closable button outside the video container */
 .closebtn {position: absolute;
 bottom: 100%;
 right: 0;
@@ -91,7 +79,6 @@ z-index: 3;
 text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.4);}
 .closebtn:active {background: #1976d2;
 color: #eeeeee;}
-/* Play/Pause button at the border position of the video container */
 button {position: absolute;
 top: 98%;
 right: 44%;
@@ -105,20 +92,16 @@ outline: none;
 z-index: 3;}
 button:active {color: #eeeeee;
 transition: linear 0.2s;}
-/* Play/Pause button icons */
 .material-icons {color: #1976d2;
 font-size: 30px;
 text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.4);}
-/* Hide the Play controls button on the video */
 video::-webkit-media-controls-overlay-play-button 
 {-webkit-appearance: none;
 display: none !important;}
-/* Show video container with border */
 video {border: 5px solid #e0e0e0;
 border-radius: 5px;
 padding: 0;
 background: #fafafa;}
-/* Show the container and cover it with a background (box-shadow) */
 #expandedVid {width: 100%;
 box-shadow: 0 0 0 100000px rgba(0,0,0,.8);
 -webkit-box-shadow: 0 0 0 100000px rgba(0,0,0,.8);
@@ -126,7 +109,6 @@ box-shadow: 0 0 0 100000px rgba(0,0,0,.8);
 
 /*--------------------------------------------*/
 
-/* Minimum width for mobile screen size (Smartphone/Tablet) */
 @media only screen and (min-width: 500px)
 and (orientation: landscape) {
 h3 {font-size: 20px;}
@@ -142,14 +124,12 @@ bottom: 20px;
 right: 5px;
 color: #eeeeee;
 margin: 20px;}
-
 .credits {position: fixed;
 bottom: 0;
 right: 0;
 margin: 18px;
 display: flex;
 text-shadow: 0 1px 1px #404040;}
-
 .istock {position: fixed;
 bottom: 0;
 left: 0;
@@ -161,15 +141,14 @@ text-shadow: -1px -1px 1px rgba(255,255,255,0.2), 1px 1px 1px rgba(0,0,0,0.4);}
 </head>
 <body>
 
-<!-- Tabs -->
 <div class="container">
 <div class="tabs">
 <h3 class="active">Gallery 1</h3><h3>Gallery 2</h3><h3>Gallery 3</h3>
 </div>
 
-<!-- Gallery content -->
 <div class="tab-content">
 <!-- Gallery 1 -->
+
 <div class="active">
 <h4>Travel & Adventure</h4>
 <video muted class="ga-vid" poster="https://media.istockphoto.com/videos/young-girl-with-map-holding-boyfriends-hand-showing-the-way-video-id820922644?s=640x640"
@@ -194,13 +173,12 @@ src="https://media.istockphoto.com/videos/the-couple-with-camping-backpacks-walk
 src="https://media.istockphoto.com/videos/two-campers-resting-in-the-trunk-of-the-car-in-mountains-video-id1179790832" onclick="myFunction(this);"></video>
 </div>
 
-<!-- Gallery 2 -->
 <div>
 <h4>Nature</h4>
 <video muted class="ga-vid" poster="https://media.istockphoto.com/videos/aerial-view-coastline-of-la-digue-island-seychelles-video-id810787448?s=640x640"
 src="https://media.istockphoto.com/videos/aerial-view-coastline-of-la-digue-island-seychelles-video-id810787448" onclick="myFunction(this);"></video>
 <video muted class="ga-vid" poster="https://media.istockphoto.com/videos/ha-long-bay-by-air-26-drone-flight-over-ha-long-bay-vietnam-26-video-id1291737803?s=640x640"
-src="https://media.istockphoto.com/videos/ha-long-bay-by-air-26-drone-flight-over-ha-long-bay-vietnam-26-video-id1291737803" onclick="myFunction(this);"></video>7
+src="https://media.istockphoto.com/videos/ha-long-bay-by-air-26-drone-flight-over-ha-long-bay-vietnam-26-video-id1291737803" onclick="myFunction(this);"></video>
 <video muted class="ga-vid" poster="https://media.istockphoto.com/videos/calm-surface-of-a-lake-in-the-forest-reflecting-the-beautiful-mount-video-id864526000?s=640x640"
 src="https://media.istockphoto.com/videos/calm-surface-of-a-lake-in-the-forest-reflecting-the-beautiful-mount-video-id864526000" onclick="myFunction(this);"></video>
 <video muted class="ga-vid" poster="https://media.istockphoto.com/videos/aerial-flight-with-drone-over-the-famous-skogar-waterfall-iceland-video-id1031669488?s=640x640"
@@ -219,7 +197,6 @@ src="https://media.istockphoto.com/videos/sunny-spring-forest-cinemagraph-video-
 src="https://media.istockphoto.com/videos/idyllic-nature-pathway-in-plitvice-national-park-croatia-video-id1341931414" onclick="myFunction(this);"></video>
 </div>
 
-<!-- Gallery 3 -->
 <div>
 <h4>Animals</h4>
 <video muted class="ga-vid" poster="https://media.istockphoto.com/videos/roe-deer-running-in-snow-covered-rural-field-video-id1087294522?s=640x640"
@@ -246,15 +223,11 @@ src="https://media.istockphoto.com/videos/1080i-wild-horses-video-id135906026" o
 
 <!---------------------------------------------->
 
-<!-- The expanding video container -->
 <div class="vid-container">
-<!-- Close the video -->
 <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-<!-- Play/Pause button -->
 <button id="Play" disabled>
 <span id="PlayIcons" class="material-icons">play_arrow</span>
 </button>
-<!-- Expanded video -->
 <video id="expandedVid" controls autoplay muted controlsList="nodownload"></video>
 </div>
 </div>
@@ -278,26 +251,17 @@ href="https://github.com/ZazerConer/Templates-For-App-Creator-24"><b>Github</b>
 <h4><a style="color:#fff;background:#000;padding:2px 5px 2px 3px;border-radius:3px;text-decoration:none;cursor:pointer;" target="_blank" href="https://www.istockphoto.com">&nbsp;iStock</a></h4>
 </div>
 
-<script src="script.js"></script>
-
 <script>
-// https://github.com/ZazerConer/Templates-For-AppCreator24.
-// Video Gallery.
-
-// Select document "tabs".
 let tabs = document.querySelectorAll(".tabs h3");
 let tabContents = document.querySelectorAll(".tab-content div");
-// Click to activate/remove a tab.
 tabs.forEach((tab, index) => {
 tab.addEventListener("click", () => {
-// Remove "active" when clicking on another tab and switching to other content.
 tabContents.forEach((content) => {
 content.classList.remove("active");
 });
 tabs.forEach((tab) => {
 tab.classList.remove("active");
 });
-// Current tab (active).
 tabContents[index].classList.add("active");
 tabs[index].classList.add("active");
 });
@@ -305,36 +269,27 @@ tabs[index].classList.add("active");
 
 //----------------------------------------------//
 
-// Click the image and show up the container.
 function myFunction(vids) {
-// Get the expanded video.
 var expandVid = document.getElementById("expandedVid");
-// Use the same src in the expanded video as the video being clicked on from the grid.
 expandVid.src = vids.src;
-// Show the container element (hidden with CSS).
 expandVid.parentElement.style.display = "block";
 }
 
-// Load content.
 window.addEventListener("DOMContentLoaded", () => {
-// Get element id (Play/Pause button).
 const video = document.getElementById("expandedVid"),
 PlayIcons = document.getElementById("PlayIcons"),
 Play = document.getElementById("Play");
-// Auto set Play/Pause button icons.
 video.addEventListener("play", () => {
 PlayIcons.innerHTML = "pause";
 });
 video.addEventListener("pause", () => {
 PlayIcons.innerHTML = "play_arrow"	;
 });
-// Click to Play/Pause.
 Play.addEventListener("click", () => {
 if (video.paused) { video.play(); 
 }
 else { video.pause(); }
 });
-// Enable/Disable controls.
 video.addEventListener("canplay", () => {
 Play.disabled = false;
 });
