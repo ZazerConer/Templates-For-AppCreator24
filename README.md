@@ -38,6 +38,8 @@ Feel free to change the html code with your own design to make it look more attr
 
 If you want more templates for your app **[Here](https://www.w3schools.com/w3css/w3css_templates.asp)**
 
+You can edit and preview the html source code : **[Online HTML Editor](https://www.tutorialspoint.com/online_html_editor.php)**
+
 <hr>
 
 ## See demo below
