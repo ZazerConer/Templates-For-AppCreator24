@@ -64,12 +64,12 @@ TV Pages with Multiple Sections.
 
 Video Player with Header & Footer.
 
-- **[Demo](https://zazerconer.github.io/Templates-For-App-Creator-24/demo/VIPL/templates1/Page2.html)**
+- **[Demo](https://zazerconer.github.io/Templates-For-AppCreator24/demo/VIPL/templates1/Page2.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Video-Player/Template1)**
 
 Video Player with Playlist (Landscape/Portrait).
 
-- **[Demo](https://zazerconer.github.io/Templates-For-App-Creator-24/demo/VIPL/templates2/live-demo.html)**
+- **[Demo](https://zazerconer.github.io/Templates-For-AppCreator24/demo/VIPL/templates2/live-demo.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-AppCreator24/tree/main/Video-Player/Template2)**
 
 <br>
@@ -78,7 +78,7 @@ Video Player with Playlist (Landscape/Portrait).
 
 Radio/Music Player with Playlist (M-Player).
 
-- **[Demo](https://zazerconer.github.io/Templates-For-App-Creator-24/demo/MUPL/templates1/index.html)**
+- **[Demo](https://zazerconer.github.io/Templates-For-AppCreator24/demo/MUPL/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Music-Player/Template1)**
 
 <br>
@@ -87,21 +87,20 @@ Radio/Music Player with Playlist (M-Player).
 
 Video Gallery.
 
-- **[Demo](https://zazerconer.github.io/Templates-For-App-Creator-24/demo/GATP/templates1/index.html)**
+- **[Demo](https://zazerconer.github.io/Templates-For-AppCreator24/demo/GATP/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-AppCreator24/tree/main/Gallary-Tab/Template1)**
 
 <br>
 
 **_Movie Page :_**
 
-- **[Demo](https://zazerconer.github.io/Templates-For-App-Creator-24/demo/MOPG/templates1/index.html)**
+- **[Demo](https://zazerconer.github.io/Templates-For-AppCreator24/demo/MOPG/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Movie-Page/Template1)**
 
 <br>
 
 **_Website/Blog page :_**
 
-- **[Demo](https://zazerconer.github.io/Templates-For-App-Creator-24/demo/WEBL/templates1/index.html)**
+- **[Demo](https://zazerconer.github.io/Templates-For-AppCreator24/demo/WEBL/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Website-Blog-Page/Template1)**
-
 <br>
