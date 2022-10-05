@@ -1,4 +1,4 @@
-## Templates for AppCreator24
+<h2 align="center">Templates for AppCreator24</h2>
 
 **This design uses HTML CSS and JavaScript.**
 
@@ -8,7 +8,7 @@ Custom templates on your design.
 
 Many app makers want to create their own android apps, but don’t have an interesting idea or design on their apps. 
 
-But not on this AppCreator24, it makes it easy for you to create your own applications without programming code that is very difficult for you to remember. 
+But not on this **AppCreator24**, it makes it easy for you to create your own applications without programming code that is very difficult for you to remember. 
 
 ## Advantages of applications you can create : 
 
@@ -30,7 +30,7 @@ But not on this AppCreator24, it makes it easy for you to create your own applic
 
 Yes, you can use this template without any hesitation.
 
-You can place this template on the HTML code section (AppCreator24).
+You can place this template on the _HTML code section_ (AppCreator24).
 
 Using HTML code is easier and more interesting because you can create things you like to create on your app with your own design.
 
@@ -46,13 +46,17 @@ You can edit and preview the html source code : **[Online HTML Editor](https://w
 
 **_Video/TV Page :_**
 
-- **[Demo 1](https://bit.ly/dEmO201)** 
+- **[Demo 1](https://zazerconer.github.io/Templates-For-AppCreator24/demo/VTVP/templates1.html)** 
+:bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-AppCreator24/blob/main/Video-TV-Page/Template1.html)**
 
-- **[Demo 2](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/templates2.html)** 
-:bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Video-Playlist/Template2.html)**
+- **[Demo 2](https://zazerconer.github.io/Templates-For-AppCreator24/demo/VTVP/templates2.html)**
+:bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-AppCreator24/blob/main/Video-TV-Page/Template2.html)**
 
-- **[Demo 3](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/templates3.html)**
-:bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/blob/main/Video-Playlist/Template3.html)**
+TV Pages with Multiple Sections.
+
+- **[Demo 3](https://zazerconer.github.io/Templates-For-AppCreator24/demo/VTVP/templates3.html)**
+:bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-AppCreator24/tree/main/Video-TV-Page/Template3)**
+
 
 <br>
 
@@ -60,12 +64,12 @@ You can edit and preview the html source code : **[Online HTML Editor](https://w
 
 Video Player with Header & Footer.
 
-- **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/VIPL/templates1/Page2.html)**
+- **[Demo](https://zazerconer.github.io/Templates-For-App-Creator-24/demo/VIPL/templates1/Page2.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Video-Player/Template1)**
 
 Video Player with Playlist (Landscape/Portrait).
 
-- **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-AppCreator24/main/demo/VIPL/templates2/live-demo.html)**
+- **[Demo](https://zazerconer.github.io/Templates-For-App-Creator-24/demo/VIPL/templates2/live-demo.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-AppCreator24/tree/main/Video-Player/Template2)**
 
 <br>
@@ -74,7 +78,7 @@ Video Player with Playlist (Landscape/Portrait).
 
 Radio/Music Player with Playlist (M-Player).
 
-- **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/MUPL/templates1/index.html)**
+- **[Demo](https://zazerconer.github.io/Templates-For-App-Creator-24/demo/MUPL/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Music-Player/Template1)**
 
 <br>
@@ -83,21 +87,21 @@ Radio/Music Player with Playlist (M-Player).
 
 Video Gallery.
 
-- **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-AppCreator24/main/demo/GATP/templates1/index.html)**
+- **[Demo](https://zazerconer.github.io/Templates-For-App-Creator-24/demo/GATP/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-AppCreator24/tree/main/Gallary-Tab/Template1)**
 
 <br>
 
 **_Movie Page :_**
 
-- **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/MOPG/templates1/index.html)**
+- **[Demo](https://zazerconer.github.io/Templates-For-App-Creator-24/demo/MOPG/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Movie-Page/Template1)**
 
 <br>
 
 **_Website/Blog page :_**
 
-- **[Demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ZazerConer/Templates-For-App-Creator-24/main/demo/WEBL/templates1/index.html)**
+- **[Demo](https://zazerconer.github.io/Templates-For-App-Creator-24/demo/WEBL/templates1/index.html)**
 :bookmark_tabs: **[Source Code](https://github.com/ZazerConer/Templates-For-App-Creator-24/tree/main/Website-Blog-Page/Template1)**
 
 <br>
