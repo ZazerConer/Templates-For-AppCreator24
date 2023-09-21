@@ -354,7 +354,7 @@ body {
    height: 100vh;
    margin-bottom: 50px;
    overflow: scroll;
-   overscroll-behavior: auto;
-   content: contain;
+   overscroll-behavior: contain;
+   contain: content;
    z-index: 500;
 }
