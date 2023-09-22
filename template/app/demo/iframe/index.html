@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="icon" href="https://i.imgur.com/ySmOwyF.jpg" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://i.imgur.com/ySmOwyF.jpg">
+  <title>Demo | Load Content with Iframe</title>
+
+  <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/template-app.min.css">
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/template-app.min.js"></script>
+  <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/bootstrap-icons/1.10.5/icons.min.css">
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/vue/3.3.4/global.prod/vue.min.js"></script>
+
+</head>
+<body>
+
+  <div id="loading">
+    <div class="loader"><div class="loaderBar"></div></div>
+  </div>
+
+  <div id="top-navigation">
+	<div>	
+	  <button class="menuBtn" id="btn-menu">&#xF5D3;</button>		
+	  <img id="app-logo" src="https://iili.io/JHDXNB2.webp" alt="joox-logo" crossorigin>		
+	  <span id="app-name">supMusic JOOX</span>
+	</div>
+	<div>
+	  <button class="btnNav section" id="btn-search">&#xF52A;</button>
+ 	  <button class="btnNav section" id="btn-notif">&#xF18A;</button>
+	  <button class="btnNav section" id="btn-profile">&#xF4E1;</button>
+	  <button class="btnNav section" id="btn-exit">&#xF1C3;</button>
+	</div>
+  </div>
+  <div id="container-menu">
+	<div class="menu-section">
+	   <button class="btn-section btn" id="btn-st-1"><i class="bi bi-house-fill"></i>Home</button>
+	   <button class="btn-section btn" id="btn-st-2"><i class="bi bi-info-circle-fill"></i>FAQ</button>
+	   <button class="btn-section btn" id="btn-st-3"><i class="bi bi-envelope-at-fill"></i>Contact Us</button>
+	   <button class="btn-section btn" id="btn-st-4"><i class="bi bi-shield-fill-check"></i>Privacy Policy</button>
+	   <button class="btn-section btn" id="btn-st-5"><i class="bi bi-bookmark-check-fill"></i>JOOX User Agreement</button>
+	   <button class="btn-section btn" id="btn-st-6"><i class="bi bi-file-earmark-text-fill"></i>Terms of Service</button>
+	   <button class="btn-section btn" id="btn-st-7"><i class="bi bi-shield-fill-exclamation"></i>Take-Down Policy</button>
+	   <button class="btn-section btn" id="btn-st-8"><i class="bi bi-google-play"></i>App Version 7.18.0</button>
+	</div>
+  </div>
+
+  <div id="container-content">
+    <section id="content"></section>
+  </div>
+
+  <div id="bottom-navigation">
+    <button class="btnNav btn" id="btn-go-1"><i class="bi bi-file-play-fill"></i></button>
+    <button class="btnNav btn" id="btn-go-2"><i class="bi bi-collection-play-fill"></i></button>
+    <button class="btnNav btn" id="btn-go-3"><i class="bi bi-app"></i></button>
+    <button class="btnNav btn" id="btn-go-4"><i class="bi bi-music-note-beamed"></i></button>
+    <button class="btnNav btn" id="btn-go-5"><i class="bi bi-file-music-fill"></i></button>
+  </div>
+
+  <span id="dialog">
+    <span id="close"><i class="bi bi-x-circle-fill"></i></span>
+     This action button does not work in Demo mode!
+  </span>
+
+<script>
+$(document).ready(function() {
+ const {createApp} = Vue;
+
+ var home = "https://www.joox.com/";
+ createApp({
+   template: `<iframe id="load-content" src="${home}"></iframe>`
+ }).mount("#content");
+ $("#btn-go-3").css({
+   "opacity": "0.5",
+   "pointerEvents": "none"
+ });
+
+ $("#btn-go-1").click(function() { 
+  var content1 = "https://www.joox.com/videos/mvs";
+   createApp({
+     template: `<iframe id="load-content" src="${content1}"></iframe>`
+   }).mount("#content");
+ });
+ $("#btn-go-2").click(function() {
+  var content2 = "https://www.joox.com/videos/programs";
+   createApp({
+     template: `<iframe id="load-content" src="${content2}"></iframe>`
+   }).mount("#content");
+ });
+ $("#btn-go-3").click(function() {
+  var content3 = "https://www.joox.com/";
+   createApp({
+     template: `<iframe id="load-content" src="${content3}"></iframe>`
+   }).mount("#content");
+ });
+ $("#btn-go-4").click(function() {
+  var content4 = "https://www.joox.com/browse";
+   createApp({
+     template: `<iframe id="load-content" src="${content4}"></iframe>`
+   }).mount("#content");
+ });
+ $("#btn-go-5").click(function() {
+  var content5 = "https://www.joox.com/charts";
+   createApp({
+     template: `<iframe id="load-content" src="${content5}"></iframe>`
+   }).mount("#content");
+ });
+
+ $("#btn-st-1").click(function() {
+ var page1 = "https://www.joox.com/";
+  createApp({
+    template: `<iframe id="load-content" src="${page1}"></iframe>`
+  }).mount("#content");
+ });
+ $("#btn-st-2").click(function() {
+  var page2 = "https://www.joox.com/my-en/faq";
+   createApp({
+     template: `<iframe id="load-content" src="${page2}"></iframe>`
+   }).mount("#content");
+ });
+ $("#btn-st-3").click(function() {
+  var page3 = "https://www.joox.com/my-en/contactus";
+   createApp({
+     template: `<iframe id="load-content" src="${page3}"></iframe>`
+   }).mount("#content");
+ });
+ $("#btn-st-4").click(function() {
+  var page4 = "https://www.joox.com/en_my/app/privacy_policy.html";
+   createApp({
+     template: `<iframe id="load-content" src="${page4}"></iframe>`
+   }).mount("#content");
+ });
+ $("#btn-st-5").click(function() {
+  var page5 = "https://www.joox.com/en_my/app/user_terms.html";
+   createApp({
+     template: `<iframe id="load-content" src="${page5}"></iframe>`
+   }).mount("#content");
+ });
+ $("#btn-st-6").click(function() {
+  var page6 = "https://www.joox.com/en_my/app/terms_service.html";
+   createApp({
+     template: `<iframe id="load-content" src="${page6}"></iframe>`
+   }).mount("#content");
+ });
+ $("#btn-st-7").click(function() {
+  var page7 = "https://www.joox.com/en_my/app/take_down_policy.html";
+   createApp({
+    template: `<iframe id="load-content" src="${page7}"></iframe>`
+   }).mount("#content");
+ });
+ $("#btn-st-8").click(function() {
+   window.open("https://play.google.com/store/apps/details?id=com.tencent.ibg.joox").focus();
+   window.open({
+     target: "_blank", 
+     rel: "noopener noreferrer"
+   });
+ });
+
+  $(".btn").click(function(e) {
+    e.preventDefault();
+      $("#loading").css({"visibility": "visible", "opacity": "1", "z-index": "700"});
+      $("#content").animate({scrollTop: 0},0);
+      $("#bottom-navigation button").css("pointerEvents", "auto");
+      $(".menu-section button").css("pointerEvents", "auto");
+      $(this).css("pointerEvents", "none");
+      $("#container-menu").css("width", "0");
+        var btnSection = $(".btn-section");
+      for (let i = 0; i < btnSection.length; i++) {
+        $(btnSection[i]).css("opacity", "0");
+      }
+        $("#container-content").css({"pointerEvents": "auto", "overflow": "visible"});
+    $("#load-content").on("load", function() {
+        $("#loading").css({"visibility": "hidden", "opacity": "0", "z-index": "0"});
+    });
+  });
+
+  $("#load-content").attr({
+    role: "application",
+    title: "Web App",
+    loading: "lazy",
+    scrolling: "auto",
+    frameborder: "0",
+    referrerpolicy: "no-referrer",
+    allow: "fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  });
+  
+  $("#content").css("background", "#111");
+});
+
+  const 
+    dialog = $("#dialog"),
+    section = $(".section"),
+    content = $("content"),
+    close = $("#close");
+  
+  $(content).css("background", "#111");
+  $(dialog).css({ "position": "fixed", "top": "50%", "left": "50%", "transform": "translate(-50%,-50%)", "font-weight": "500", "color": "#fff", "text-shadow": "0 1px #333", "padding": "15px 25px", "line-height": "1.6", "border": "1px solid #222", "border-radius": "5px", "background": "#EF5350", "box-shadow": "0 0 0 100000px rgba(0,0,0,0.5)","z-index": "600"});  
+  $(dialog).css("display", "none");
+  $(close).css({"position": "absolute", "top": "-15px", "right": "-10px", "font-size": "24px", "color": "#fff"});
+
+  $(section).click(function() {
+    $(dialog).fadeIn(100);
+    $(dialog).css("z-index", "600");
+    $(content).css({"pointerEvents": "none", "overflow": "hidden"});
+  });
+
+  $(close).click(function() {
+     $(dialog).fadeOut();
+     $(dialog).css("z-index", "0");
+     $(content).css({"pointerEvents": "auto", "overflow": "visible"});
+  });
+</script>
+
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/theme/dark.min.js"></script>
+
+</body>
+</html>
