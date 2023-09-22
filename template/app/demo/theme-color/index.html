@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+   <title>Demo | App Theme Color Preview</title>
+   
+   <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/template-app.min.css">
+   <script src="https://ac24.zazerconer.workers.dev/template/app/build/template-app.min.js"></script>
+   <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/bootstrap-icons/1.10.5/icons.min.css">
+   <script src="https://ac24.zazerconer.workers.dev/template/app/build/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+#container-content h3 {
+   position: absolute;
+   top: 100px;
+   left: 0;
+   right: 0;
+   margin: auto;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   text-transform: uppercase;
+   white-space: nowrap;
+}
+.container-color {
+   position: absolute;
+   top: 140px;
+   left: 0;
+   right: 0;
+   margin: auto auto 100px auto;
+   display: grid;
+   width: 50vw;
+   height: auto;
+   align-items: center;
+   justify-content: center;
+   padding: 30px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   -ms-border-radius: 4px;
+   -o-border-radius: 4px;
+   border-radius: 4px;
+   background: rgba(255, 255, 255, 0.4);
+   overflow: auto;
+}
+.container-color label {
+   font-size: medium;
+   font-weight: 500;
+   color: #3949ab;
+   margin: 0 0 10px 5px;
+   white-space: nowrap;
+}
+.container-color option {
+   width: 35vw;
+   padding: 10px 15px;
+   margin: 3px auto;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   -ms-border-radius: 5px;
+   -o-border-radius: 5px;
+   border-radius: 5px;
+   color: #3f51b5;
+   font-weight: 500;
+   text-align: center;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   background: #fff;
+   -webkit-border: 1px solid #5c6bc0;
+   -moz-border: 1px solid #5c6bc0;
+   -ms-border: 1px solid #5c6bc0;
+   -o-border: 1px solid #5c6bc0;
+   border: 1px solid #5c6bc0;
+   -webkit-transition: all 0.2s linear;
+   -moz-transition: all 0.2s linear;
+   -ms-transition: all 0.2s linear;
+   -o-transition: all 0.2s linear;
+   transition: all 0.2s linear;
+}
+option:active {
+   background: #999;
+   opacity: 0.6;
+}
+</style>
+
+</head>
+<body>
+
+  <div id="loading">
+    <div class="loader"><div class="loaderBar"></div></div>
+  </div>
+
+  <div id="top-navigation">
+    <div>	
+       <button class="menuBtn" id="btn-menu">&#xF5D3;</button>		
+       <img id="app-logo" src="https://iili.io/JJxwfqu.webp" alt="app-logo">		
+       <span id="app-name">DEMO</span>
+    </div>
+    <div>
+       <button class="btnNav" id="btn-search">&#xF52A;</button>
+       <button class="btnNav" id="btn-notif">&#xF18A;</button>
+       <button class="btnNav" id="btn-profile">&#xF4E1;</button>
+       <button class="btnNav" id="btn-exit">&#xF1C3;</button>
+    </div>
+  </div>
+  <div id="container-menu">
+    <div class="menu-section">
+	   <button class="btn-section btn" id="btn-st-1"><i class="bi bi-house-fill"></i>Home</button>
+	   <button class="btn-section btn" id="btn-st-3"><i class="bi bi-bookmarks-fill"></i>Saved</button>
+	   <button class="btn-section btn" id="btn-st-4"><i class="bi bi-gear-fill"></i>Settings</button>
+	   <button class="btn-section btn" id="btn-st-2"><i class="bi bi-question-circle-fill"></i>Help</button>
+	   <button class="btn-section btn" id="btn-st-2"><i class="bi bi-info-circle-fill"></i>Info</button>
+	   <button class="btn-section btn" id="btn-st-6"><i class="bi bi-chat-square-text-fill"></i>Feedback</button>
+	   <button class="btn-section btn" id="btn-st-5"><i class="bi bi-shield-fill-check"></i>Privacy Policy</button>
+	   <button class="btn-section btn" id="btn-st-2"><i class="bi bi-google-play"></i>App Version 1.0.1</button>
+	   <button class="btn-section btn" id="btn-st-7"><i class="bi bi-share-fill"></i>Share</button>
+    </div>
+  </div>
+
+  <div id="container-content">
+    <section id="content">
+        <h3>app theme color preview</h3>
+      <div class="container-color">
+        <label>Selected color: <span id="st-color"></span></label>
+		 <option id="default" data-color="#5C6BC0">Default color</option>
+		 <option id="red" data-color="#D50000">Red</option>
+		 <option id="deepred" data-color="#C62828">Deep Red</option>
+		 <option id="pink" data-color="#F50057">Pink</option>
+		 <option id="deeppink" data-color="#AD1457">Deep Pink</option>
+		 <option id="purple" data-color="#A608F5">Purple</option>
+		 <option id="deeppurple" data-color="#6200EA">Deep Purple</option>
+		 <option id="indigo" data-color="#3F51B5">Indigo</option>
+		 <option id="blue" data-color="#2962FF">Blue</option>
+		 <option id="deepblue" data-color="#0D47A1">Deep Blue</option>
+		 <option id="lightblue" data-color="#039BE5">Light Blue</option>
+		 <option id="cyan" data-color="#00ACC1">Cyan</option>
+		 <option id="deepcyan" data-color="#00838F">Deep Cyan</option>
+		 <option id="teal" data-color="#009688">Teal</option>
+		 <option id="deepteal" data-color="#00695C">Deep Teal</option>
+		 <option id="green" data-color="#7CB342">Green</option>
+		 <option id="deepgreen" data-color="#2E7D32">Deep Green</option>
+		 <option id="lime" data-color="#C0CA33">Lime</option>
+		 <option id="deeplime"data-color="#9E9D24">Deep Lime</option>
+		 <option id="leon" data-color="#AEEA00">Leon</option>
+		 <option id="yellow" data-color="#FFEB3B">Yellow</option>
+		 <option id="gold" data-color="#FFD600">Gold</option>
+		 <option id="amber" data-color="#FFB300">Amber</option>
+		 <option id="orange" data-color="#FF9800">Orange</option>
+		 <option id="deeporange" data-color="#FF5722">Deep Orange</option>
+		 <option id="brown" data-color="#5D4037">Brown</option>
+		 <option id="rosebrown" data-color="#660F01">Rose Brown</option>
+		 <option id="grey" data-color="#757575">Grey</option>
+		 <option id="bluegrey" data-color="#546E7A">Blue Grey</option>
+		 <option id="dark" data-color="#151515">Dark</option>
+      </div>
+    </section>
+  </div>
+
+  <div id="bottom-navigation">
+    <button class="btnNav btn" id="btn-go-1"><i class="bi bi-browser-chrome"></i></button>
+    <button class="btnNav btn" id="btn-go-2"><i class="bi bi-facebook"></i></button>
+    <button class="btnNav btn" id="btn-go-3"><i class="bi bi-app"></i></button>
+    <button class="btnNav btn" id="btn-go-4"><i class="bi bi-instagram"></i></button>
+    <button class="btnNav btn" id="btn-go-5"><i class="bi bi-twitter"></i></button>
+  </div>
+
+<script>
+$(document).ready(function() {
+ $("option:first").css({"box-shadow": "0 0 0 1px #3F51B5", "color": "#fff", "text-shadow": "0 1px 1px #333", "background": $("option:first").attr("data-color")});
+  $("option:first").addClass("select");
+   $("#st-color").html($("option:first").text());
+   $("option").click(function(e) {
+    e.preventDefault();
+     $("option").removeClass("select");
+     $(this).addClass("select");
+     $("option").css({"box-shadow": "none", "color": "#3F51B5", "text-shadow": "none", "background": "#fff", "border": "1px solid #3F51B5"});
+     $(this).css({"box-shadow": "0 0 0 1px "+$(this).attr("data-color")+"", "color": "#fff", "text-shadow": "0 1px 1px #333", "background": $(this).attr("data-color"), "border": "1px solid transparent"});
+     $("#st-color").html($(this).text());
+   });
+
+  const body = document.body;
+	$("#default").click(()=>{$("#top-navigation").css("background", "#5C6BC0");$("#top-navigation button").css("color", "#E8EAF6");$("#app-name").css("color", "#E8EAF6");$("#bottom-navigation").css("background", "#5C6BC0");$("#bottom-navigation .bi").css("color", "#E8EAF6");$("#container-menu").css("background", "#6E7BBE");$("#container-menu button").css("color", "#E8EAF6");$("#container-menu .bi").css("color", "#E8EAF6");$("#container-content").css("background", "#E8EAF6");$("section").css({"color": "#5C6BC0", "background": "#E8EAF6"});$("#loading").css("background", "#3F51B5");$(body).css("background", "#5C6BC0");});
+	$("#red").click(()=>{$("#top-navigation").css("background", "#D50000");$("#top-navigation button").css("color", "#FFEBEE");$("#app-name").css("color", "#FFEBEE");$("#bottom-navigation").css("background", "#D50000");$("#bottom-navigation .bi").css("color", "#FFEBEE");$("#container-menu").css("background", "#FF1744");$("#container-menu button").css("color", "#FFEBEE");$("#container-menu .bi").css("color", "#FFEBEE");$("#container-content").css("background", "#FFEBEE");$("section").css({"color": "#D50000", "background": "#FFEBEE"});$("#loading").css("background", "#C62828");$(body).css("background", "#D50000");});
+	$("#deepred").click(()=>{$("#top-navigation").css("background", "#C62828");$("#top-navigation button").css("color", "#FFEBEE");$("#app-name").css("color", "#FFEBEE");$("#bottom-navigation").css("background", "#C62828");$("#bottom-navigation .bi").css("color", "#FFEBEE");$("#container-menu").css("background", "#D32F2F");$("#container-menu button").css("color", "#FFEBEE");$("#container-menu .bi").css("color", "#FFEBEE");$("#container-content").css("background", "#FFEBEE");$("section").css({"color": "#C62828", "background": "#FFEBEE"});$("#loading").css("background", "#B71C1C");$(body).css("background", "#C62828");});
+	$("#pink").click(()=>{$("#top-navigation").css("background", "#F50057");$("#top-navigation button").css("color", "#FCE4EC");$("#app-name").css("color", "#FCE4EC");$("#bottom-navigation").css("background", "#F50057");$("#bottom-navigation .bi").css("color", "#FCE4EC");$("#container-menu").css("background", "#E91E63");$("#container-menu button").css("color", "#FCE4EC");$("#container-menu .bi").css("color", "#FCE4EC");$("#container-content").css("background", "#FCE4EC");$("section").css({"color": "#F50057", "background": "#FCE4EC"});$("#loading").css("background", "#D81B60");$(body).css("background", "#F50057");});
+	$("#deeppink").click(()=>{$("#top-navigation").css("background", "#AD1457");$("#top-navigation button").css("color", "#FCE4EC");$("#app-name").css("color", "#FCE4EC");$("#bottom-navigation").css("background", "#AD1457");$("#bottom-navigation .bi").css("color", "#FCE4EC");$("#container-menu").css("background", "#C2185B");$("#container-menu button").css("color", "#FCE4EC");$("#container-menu .bi").css("color", "#FCE4EC");$("#container-content").css("background", "#FCE4EC");$("section").css({"color": "#AD1457", "background": "#FCE4EC"});$("#loading").css("background", "#880E4F");$(body).css("background", "#AD1457");});
+	$("#purple").click(()=>{$("#top-navigation").css("background", "#A608F5");$("#top-navigation button").css("color", "#F3E5F5");$("#app-name").css("color", "#F3E5F5");$("#bottom-navigation").css("background", "#A608F5");$("#bottom-navigation .bi").css("color", "#F3E5F5");$("#container-menu").css("background", "#AA00FF");$("#container-menu button").css("color", "#F3E5F5");$("#container-menu .bi").css("color", "#F3E5F5");$("#container-content").css("background", "#F3E5F5");$("section").css({"color": "#A608F5", "background": "#F3E5F5"});$("#loading").css("background", "#6A1B9A");$(body).css("background", "#A608F5");});
+	$("#deeppurple").click(()=>{$("#top-navigation").css("background", "#6200EA");$("#top-navigation button").css("color", "#EDE7F6");$("#app-name").css("color", "#EDE7F6");$("#bottom-navigation").css("background", "#6200EA");$("#bottom-navigation .bi").css("color", "#EDE7F6");$("#container-menu").css("background", "#651FFF");$("#container-menu button").css("color", "#EDE7F6");$("#container-menu .bi").css("color", "#EDE7F6");$("#container-content").css("background", "#EDE7F6");$("section").css({"color": "#6200EA", "background": "#EDE7F6"});$("#loading").css("background", "#512DA8");$(body).css("background", "#6200EA");});
+	$("#indigo").click(()=>{$("#top-navigation").css("background", "#3F51B5");$("#top-navigation button").css("color", "#E8EAF6");$("#app-name").css("color", "#E8EAF6");$("#bottom-navigation").css("background", "#3F51B5");$("#bottom-navigation .bi").css("color", "#EDE7F6");$("#container-menu").css("background", "#3949AB");$("#container-menu button").css("color", "#E8EAF6");$("#container-menu .bi").css("color", "#E8EAF6");$("#container-content").css("background", "#E8EAF6");$("section").css({"color": "#3F51B5", "background": "#E8EAF6"});$("#loading").css("background", "#283593");$(body).css("background", "#3F51B5");});
+	$("#blue").click(()=>{$("#top-navigation").css("background", "#2962FF");$("#top-navigation button").css("color", "#E3F2FD");$("#app-name").css("color", "#E3F2FD");$("#bottom-navigation").css("background", "#2962FF");$("#bottom-navigation .bi").css("color", "#E3F2FD");$("#container-menu").css("background", "#2979FF");$("#container-menu button").css("color", "#E3F2FD");$("#container-menu .bi").css("color", "#E3F2FD");$("#container-content").css("background", "#E3F2FD");$("section").css({"color": "#2962FF", "background": "#E3F2FD"});$("#loading").css("background", "#1565C0");$(body).css("background", "#2962FF");});
+	$("#deepblue").click(()=>{$("#top-navigation").css("background", "#0D47A1");$("#top-navigation button").css("color", "#E3F2FD");$("#app-name").css("color", "#E3F2FD");$("#bottom-navigation").css("background", "#0D47A1");$("#bottom-navigation .bi").css("color", "#E3F2FD");$("#container-menu").css("background", "#1C51A4");$("#container-menu button").css("color", "#E3F2FD");$("#container-menu .bi").css("color", "#E3F2FD");$("#container-content").css("background", "#E3F2FD");$("section").css({"color": "#0D47A1", "background": "#E3F2FD"});$("#loading").css("background", "#01579B");$(body).css("background", "#0D47A1");});
+	$("#lightblue").click(()=>{$("#top-navigation").css("background", "#039BE5");$("#top-navigation button").css("color", "#E1F5FE");$("#app-name").css("color", "#E1F5FE");$("#bottom-navigation").css("background", "#039BE5");$("#bottom-navigation .bi").css("color", "#E1F5FE");$("#container-menu").css("background", "#03A9F4");$("#container-menu button").css("color", "#E1F5FE");$("#container-menu .bi").css("color", "#E1F5FE");$("#container-content").css("background", "#E1F5FE");$("section").css({"color": "#039BE5", "background": "#E1F5FE"});$("#loading").css("background", "#0277BD");$(body).css("background", "#039BE5");});
+	$("#cyan").click(()=>{$("#top-navigation").css("background", "#00ACC1");$("#top-navigation button").css("color", "#E0F7FA");$("#app-name").css("color", "#E0F7FA");$("#bottom-navigation").css("background", "#00ACC1");$("#bottom-navigation .bi").css("color", "#E0F7FA");$("#container-menu").css("background", "#00BCD4");$("#container-menu button").css("color", "#E0F7FA");$("#container-menu .bi").css("color", "#E0F7FA");$("#container-content").css("background", "#E0F7FA");$("section").css({"color": "#00ACC1", "background": "#E0F7FA"});$("#loading").css("background", "#0097A7");$(body).css("background", "#00ACC1");});
+	$("#deepcyan").click(()=>{$("#top-navigation").css("background", "#00838F");$("#top-navigation button").css("color", "#E0F7FA");$("#app-name").css("color", "#E0F7FA");$("#bottom-navigation").css("background", "#00838F");$("#bottom-navigation .bi").css("color", "#E0F7FA");$("#container-menu").css("background", "#0097A7");$("#container-menu button").css("color", "#E0F7FA");$("#container-menu .bi").css("color", "#E0F7FA");$("#container-content").css("background", "#E0F7FA");$("section").css({"color": "#00838F", "background": "#E0F7FA"});$("#loading").css("background", "#006064");$(body).css("background", "#00838F");});
+	$("#teal").click(()=>{$("#top-navigation").css("background", "#009688");$("#top-navigation button").css("color", "#E0F2F1");$("#app-name").css("color", "#E0F2F1");$("#bottom-navigation").css("background", "#009688");$("#bottom-navigation .bi").css("color", "#E0F2F1");$("#container-menu").css("background", "#26A69A");$("#container-menu button").css("color", "#E0F2F1");$("#container-menu .bi").css("color", "#E0F2F1");$("#container-content").css("background", "#E0F2F1");$("section").css({"color": "#009688", "background": "#E0F2F1"});$("#loading").css("background", "#00796B");$(body).css("background", "#009688");});
+	$("#deepteal").click(()=>{$("#top-navigation").css("background", "#00695C");$("#top-navigation button").css("color", "#E0F2F1");$("#app-name").css("color", "#E0F2F1");$("#bottom-navigation").css("background", "#00695C");$("#bottom-navigation .bi").css("color", "#E0F2F1");$("#container-menu").css("background", "#00796B");$("#container-menu button").css("color", "#E0F2F1");$("#container-menu .bi").css("color", "#E0F2F1");$("#container-content").css("background", "#E0F2F1");$("section").css({"color": "#00695C", "background": "#E0F2F1"});$("#loading").css("background", "#004D40");$(body).css("background", "#00695C");});
+	$("#green").click(()=>{$("#top-navigation").css("background", "#7CB342");$("#top-navigation button").css("color", "#F1F8E9");$("#app-name").css("color", "#F1F8E9");$("#bottom-navigation").css("background", "#7CB342");$("#bottom-navigation .bi").css("color", "#F1F8E9");$("#container-menu").css("background", "#8BC34A");$("#container-menu button").css("color", "#F1F8E9");$("#container-menu .bi").css("color", "#F1F8E9");$("#container-content").css("background", "#F1F8E9");$("section").css({"color": "#7CB342", "background": "#F1F8E9"});$("#loading").css("background", "#558B2F");$(body).css("background", "#7CB342");});
+	$("#deepgreen").click(()=>{$("#top-navigation").css("background", "#2E7D32");$("#top-navigation button").css("color", "#E8F5E9");$("#app-name").css("color", "#E8F5E9");$("#bottom-navigation").css("background", "#2E7D32");$("#bottom-navigation .bi").css("color", "#E8F5E9");$("#container-menu").css("background", "#388E3C");$("#container-menu button").css("color", "#E8F5E9");$("#container-menu .bi").css("color", "#E8F5E9");$("#container-content").css("background", "#E8F5E9");$("section").css({"color": "#2E7D32", "background": "#E8F5E9"});$("#loading").css("background", "#1B5E20");$(body).css("background", "#2E7D32");});
+	$("#lime").click(()=>{$("#top-navigation").css("background", "#C0CA33");$("#top-navigation button").css("color", "#F9FBE7");$("#app-name").css("color", "#F9FBE7");$("#bottom-navigation").css("background", "#C0CA33");$("#bottom-navigation .bi").css("color", "#F9FBE7");$("#container-menu").css("background", "#CDDC39");$("#container-menu button").css("color", "#F9FBE7");$("#container-menu .bi").css("color", "#F9FBE7");$("#container-content").css("background", "#F9FBE7");$("section").css({"color": "#C0CA33", "background": "#F9FBE7"});$("#loading").css("background", "#AFB42B");$(body).css("background", "#C0CA33");});
+	$("#deeplime").click(()=>{$("#top-navigation").css("background", "#9E9D24");$("#top-navigation button").css("color", "#F9FBE7");$("#app-name").css("color", "#F9FBE7");$("#bottom-navigation").css("background", "#9E9D24");$("#bottom-navigation .bi").css("color", "#F9FBE7");$("#container-menu").css("background", "#AFB42B");$("#container-menu button").css("color", "#F9FBE7");$("#container-menu .bi").css("color", "#F9FBE7");$("#container-content").css("background", "#F9FBE7");$("section").css({"color": "#9E9D24", "background": "#F9FBE7"});$("#loading").css("background", "#827717");$(body).css("background", "#9E9D24");});
+	$("#leon").click(()=>{$("#top-navigation").css("background", "#AEEA00");$("#top-navigation button").css("color", "#827717");$("#app-name").css("color", "#827717");$("#bottom-navigation").css("background", "#AEEA00");$("#bottom-navigation .bi").css("color", "#827717");$("#container-menu").css("background", "#C6FF00");$("#container-menu button").css("color", "#827717");$("#container-menu .bi").css("color", "#827717");$("#container-content").css("background", "#F9FBE7");$("section").css({"color": "#827717", "background": "#F9FBE7"});$("#loading").css("background", "#C0CA33");$(body).css("background", "#AEEA00");});
+	$("#yellow").click(()=>{$("#top-navigation").css("background", "#FFEB3B");$("#top-navigation button").css("color", "#F57F17");$("#app-name").css("color", "#F57F17");$("#bottom-navigation").css("background", "#FFEB3B");$("#bottom-navigation .bi").css("color", "#F57F17");$("#container-menu").css("background", "#FFEE58");$("#container-menu button").css("color", "#F57F17");$("#container-menu .bi").css("color", "#F57F17");$("#container-content").css("background", "#FFFDE7");$("section").css({"color": "#F9A825", "background": "#FFFDE7"});$("#loading").css("background", "#FDD835");$(body).css("background", "#FFEB3B");});
+	$("#gold").click(()=>{$("#top-navigation").css("background", "#FFD600");$("#top-navigation button").css("color", "#F57F17");$("#app-name").css("color", "#F57F17");$("#bottom-navigation").css("background", "#FFD600");$("#bottom-navigation .bi").css("color", "#F57F17");$("#container-menu").css("background", "#FDD835");$("#container-menu button").css("color", "#F57F17");$("#container-menu .bi").css("color", "#F57F17");$("#container-content").css("background", "#FFFDE7");$("section").css({"color": "#F57F17", "background": "#FFFDE7"});$("#loading").css("background", "#FBC02D");$(body).css("background", "#FFD600");});
+	$("#amber").click(()=>{$("#top-navigation").css("background", "#FFB300");$("#top-navigation button").css("color", "#FFF8E1");$("#app-name").css("color", "#FFF8E1");$("#bottom-navigation").css("background", "#FFB300");$("#bottom-navigation .bi").css("color", "#FFF8E1");$("#container-menu").css("background", "#FFC107");$("#container-menu button").css("color", "#FFF8E1");$("#container-menu .bi").css("color", "#FFF8E1");$("#container-content").css("background", "#FFF8E1");$("section").css({"color": "#FFB300", "background": "#FFF8E1"});$("#loading").css("background", "#FFA000");$(body).css("background", "#FFB300");});
+	$("#orange").click(()=>{$("#top-navigation").css("background", "#FF9800");$("#top-navigation button").css("color", "#FFF3E0");$("#app-name").css("color", "#FFF3E0");$("#bottom-navigation").css("background", "#FF9800");$("#bottom-navigation .bi").css("color", "#FFF3E0");$("#container-menu").css("background", "#FFA726");$("#container-menu button").css("color", "#FFF3E0");$("#container-menu .bi").css("color", "#FFF3E0");$("#container-content").css("background", "#FFF3E0");$("section").css({"color": "#FF9800", "background": "#FFF3E0"});$("#loading").css("background", "#FB8C00");$(body).css("background", "#FF9800");});
+	$("#deeporange").click(()=>{$("#top-navigation").css("background", "#FF5722");$("#top-navigation button").css("color", "#FBE9E7");$("#app-name").css("color", "#FBE9E7");$("#bottom-navigation").css("background", "#FF5722");$("#bottom-navigation .bi").css("color", "#FBE9E7");$("#container-menu").css("background", "#FF7043");$("#container-menu button").css("color", "#FBE9E7");$("#container-menu .bi").css("color", "#FBE9E7");$("#container-content").css("background", "#FBE9E7");$("section").css({"color": "#FF5722", "background": "#FBE9E7"});$("#loading").css("background", "#E64A19");$(body).css("background", "#FF5722");});
+	$("#brown").click(()=>{$("#top-navigation").css("background", "#5D4037");$("#top-navigation button").css("color", "#EFEBE9");$("#app-name").css("color", "#EFEBE9");$("#bottom-navigation").css("background", "#5D4037");$("#bottom-navigation .bi").css("color", "#EFEBE9");$("#container-menu").css("background", "#6D4C41");$("#container-menu button").css("color", "#EFEBE9");$("#container-menu .bi").css("color", "#EFEBE9");$("#container-content").css("background", "#EFEBE9");$("section").css({"color": "#5D4037", "background": "#EFEBE9"});$("#loading").css("background", "#4E342E");$(body).css("background", "#5D4037");});
+	$("#rosebrown").click(()=>{$("#top-navigation").css("background", "#660F01");$("#top-navigation button").css("color", "#EFEBE9");$("#app-name").css("color", "#EFEBE9");$("#bottom-navigation").css("background", "#660F01");$("#bottom-navigation .bi").css("color", "#EFEBE9");$("#container-menu").css("background", "#750D01");$("#container-menu button").css("color", "#EFEBE9");$("#container-menu .bi").css("color", "#EFEBE9");$("#container-content").css("background", "#EFEBE9");$("section").css({"color": "#660F01", "background": "#EFEBE9"});$("#loading").css("background", "#450F01");$(body).css("background", "#660F01");});
+	$("#grey").click(()=>{$("#top-navigation").css("background", "#757575");$("#top-navigation button").css("color", "#FAFAFA");$("#app-name").css("color", "#FAFAFA");$("#bottom-navigation").css("background", "#757575");$("#bottom-navigation .bi").css("color", "#FAFAFA");$("#container-menu").css("background", "#848484");$("#container-menu button").css("color", "#FAFAFA");$("#container-menu .bi").css("color", "#FAFAFA");$("#container-content").css("background", "#FAFAFA");$("section").css({"color": "#757575", "background": "#FAFAFA"});$("#loading").css("background", "#616161");$(body).css("background", "#757575");});
+	$("#bluegrey").click(()=>{$("#top-navigation").css("background", "#546E7A");$("#top-navigation button").css("color", "#ECEFF1");$("#app-name").css("color", "#ECEFF1");$("#bottom-navigation").css("background", "#546E7A");$("#bottom-navigation .bi").css("color", "#ECEFF1");$("#container-menu").css("background", "#607D8B");$("#container-menu button").css("color", "#ECEFF1");$("#container-menu .bi").css("color", "#ECEFF1");$("#container-content").css("background", "#ECEFF1");$("section").css({"color": "#546E7A", "background": "#ECEFF1"});$("#loading").css("background", "#455A64");$(body).css("background", "#546E7A");});
+	$("#dark").click(()=>{$("#top-navigation").css("background", "#151515");$("#top-navigation button").css("color", "#EEEEEE");$("#app-name").css("color", "#EEEEEE");$("#bottom-navigation").css("background", "#151515");$("#bottom-navigation .bi").css("color", "#EEEEEE");$("#container-menu").css("background", "#191919");$("#container-menu button").css("color", "#EEEEEE");$("#container-menu .bi").css("color", "#EEEEEE");$("#container-content").css("background", "#EEEEEE");$("section").css({"color": "#151515", "background": "#EEEEEE"});$("#loading").css("background", "#000000");$(body).css("background", "#151515");});
+
+  $(".btn").click(function(e) {
+   var loading = $("#loading");
+    var menu = $("#container-menu");
+     var btnSection = $(".btn-section");
+      var content = $("#container-content");
+        e.preventDefault();
+        $(loading).css({"visibility": "visible", "opacity": "1", "z-index": "700"});
+        $(menu).css("width", "0");
+      for (let i = 0; i < btnSection.length; i++) {
+        $(btnSection[i]).css("opacity", "0");
+      }
+        $(content).css({"pointerEvents": "auto", "overflow": "visible"});
+    setTimeout(function() {
+      $(loading).css({"visibility": "hidden", "opacity": "0", "z-index": "0"});
+    }, 3000);
+  });
+});
+</script>
+
+   <script src="https://ac24.zazerconer.workers.dev/template/app/build/theme/default.min.js"></script>
+
+</body>
+</html>
