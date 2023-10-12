@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Video Gallery</title>
+
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/video-gallery/css/style.min.css">
+
+</head>
+<body>
+
+  <div class="container-content">
+   <div class="gallery-content">
+    <section class="section-content" id="s1">
+       <h4>Section 1</h4>
+       <img src="" location="" title="" desc="">
+       <img src="" location="" title="" desc="">
+       <img src="" location="" title="" desc="">
+    </section>
+    <section class="section-content" id="s2">
+      <h4>Section 2</h4>
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+    </section>
+    <section class="section-content" id="s3">
+      <h4>Section 3</h4>
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+    </section>
+    <section class="section-content" id="s4">
+      <h4>Section 4</h4>
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+    </section>
+    <section class="section-content" id="s5">
+      <h4>Section 5</h4>
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+    </section>
+   </div>
+  </div>
+
+  <div class="select-section">
+   <button class="btn-section" section="1">Section 1</button>
+   <button class="btn-section" section="2">Section 2</button>
+   <button class="btn-section" section="3">Section 3</button>
+   <button class="btn-section" section="4">Section 4</button>
+   <button class="btn-section" section="5">Section 5</button>
+  </div>
+   
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/video-gallery/js/script.min.js"></script>
+
+<script>
+  $(primaryContent).css(color, "#00BCD4");
+
+  $(themeContent).addClass(dark);
+
+  $(scrollBar).addClass(show);
+
+  $(imgContent).css({
+    width: "4.5em",
+    height: "4.5em",
+    margin: "10px",
+    padding: "0",
+    borderRadius: "5px",
+    background: "transparent"
+  });
+
+  $(imgContent).each(function() { 
+    $(this).attr(dataContent, "Content");
+  });
+</script>
+
+</body>
+</html>
