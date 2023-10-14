@@ -33,9 +33,10 @@
   </div>
   
 <script>
-  for(x = 0; x < 24; x++) {
+  for(x = 0; x <24; x++) {
    var img = $('<img src="" location="" title="" desc="">');
-    $("#s1, #s2, #s3, #s4, #s5").append(img);
+    $("#s1,#s2,#s3,#s4,#s5").append(img);
+    $(".section-content img").attr("src", "https://iili.io/J3k0IDJ.webp");
   }
 </script>
 
@@ -62,7 +63,7 @@
     margin: "10px",
     padding: "0",
     borderRadius: "5px",
-    background: "transparent"
+    background: "linear-gradient(#444,#333,#222)"
   });
 
   $(imgContent).each(function() { 
