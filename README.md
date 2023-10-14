@@ -451,6 +451,317 @@ Use pre-built theme color templates.
 <hr>
 <br>
 
+### Video Gallery
+
+Template for _Video Gallery_.
+
+<br>
+
+<details>
+<summary>Expand</summary>
+
+<br>
+
+`HTML Code`
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Content Title</title>
+
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/video-gallery/css/style.min.css">
+
+</head>
+<body>
+
+  <div class="container-content">
+   <div class="gallery-content">
+    <section class="section-content" id="s1">
+       <h4>Section 1</h4>
+       <img src="" location="" title="" desc="">
+       <img src="" location="" title="" desc="">
+       <img src="" location="" title="" desc="">
+    </section>
+    <section class="section-content" id="s2">
+      <h4>Section 2</h4>
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+    </section>
+    <section class="section-content" id="s3">
+      <h4>Section 3</h4>
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+    </section>
+    <section class="section-content" id="s4">
+      <h4>Section 4</h4>
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+    </section>
+    <section class="section-content" id="s5">
+      <h4>Section 5</h4>
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+      <img src="" location="" title="" desc="">
+    </section>
+   </div>
+  </div>
+
+  <div class="select-section">
+   <button class="btn-section" section="1">Section 1</button>
+   <button class="btn-section" section="2">Section 2</button>
+   <button class="btn-section" section="3">Section 3</button>
+   <button class="btn-section" section="4">Section 4</button>
+   <button class="btn-section" section="5">Section 5</button>
+  </div>
+
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/video-gallery/js/script.min.js"></script>
+
+<script>
+   /* Set color for the primary content */
+  $(primaryContent).css(color, "#00BCD4");
+
+   /* Set theme content » value: dark | light */
+  $(themeContent).addClass(dark);
+
+   /* Show/Hide scrollbar */
+   /* Only active for touchscreen devices */
+   /* value: show | hide */
+  $(scrollBar).addClass(show);
+
+   /* Image content style */
+  $(imgContent).css({
+    width: "4.5em",
+    height: "4.5em",
+    margin: "10px",
+    padding: "0",
+    borderRadius: "5px",
+    background: "transparent"
+  });
+  
+   /* Placeholder Image content (text) */
+  $(imgContent).each(function() { 
+    $(this).attr(dataContent, "Content");
+  });
+</script>
+
+</body>
+</html>
+```
+
+- **[DEMO](https://zazerconer.github.io/Templates-For-AppCreator24/template/app/demo/video-gallery/)**
+
+<br>
+
+<div align="center"><strong>Use of Video Gallery</strong></div>
+
+<br>
+
+**Image content:**
+
+```html
+<img src="" location="" title="" desc="">
+```
+
+<br>
+
+| Attribute | Value |
+| --- | ---|
+| src | `image.jpg` |
+| location | `go:` |
+| title | _optional_ |
+| desc | _optional_ |
+
+<br>
+
+1. Image URL
+
+`src="http://img-content.jpg"`
+
+2. Add location link: Reference `go:`
+
+`location="go:Video"`
+
+3. Video title.
+
+Put a video title or leave it blank.
+
+`title="My Video"`
+
+2. Video description
+
+Put a video description or leave it blank.
+
+`desc="My Video Content"`
+
+<br>
+
+To view the **Title** and **Description**, press and hold the _Image content_ for a few seconds then release the hold.
+But if the value on the attribute is empty, it will not be shown.
+
+<br>
+
+**Added more content and section buttons**
+
+Max content section: **_8_**
+
+- `<section class="section-content" id=""></section>`
+- `<button class="btn-section" section=""></button>`
+
+<br>
+
+**In Portrait mode the button will be hidden**
+
+- **600px**: _btn_ `7/8` | **500px**: _btn_ `6/7/8` | **400px**: _btn_ `5/6/7/8`.
+- Only show all buttons when switching to Landscape mode.
+
+</details>
+
+<br>
+<hr>
+<br>
+
+### Video Playlist
+
+Template for _Video Playlist_.
+
+<br>
+
+<details>
+<summary>Expand</summary>
+
+<br>
+
+`HTML Code`
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Content Title</title>
+
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/video-playlist/css/style.min.css">
+  <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/video-playlist/font/Axiforma.min.css">
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/video-playlist/ovpjs/0.10.31/ovenplayer.all.debug.min.js"></script>
+
+</head>
+<body>
+
+  <div id="player"></div>
+
+  <div class="container-content">
+   <div class="content">
+     <div url="" type="" title="" vod=""></div>
+     <div url="" type="" title="" vod=""></div>
+     <div url="" type="" title="" vod=""></div>
+     <div url="" type="" title="" vod=""></div>
+     <div url="" type="" title="" vod=""></div>
+     <div url="" type="" title="" vod=""></div>
+   </div>
+  </div>
+
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/video-playlist/js/script.min.js"></script>
+
+<script>
+   /* Set color for the primary content */
+  $(primaryContent).css(color, "#00BCD4");
+
+   /* Show/Hide scrollbar */
+   /* Only active for touchscreen devices */
+   /* value: show | hide */
+  $(scrollBar).addClass(show);
+</script>
+
+</body>
+</html>
+```
+
+- **[DEMO](https://zazerconer.github.io/Templates-For-AppCreator24/template/app/demo/video-playlist/)**
+
+<br>
+
+<div align="center"><strong>Use of Video Playlist</strong></div>
+
+<br>
+
+**`<div>` element content:**
+
+```html
+<div url="" type="" title="" vod=""></div>
+```
+
+<br>
+
+| Attribute | Value |
+| --- | ---|
+| url | `video.mp4` |
+| type | `mp4 / hls / dash / webm` |
+| title | _optional_ |
+| vod | `true / false` |
+
+<br>
+
+1. Video URL.
+
+`url="http://video-content.mp4"`
+
+2. Type of media source.
+
+**MP4**
+
+`url="http://video-content.mp4" type="mp4"`
+
+**HLS**
+
+`url="http://video-content.m3u8" type="hls"`
+
+**MPEG-DASH**
+
+`url="http://video-content.mpd" type="dash"`
+
+**WebM**
+
+`url="http://video-content.mkv" type="webm"`
+
+3. Video title.
+
+`title="Video Content Title"`
+
+4. Stream video.
+
+Set value: `true` / `false`
+
+- If the video is **VOD**:
+
+`vod="true"`
+
+- If the video is **LIVE**:
+
+`vod="false"`
+
+<br>
+
+**Player plugins used for video content:**
+
+**[OvenPlayer](https://github.com/AirenSoft/OvenPlayer)**
+
+</details>
+
+<br>
+<hr>
+<br>
+
 **Please note:** 
 For this Demo app preview it may not work well or it may not be adapted in browser like CSS or JS, so please open and use the **template** on real tester in App.
 
