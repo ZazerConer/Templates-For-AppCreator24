@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Demo | Video Playlist</title>
+
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/video-playlist/css/style.min.css">
+  <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/video-playlist/font/Axiforma.min.css">
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/video-playlist/ovpjs/0.10.31/ovenplayer.all.debug.min.js"></script>
+  
+<style>
+h5 {
+  color: rgb(250,250,255);
+  text-align: left;
+  font-weight: 400;
+  margin: 8px 0 8px 5vw;
+}
+</style>
+
+</head>
+<body>
+
+  <div id="player"></div>
+
+  <div class="container-content">
+   <div class="content">
+     <h5>MP4</h5><br>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/BigBuckBunny.mp4" type="mp4" title="Big Buck Bunny" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/ElephantsDream.mp4" type="mp4" title="Elephants Dream" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/ForBiggerBlazes.mp4" type="mp4" title="For Bigger Blazes" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/ForBiggerEscapes.mp4" type="mp4" title="For Bigger Escapes" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/ForBiggerFun.mp4" type="mp4" title="For Bigger Fun" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/ForBiggerJoyrides.mp4" type="mp4" title="For Bigger Joyrides" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/ForBiggerMeltdowns.mp4" type="mp4" title="For Bigger Meltdowns" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/Sintel.mp4" type="mp4" title="Sintel" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/TearsOfSteel.mp4" type="mp4" title="Tears Of Steel" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/SubaruOutbackOnStreetAndDirt.mp4" type="mp4" title="Subaru Outback On Street And Dirt" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/VolkswagenGTIReview.mp4" type="mp4" title="Volkswagen GTI Review" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/WeAreGoingOnBullrun.mp4" type="mp4" title="We Are Going On Bullrun" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/WhatCarCanYouGetForAGrand.mp4" type="mp4" title="What care can you get for a grand?" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/DesigningForGoogleCast.mp4" type="mp4" title="Designing for Google Cast" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/GoogleIO-2014-CastingToTheFuture.mp4" type="mp4" title="Casting to the Future" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/GoogleIO-2014-MakingGoogleCastReadyAppsDiscoverable.mp4" type="mp4" title="Making Google Cast Ready Apps Discoverable" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/Google_I_O_2013_Keynote.mp4" type="mp4" title="Google I/O Keynote 2013" vod="true"></div>
+   </div>
+   <div class="content">
+     <h5>HLS</h5><br>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/BigBuckBunny.m3u8" type="hls" title="Big Buck Bunny" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/ElephantsDream.m3u8" type="hls" title="Elephants Dream" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/ForBiggerBlazes.m3u8" type="hls" title="For Bigger Blazes" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/ForBiggerEscapes.m3u8" type="hls" title="For Bigger Escapes" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/ForBiggerFun.m3u8" type="hls" title="For Bigger Fun" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/ForBiggerJoyrides.m3u8" type="hls" title="For Bigger Joyrides" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/ForBiggerMeltdowns.m3u8" type="hls" title="For Bigger Meltdowns" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/Sintel.m3u8" type="hls" title="Sintel" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/TearsOfSteel.m3u8" type="hls" title="Tears Of Steel" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/SubaruOutbackOnStreetAndDirt.m3u8" type="hls" title="Subaru Outback On Street And Dirt" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/VolkswagenGTIReview.m3u8" type="hls" title="Volkswagen GTI Review" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/WeAreGoingOnBullrun.m3u8" type="hls" title="We Are Going On Bullrun" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/WhatCarCanYouGetForAGrand.m3u8" type="hls" title="What care can you get for a grand?" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/DesigningForGoogleCast.m3u8" type="hls" title="Designing for Google Cast" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/GoogleIO-2014-CastingToTheFuture.m3u8" type="hls" title="Casting to the Future" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/GoogleIO-2014-MakingGoogleCastReadyAppsDiscoverable.m3u8" type="hls" title="Making Google Cast Ready Apps Discoverable" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/Google_I_O_2013_Keynote.m3u8" type="hls" title="Google I/O Keynote 2013" vod="true"></div>
+   </div>
+   <div class="content">
+     <h5>MPEG-DASH</h5><br>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/BigBuckBunny.mpd" type="dash" title="Big Buck Bunny" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/ElephantsDream.mpd" type="dash" title="Elephants Dream" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/ForBiggerBlazes.mpd" type="dash" title="For Bigger Blazes" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/ForBiggerEscapes.mpd" type="dash" title="For Bigger Escapes" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/ForBiggerFun.mpd" type="dash" title="For Bigger Fun" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/ForBiggerJoyrides.mpd" type="dash" title="For Bigger Joyrides" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/ForBiggerMeltdowns.mpd" type="dash" title="For Bigger Meltdowns" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/Sintel.mpd" type="dash" title="Sintel" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/TearsOfSteel.mpd" type="dash" title="Tears Of Steel" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/SubaruOutbackOnStreetAndDirt.mpd" type="dash" title="Subaru Outback On Street And Dirt" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/VolkswagenGTIReview.mpd" type="dash" title="Volkswagen GTI Review" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/WeAreGoingOnBullrun.mpd" type="dash" title="We Are Going On Bullrun" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/WhatCarCanYouGetForAGrand.mpd" type="dash" title="What care can you get for a grand?" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/DesigningForGoogleCast.mpd" type="dash" title="Designing for Google Cast" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/GoogleIO-2014-CastingToTheFuture.mpd" type="dash" title="Casting to the Future" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/GoogleIO-2014-MakingGoogleCastReadyAppsDiscoverable.mpd" type="dash" title="Making Google Cast Ready Apps Discoverable" vod="true"></div>
+     <div url="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/Google_I_O_2013_Keynote.mpd" type="dash" title="Google I/O Keynote 2013" vod="true"></div>
+   </div>
+  </div>
+
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/video-playlist/js/script.min.js"></script>
+
+<script>
+  $(primaryContent).css(color, "#00BCD4");
+
+  $(scrollBar).addClass(show);
+</script>
+
+</body>
+</html>
