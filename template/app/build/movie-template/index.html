@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Movie Template</title>
+
+  <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/movie-template/style.min.css">
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+   <!-- 
+    • Top Poster (Trending/Latest movies).
+    • Max TP: 8
+   -->
+  <div class="top-poster">
+   <img tp="p1" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p2" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p3" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p4" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p5" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p6" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p7" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p8" src="" location="" title="" desc="" year="" rating="">
+  </div>
+
+   <!-- 
+    • Section Content.
+    • Max poster content: Unlimited
+   -->
+  <section class="container-section" id="s1">
+   <h3>Section 1</h3>
+   <div class="content-section">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+   </div>
+  </section>
+
+  <section class="container-section" id="s2">
+   <h3>Section 2</h3>
+   <div class="content-section">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+   </div>
+  </section>
+
+  <section class="container-section" id="s3">
+   <h3>Section 3</h3>
+   <div class="content-section">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+   </div>
+  </section>
+
+  <section class="container-section" id="s4">
+   <h3>Section 4</h3>
+   <div class="content-section">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+   </div>
+  </section>
+  
+  <section class="container-section" id="s5">
+   <h3>Section 5</h3>
+   <div class="content-section">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+   </div>
+  </section>
+
+   <!-- Section Bar -->
+  <div class="section-bar">
+   <div bar="section1"><i class="bi bi-film"></i></div>
+   <div bar="section2">S2</div>
+   <div bar="section3">S3</div>
+   <div bar="section4">S4</div>
+   <div bar="section5">S5</div>
+  </div>
+
+  <!--
+   • Add more section content and section bar.
+   • Section: <section class="container-section" id="s{number}"></section>
+   • Section bar: <div bar="section{number}"></div>
+   • Max Section: 10
+  -->
+
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/movie-template/script.min.js"></script>
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/swiper/10/swiper-bundle.min.js"></script>
+
+<script>
+/* Set color for the primary content */
+  $(primaryContent).css(color, "#00BCD4");
+  
+/* Change the primary font */
+  const fontface = {
+    load: "https://fonts.cdnfonts.com/css/lt-bump"
+  }
+  $(primaryFont).css(fontFamily, "LT Bump, sans-serif");
+  $(docElement).after(`<link rel="stylesheet" href="${fontface.load}">`);
+</script>
+
+</body>
+</html>
