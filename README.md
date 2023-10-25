@@ -55,10 +55,11 @@ Starting with **HTML** it is very easy for you to style or design your App. But 
 <br>
 
 <details>
-<summary><b>See Code</b></summary>
+<summary><b>Expand</b></summary>
 
 <br>
 
+`HTML`
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +67,7 @@ Starting with **HTML** it is very easy for you to style or design your App. But 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <title>Your Name App</title>
+  <title>Content Title</title>
 
   <!-- Link to app template source -->
   <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/template-app.min.css">
@@ -185,10 +186,7 @@ Action Links are available in the App:
 | Office | `http://action_offices` |
 | Product | `http://action_products` |
 
-</details>
-
 <br>
-<hr>
 
 ### How to load content from URL and insert into current section?
 
@@ -216,6 +214,7 @@ Let's do it and see how easy you can make it.
 
 <br>
 
+`JS` _jQuery_
 ```js
 $(document).ready(function() {
 
@@ -339,7 +338,6 @@ $("#load-content").css({
 To use `<iframe>`, make sure your site page for **'X-Frame-Options'** header is set to **"ALLOW"**.
 > You can try pasting the **URL** in an `<iframe>` tag to see if it's allowed.
 
-<br>
 <hr>
 
 Do not use the same `<section>` tag with multiple contents when you are not using `<iframe>`.
@@ -397,11 +395,10 @@ $(document).ready(function() {
 </details>
 
 <br>
-<hr>
 
 ### App Theme Color
 
-Change the App theme with your favorite color.
+Change the App **Theme** with your favorite color.
 
 <br>
 
@@ -448,7 +445,14 @@ Use pre-built theme color templates.
 </details>
 
 <br>
+
+</details>
+
+<br>
 <hr>
+
+## See more templates below
+
 <br>
 
 ### Video Gallery
@@ -458,14 +462,13 @@ Template for _Video Gallery_.
 <br>
 
 <details>
-<summary>Expand</summary>
+<summary><b>Expand</b></summary>
 
 <br>
 
-`HTML Code`
-
+`HTML`
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -610,9 +613,10 @@ But if the value on the attribute is empty, it will not be shown.
 
 **Added more content and section buttons**
 
-Max content section: **_8_**
+Max content section: **8**
 
 - `<section class="section-content" id=""></section>`
+
 - `<button class="btn-section" section=""></button>`
 
 <br>
@@ -635,14 +639,13 @@ Template for _Video Playlist_.
 <br>
 
 <details>
-<summary>Expand</summary>
+<summary><b>Expand</b></summary>
 
 <br>
 
-`HTML Code`
-
+`HTML`
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -762,8 +765,243 @@ Set value: `true` / `false`
 <hr>
 <br>
 
+### Movie Template
+
+Template for _Movie App_.
+
+<br>
+
+<details>
+<summary><b>Expand</b></summary>
+
+<br>
+
+`HTML`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Content Title</title>
+
+  <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/movie-template/style.min.css">
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+  <div class="top-poster">
+   <img tp="p1" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p2" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p3" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p4" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p5" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p6" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p7" src="" location="" title="" desc="" year="" rating="">
+   <img tp="p8" src="" location="" title="" desc="" year="" rating="">
+  </div>
+
+  <section class="container-section" id="s1">
+   <h3>Section 1</h3>
+   <div class="content-section">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+   </div>
+  </section>
+
+  <section class="container-section" id="s2">
+   <h3>Section 2</h3>
+   <div class="content-section">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+   </div>
+  </section>
+
+  <section class="container-section" id="s3">
+   <h3>Section 3</h3>
+   <div class="content-section">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+   </div>
+  </section>
+
+  <section class="container-section" id="s4">
+   <h3>Section 4</h3>
+   <div class="content-section">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+   </div>
+  </section>
+  
+  <section class="container-section" id="s5">
+   <h3>Section 5</h3>
+   <div class="content-section">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+    <img src="" location="" title="" desc="" year="" rating="">
+   </div>
+  </section>
+
+  <div class="section-bar">
+   <div bar="section1"><i class="bi bi-film"></i></div>
+   <div bar="section2">S2</div>
+   <div bar="section3">S3</div>
+   <div bar="section4">S4</div>
+   <div bar="section5">S5</div>
+  </div>
+
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/movie-template/script.min.js"></script>
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/swiper/10/swiper-bundle.min.js"></script>
+
+<script>
+/* Set color for the primary content */
+  $(primaryContent).css(color, "#00BCD4");
+  
+/* Change the primary font */
+  const fontface = {
+    load: "https://fonts.cdnfonts.com/css/lt-bump"
+  }
+  $(primaryFont).css(fontFamily, "LT Bump, sans-serif");
+  $(docElement).after(`<link rel="stylesheet" href="${fontface.load}">`);
+</script>
+
+</body>
+</html>
+```
+
+- **[DEMO](https://zazerconer.github.io/Templates-For-AppCreator24/template/app/demo/movie-template/)**
+
+<br>
+
+<div align="center"><strong>Use of Movie Templates</strong></div>
+
+<br>
+
+**Image content:** `Poster`
+
+```html
+<img src="" location="" title="" desc="" year="" rating="">
+```
+
+<br>
+
+| Attribute | Value |
+| --- | ---|
+| src | `poster.jpg` |
+| location | `go:` |
+| title | _required_ |
+| desc | _required_ |
+| year | _optional_ |
+| rating | _optional_ |
+
+<br>
+
+1. Image URL
+
+`src="http://movie-poster.jpg"`
+
+2. Add location link: Reference `go:`
+
+`location="go:Video"`
+
+3. Movie title.
+
+`title="The Name of the Movie"`
+
+2. Movie description
+
+`desc="Movie description/synopsis/topic"`
+
+3. The Year of the movie
+
+`year="2023"`
+
+4. Current movie ratings
+
+Star _rating_ number.
+
+`rating="7.0"`
+
+<br>
+
+#### Top Poster
+
+Trending/Latest movies.
+
+Max TP: **8**
+
+#### Section Content
+
+Max poster content: **Unlimited**
+
+#### Add more section content and section bar
+
+Max Section: **10**
+
+**Section:** `<section class="container-section" id="s{number}"></section>`
+
+**Section bar:** `<div bar="section{number}"></div>`
+
+<br>
+
+Starting with the main section `1`, you can place as much poster content as you want. For the second `2` and other sections, it's up to you to do anything for this, like separate sections by **Genre**, **Year**, **Name** etc.
+
+#### Section Bar
+
+Use `Text` only or `Icon fonts`.
+
+Example:
+
+**_Text_** `<div bar="section">Section Name</div>`
+
+**_Icon_** `<div bar="section"><i class="bi icon-name"></i></div>`
+
+<br>
+
+#### You can find all the _Information_ and _Details_ of the Movie at:
+
+**[IMDb](https://m.imdb.com)**
+
+IMDb: Ratings, Reviews, and Where to Watch the Best Movies & TV Shows.
+
+**[Rotten Tomatoes](https://www.rottentomatoes.com)**
+
+Rotten Tomatoes: Movies | TV Shows | Movie Trailers | Reviews - Rotten Tomatoes.
+
+**[The Movie Database](https://www.themoviedb.org)**
+
+The Movie Database (TMDB).
+
+**[Common Sense Media](https://www.commonsensemedia.org/movie-reviews)**
+
+Common Sense Media: Movie Reviews.
+
+**[Box Office Mojo](https://www.boxofficemojo.com)**
+
+Box Office Mojo: Latest popular movies - Top hits and similarities.
+
+<br>
+
+#### Solution if you have problems:
+
+Please see the **[Demo](https://zazerconer.github.io/Templates-For-AppCreator24/template/app/demo/movie-template/)** if you'r still confused or you can open this **[HTML](https://github.com/ZazerConer/Templates-For-AppCreator24/blob/main/template/app/demo/movie-template/index.html)** code and read the code I made, find the part you'r having problems with.
+
+<br>
+
+</details>
+
+<br>
+<hr>
+<br>
+
 **Please note:** 
-For this Demo app preview it may not work well or it may not be adapted in browser like CSS or JS, so please open and use the **template** on real tester in App.
+For this Demo app preview it may not work well or it may not be adapted in browser like CSS or JS, so please open and use the **Template** on real tester in App.
 
 <br>
 <hr>
