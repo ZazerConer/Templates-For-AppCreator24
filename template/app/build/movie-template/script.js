@@ -1,388 +1,1232 @@
 /**
-  * Templates for AppCreator24 @ ZazerConer's GitHub
-  * Movie Template.
-  * JS code.
+ * Templates for AppCreator24 @ ZazerConer's GitHub
+ * Music Player
+ * JS code
 **/
+   
+  function setVer() {
+    $("html").attr("data-set-plyr", "eR-uIpkMl_Joz");
+  }
+   window.addEventListener("load", setVer());
 
-  const div = document.createElement("div");
-    div.style = "position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;background:rgb(0,0,0);z-index:2000;";
-    div.setAttribute("id", "div");
-    document.body.appendChild(div);
+  $("title").after('<link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/bootstrap-icons/1.10.5/icons.min.css">');
 
-  $("img").each(function() {
-     $(this).hide();
-  });
-  $(".container-section").each(function() {
-     $(this).hide();
-  });
-  
-  $("title").after(
-    '<link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/bootstrap-icons/1.10.5/icons.min.css">'+
-    '<link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/swiper/10/swiper-bundle.min.css">'
+  $("#list").before(
+    '<div class="wrap-contain" id="content">'+
+    '<img class="coverAlbum">'+
+    '<h2 class="artist">Artist</h2>'+
+    '<h3 class="song">Song Title</h3>'+
+    '<audio hidden autoplay preload="metadata" type="audio/mpeg" vlm="100%"></audio>'+
+    '<div class="control">'+
+    '<div class="audio-progress">'+
+    '<span id="time-elapsed">00.00</span>'+
+    '<progress id="progress-bar" value="0" min="0" max="100"></progress>'+
+    '<input class="seek" id="seek" type="range" value="0" min="0" max="100" step="any">'+
+    '<span id="duration">00.00</span>'+
+    '</div>'+
+    '<button class="play" id="play"><i class="bi bi-play"></i></button>'+
+    '<button class="pause" id="pause"><i class="bi bi-pause"></i></button>'+
+    '<button class="volDown" id="volDown"><i class="bi bi-volume-down"></i></button>'+
+    '<button class="volUp" id="volUp"><i class="bi bi-volume-mute"></i></button>'+
+    '<button class="clickPrev" id="prev"><i class="bi bi-chevron-left"></i></button>'+
+    '<button class="clickNext" id="next"><i class="bi bi-chevron-right"></i></button>'+
+    '<button id="openList"><i class="bi bi-music-note-list"></i></button>'+
+    '<button id="closeList"><i class="bi bi-x-lg"></i></button>'+
+    '<div class="vol-face">'+
+    '<svg class="mute" id="mute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M18 23l-9.305-5.998.835-.651 7.47 4.815v-10.65l1-.781v13.265zm0-15.794l5.384-4.206.616.788-23.384 18.264-.616-.788 5.46-4.264h-2.46v-10h5.691l9.309-6v6.206zm-11.26 8.794l1.26-.984v-7.016h-4v8h2.74zm10.26-8.013v-5.153l-8 5.157v6.244l8-6.248z"/></svg>'+
+    '<svg class="unmute" id="unmute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M15 23l-9.309-6h-5.691v-10h5.691l9.309-6v22zm-9-15.009v8.018l8 5.157v-18.332l-8 5.157zm14.228-4.219c2.327 1.989 3.772 4.942 3.772 8.229 0 3.288-1.445 6.241-3.77 8.229l-.708-.708c2.136-1.791 3.478-4.501 3.478-7.522s-1.342-5.731-3.478-7.522l.706-.706zm-2.929 2.929c1.521 1.257 2.476 3.167 2.476 5.299 0 2.132-.955 4.042-2.476 5.299l-.706-.706c1.331-1.063 2.182-2.729 2.182-4.591 0-1.863-.851-3.529-2.184-4.593l.708-.708zm-12.299 1.299h-4v8h4v-8z"/></svg>'+
+    '</div>'+
+    '</div>'+
+    '</div>'
   );
+
+   $("#list").hide();
+   $("#list div").first().addClass("first");
+   $("#list div").last().addClass("last");
+   $("#list div").addClass("plList");
+   $("img").attr("alt", "");
 
 $(document).ready(function() {
-  
-  $("body").css("visibility", "visible");
-  $("#div").fadeOut(200);
-  $("#s1").fadeIn();
-  
-  $("img").each(function() {
-    $(this).fadeIn(200);
-  });
-  setTimeout(function() {
-    $("img").attr("alt", "");
-  }, 100);
-  
-  $("body").before(
-    '<div class="container-swiper swiper">'+
-    '<div class="swiper-wrapper">'+
-    '<div class="swiper-slide">'+
-    '<img id="p1">'+
-    '</div>'+
-    '<div class="swiper-slide">'+
-    '<img id="p2">'+
-    '</div>'+
-    '<div class="swiper-slide">'+
-    '<img id="p3">'+
-    '</div>'+
-    '<div class="swiper-slide">'+
-    '<img id="p4">'+
-    '</div>'+
-    '<div class="swiper-slide">'+
-    '<img id="p5">'+
-    '</div>'+
-    '<div class="swiper-slide">'+
-    '<img id="p6">'+
-    '</div>'+
-    '<div class="swiper-slide">'+
-    '<img id="p7">'+
-    '</div>'+
-    '<div class="swiper-slide">'+
-    '<img id="p8">'+
-    '</div>'+
-    '</div>'+
-    '<div class="swiper-pagination clr"></div>'+
-    '</div>'
-  );
-  
-  $(".top-poster img").each(function() {
-    var tp = $(this).attr("tp");
-    var p1 = $(this).attr("tp", "p1");
-    var p2 = $(this).attr("tp", "p2");
-    var p3 = $(this).attr("tp", "p3");
-    var p4 = $(this).attr("tp", "p4");
-    var p5 = $(this).attr("tp", "p5");
-    var p6 = $(this).attr("tp", "p6");
-    var p7 = $(this).attr("tp", "p7");
-    var p8 = $(this).attr("tp", "p8");
-    if (tp === "p1") {
-      $(".swiper-slide #p1").attr({"src": $(p1).attr("src"), "location": $(p1).attr("location"), "title": $(p1).attr("title"), "desc": $(p1).attr("desc"), "year": $(p1).attr("year"), "rating": $(p1).attr("rating")});
-    } else if (tp === "p2") {
-      $(".swiper-slide #p2").attr({"src": $(p2).attr("src"), "location": $(p2).attr("location"), "title": $(p2).attr("title"), "desc": $(p2).attr("desc"), "year": $(p2).attr("year"), "rating": $(p2).attr("rating")});
-    } else if (tp === "p3") {
-      $(".swiper-slide #p3").attr({"src": $(p3).attr("src"), "location": $(p3).attr("location"), "title": $(p3).attr("title"), "desc": $(p3).attr("desc"), "year": $(p3).attr("year"), "rating": $(p3).attr("rating")});
-    } else if (tp === "p4") {
-      $(".swiper-slide #p4").attr({"src": $(p4).attr("src"), "location": $(p4).attr("location"), "title": $(p4).attr("title"), "desc": $(p4).attr("desc"), "year": $(p4).attr("year"), "rating": $(p4).attr("rating")});
-    } else if (tp === "p5") {
-      $(".swiper-slide #p5").attr({"src": $(p5).attr("src"), "location": $(p5).attr("location"), "title": $(p5).attr("title"), "desc": $(p5).attr("desc"), "year": $(p5).attr("year"), "rating": $(p5).attr("rating")});
-    } else if (tp === "p6") {
-      $(".swiper-slide #p6").attr({"src": $(p6).attr("src"), "location": $(p6).attr("location"), "title": $(p6).attr("title"), "desc": $(p6).attr("desc"), "year": $(p6).attr("year"), "rating": $(p6).attr("rating")});
-    } else if (tp === "p7") {
-      $(".swiper-slide #p7").attr({"src": $(p7).attr("src"), "location": $(p7).attr("location"), "title": $(p7).attr("title"), "desc": $(p7).attr("desc"), "year": $(p7).attr("year"), "rating": $(p7).attr("rating")});
-    } else if (tp === "p8") {
-      $(".swiper-slide #p8").attr({"src": $(p8).attr("src"), "location": $(p8).attr("location"), "title": $(p8).attr("title"), "desc": $(p8).attr("desc"), "year": $(p8).attr("year"), "rating": $(p8).attr("rating")});
-    }
-  });
 
-  $("body").append(
-    '<div class="content-play">'+
-    '<div class="content-info">'+
-    '<div class="rating">'+
-    '<i class="bi bi-bookmark-star-fill"></i>&nbsp;<div class="rating-number">&nbsp;<span class="star"></span><span class="yr"></span></div>'+
-    '</div>'+
-    '<br>'+
-    '<img>'+
-    '<abbr><span class="title"></span><small class="desc"></small></abbr>'+
-    '</div>'+
-    '<button id="back">Back</button>'+
-    '<button id="play">Play</button>'+
-    '</div>'+
-    '<div class="scrollUp"><button id="scrollTop" title="Go to top"><i class="bi bi-chevron-double-up"></i></button></div>'+
-    '<div class="select-section">'+
-    '<button class="btn-section btn" id="reload"><i class="bi bi-bootstrap-reboot"></i></button>'+
-    '<button class="btn-section" id="open"><i class="bi bi-list-nested"></i></button>'+
-    '</div>'
-  );
-
-  $(".section-bar div").each(function() {
-    var sBar = $(this).attr("bar");
-    var ix1 = $(this).attr("bar", "section1");
-    var ix2 = $(this).attr("bar", "section2");
-    var ix3 = $(this).attr("bar", "section3");
-    var ix4 = $(this).attr("bar", "section4");
-    var ix5 = $(this).attr("bar", "section5");
-    var ix6 = $(this).attr("bar", "section6");
-    var ix7 = $(this).attr("bar", "section7");
-    var ix8 = $(this).attr("bar", "section8");
-    var ix9 = $(this).attr("bar", "section9");
-    var ix10 = $(this).attr("bar", "section10");
-    var append = $(".select-section #open");
-    if (sBar === "section1") {
-      $(append).before('<button class="btn-section btn" section="1"></button>');
-      $("[section='1']").html(ix1);
-    } else if (sBar === "section2") {
-      $(append).before('<button class="btn-section btn" section="2"></button>');
-      $("[section='2']").html(ix2);
-    } else if (sBar === "section3") {
-      $(append).before('<button class="btn-section btn" section="3"></button>');
-      $("[section='3']").html(ix3);
-    } else if (sBar === "section4") {
-      $(append).before('<button class="btn-section btn" section="4"></button>');
-      $("[section='4']").html(ix4);
-    } else if (sBar === "section5") {
-      $(append).before('<button class="btn-section btn" section="5"></button>');
-      $("[section='5']").html(ix5);
-    } else if (sBar === "section6") {
-      $(append).before('<button class="btn-section btn" section="6"></button>');
-      $("[section='6']").html(ix6);
-    } else if (sBar === "section7") {
-      $(append).before('<button class="btn-section btn" section="7"></button>');
-      $("[section='7']").html(ix7);
-    } else if (sBar === "section8") {
-      $(append).before('<button class="btn-section btn" section="8"></button>');
-      $("[section='8']").html(ix8);
-    } else if (sBar === "section9") {
-      $(append).before('<button class="btn-section btn" section="9"></button>');
-      $("[section='9']").html(ix9);
-    } else if (sBar === "section10") {
-      $(append).before('<button class="btn-section btn" section="10"></button>');
-      $("[section='10']").html(ix10);
-    }
-  });
-
-  $(".select-section .btn").hide();
-  $("[section='1']").css("color", "var(--primary-color)");
-
-  $(".swiper-slide img").each(function() {
-    setTimeout(function() {
-      $(this).attr("alt", "");
-    }, 100);
-     if ($(this).attr("src") === "") {
-       $(this).hide();
-     }
-    var title = $(this).attr("title");
-    var desc = $(this).attr("desc");
-    var year = $(this).attr("year");
-     $(this).after('<span><div class="t">'+title+' &nbsp;<small class="y">('+year+')</small></div><small>'+desc+'</small></span>');
-  }).click(function() {
-    var src = $(this).attr("src");
-    var title = $(this).attr("title");
-    var desc = $(this).attr("desc");
-    var year = $(this).attr("year");
-    var rating = $(this).attr("rating");
-    var url = $(this).attr("location");
-     $(".content-play img").attr("src", src);
-     $(".content-play .title").html(title);
-     $(".content-play .desc").html(desc);
-     $(".content-play .rating-number .star").html(rating);
-     $(".content-play .rating-number .yr").html(year);
-     $(".content-play").attr("location", url);
-     $(".content-play").fadeIn(200);
-     $(".container-section").css("pointerEvents", "none");
-     $("body").css("overflow", "hidden");
-  });
-
-  $(".content-section img").each(function() {
-    if ($(this).attr("src") === "") {
-       $(this).addClass("placeholder");
+  $("#list div").each(function() {
+    var artist = $(this).attr("artist");
+    var song = $(this).attr("song");
+    if (artist && song) {
+      $(this).html(`<b>${artist}</b><br><small>${song}</small>`);
     } else {
-       $(this).addClass("poster");
-    }
-  }).click(function() {
-     $(".content-play").fadeIn(200);
-     $(".container-section").css("pointerEvents", "none");
-     $("body").css("overflow", "hidden");
-    var src = $(this).attr("src");
-    var title = $(this).attr("title");
-    var desc = $(this).attr("desc");
-    var year = $(this).attr("year");
-    var rating = $(this).attr("rating");
-    var url = $(this).attr("location");
-     $(".content-play img").attr("src", src);
-     $(".content-play .title").html(title);
-     $(".content-play .desc").html(desc);
-     $(".content-play .rating-number .star").html(rating);
-     $(".content-play .rating-number .yr").html(year);
-     $(".content-play").attr("location", url);
-  }).on("contextmenu", function() {
-    var src = $(this).attr("src");
-    var title = $(this).attr("title");
-    var desc = $(this).attr("desc");
-    var year = $(this).attr("year");
-    var rating = $(this).attr("rating");
-    var url = $(this).attr("location");
-     $(".content-play img").attr("src", src);
-     $(".content-play .title").html(title);
-     $(".content-play .desc").html(desc);
-     $(".content-play .rating-number .star").html(rating);
-     $(".content-play .rating-number .yr").html(year);
-     $(".content-play").attr("location", url);
-     $(".content-play").fadeIn(200);
-     $(".container-section").css("pointerEvents", "none");
-     $("body").css("overflow", "hidden");
-  });
-
-  $(".content-play #back").click(function() {
-    $(".content-play").fadeOut(200);
-    $(".container-section").css("pointerEvents", "auto");
-    $("body").css("overflow", "auto");
-    $(".content-play .rating-number .yr").html("");
-  });
-
-  $(".content-play #play").click(function() {
-    var location = $(".content-play").attr("location");
-    if (location === "") {
-     return false;
-    } else {
-      $(window.location).attr("href", location);
-      $(".content-play").fadeOut(200);
-      $(".container-section").css("pointerEvents", "auto");
-      $("body").css("overflow", "auto");
-     return true;
+      $(this).hide();
     }
   });
 
-  $(".select-section #open").click(function() {
-    if ($(".select-section .btn").hide()) {
-      $(".select-section .btn").show();
-     setTimeout(function() {
-       $(".select-section .btn").fadeOut(800);
-     }, 5000);
-    }
-     $(".content-play").fadeOut(200);
-     $(".container-section").css("pointerEvents", "auto");
-     $("body").css("overflow", "auto");
-  });
+  $("#list div:first").addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+  $("audio").attr("src", $("#list div.first").attr("url"));
+  
+  var cover = $("#list div:first").attr("cover");
+    $(".coverAlbum").attr("src", cover);
+    $("body").css({
+      "background": `url('${cover}')`,
+      "background-repeat": "no-repeat",
+      "background-size": "cover",
+      "background-position": "center"
+    });
+    $(".artist").html($("#list div:first").attr("artist"));
+    $(".song").html($("#list div:first").attr("song"));
 
-  $("#reload").click(function() {
-    window.location = window.location.pathname;
-     $("#div").show();
-    setTimeout(function() {
-      $("#div").fadeOut(200);
-    }, 1000);
-  });
-
-  $(".select-section .btn").click(function() {
-   var section = $(this).attr("section");
-   if (section === "1") {
-      $(".container-section").hide();
-     setTimeout(function() {
-       $(".container-swiper").fadeIn();
-       $("#s1").fadeIn();
-     }, 500);
-   } else if (section === "2") {
-      $(".container-section").hide();
-      $(".container-swiper").hide();
-     setTimeout(function() {
-       $("#s2").fadeIn();
-     }, 500);
-   } else if (section === "3") {
-      $(".container-section").hide();
-      $(".container-swiper").hide();
-     setTimeout(function() {
-       $("#s3").fadeIn();
-     }, 500);
-   } else if (section === "4") {
-      $(".container-section").hide();
-      $(".container-swiper").hide();
-     setTimeout(function() {
-       $("#s4").fadeIn();
-     }, 500);
-   } else if (section === "5") {
-      $(".container-section").hide();
-      $(".container-swiper").hide();
-     setTimeout(function() {
-       $("#s5").fadeIn();
-     }, 500);
-   } else if (section === "6") {
-      $(".container-section").hide();
-      $(".container-swiper").hide();
-     setTimeout(function() {
-       $("#s6").fadeIn();
-     }, 500);
-   } else if (section === "7") {
-      $(".container-section").hide();
-      $(".container-swiper").hide();
-     setTimeout(function() {
-       $("#s7").fadeIn();
-     }, 500);
-   } else if (section === "8") {
-      $(".container-section").hide();
-      $(".container-swiper").hide();
-     setTimeout(function() {
-       $("#s8").fadeIn();
-     }, 500);
-   } else if (section === "9") {
-      $(".container-section").hide();
-      $(".container-swiper").hide();
-     setTimeout(function() {
-       $("#9").fadeIn();
-     }, 500);
-   } else if (section === "10") {
-      $(".container-section").hide();
-      $(".container-swiper").hide();
-     setTimeout(function() {
-       $("#s10").fadeIn();
-     }, 500);
-   }
-     $(".btn-section").css("color", "rgb(250,250,255)");
-     $(this).css("color", "var(--primary-color)");
-     $(document.body).animate({scrollTop: 0});
-     $(document.documentElement).animate({scrollTop: 0});
-  }).each(function() {
-    var text = this.innerText;
-    var word1 = text.substr(0, 1);
-    var word2 = text.substr(1, 1);
-    if (text) {
-      $(this).text(word1+word2).css({
-        "font-size": "large", 
-        "font-weight": "bold", 
-        "text-transform": "uppercase"
+  $("#next").click(function(e) {
+    e.preventDefault();
+    if ($("#list div.play").hasClass("last")) {
+      $("#list div").first().addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+      $("#list div.play:last").removeClass("play").attr("id", "").css({"color": "#fafaff", "border-bottom": "1px solid transparent", "background": "", "pointerEvents": "auto"});
+      $("#list").animate({scrollTop: 0}, 150);
+      $(window.location).attr("href", "#active");
+      $("audio").attr("src", $("#list div.play").attr("url"));
+     var cover = $("#list div.play").attr("cover");
+      $(".coverAlbum").attr("src", cover);
+      $("body").css({
+        "background": `url('${cover}')`,
+        "background-repeat": "no-repeat",
+        "background-size": "cover",
+        "background-position": "center"
       });
-    }
-  });
-
-  var swiper = new Swiper(".swiper", {
-      spaceBetween: 30,
-      centeredSlides: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
-
-  window.onscroll = function() {scroll()};
-  function scroll() {
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-      $(".scrollUp").fadeIn(100);
+      $(".artist").html($("#list div.play").attr("artist"));
+      $(".song").html($("#list div.play").attr("song"));
+        $("#pause").hide();
+        $("#play").show();
+        $("audio").trigger("pause");
+      var source = $("#list div.play").attr("url");
+      if (source === "") {
+        $("#pause").hide();
+        $("#play").show();
+        $("audio").trigger("pause");
+        return false;
+      } else {
+        setTimeout(function() {
+          $("#pause").show();
+          $("#play").hide();
+          $("audio").trigger("play");
+        }, 1000);
+        return true;
+      }
     } else {
-      $(".scrollUp").fadeOut(100);
+      $("#list div.play").next().addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+      $("#list div.play:first").removeClass("play").attr("id", "").css({"color": "#fafaff", "border-bottom": "1px solid transparent", "background": "", "pointerEvents": "auto"});
+      $(window.location).attr("href", "#active");
+      $("audio").attr("src", $("#list div.play").attr("url"));
+     var cover = $("#list div.play").attr("cover");
+      $(".coverAlbum").attr("src", cover);
+      $("body").css({
+        "background": `url('${cover}')`,
+        "background-repeat": "no-repeat",
+        "background-size": "cover",
+        "background-position": "center"
+      });
+      $(".artist").html($("#list div.play").attr("artist"));
+      $(".song").html($("#list div.play").attr("song"));
+        $("#pause").hide();
+        $("#play").show();
+        $("audio").trigger("pause");
+      var source = $("#list div.play").attr("url");
+      if (source === "") {
+        $("#pause").hide();
+        $("#play").show();
+        $("audio").trigger("pause");
+        return false;
+      } else {
+        setTimeout(function() {
+          $("#pause").show();
+          $("#play").hide();
+          $("audio").trigger("play");
+        }, 1000);
+        return true;
+      }
+    }
+      $("#list div").each(function() {
+        var type = $(this).attr("url");
+        var matchType = {mp3: type.match(".mp3"), wav: type.match(".wav"), ogg: type.match(".ogg"), aac: type.match(".aac")}
+        var format = {mp3: "audio/mpeg", wav: "audio/wav", ogg: "audio/ogg", aac: "audio/aac"}
+        if (matchType.mp3) {
+          $("audio").attr("type", format.mp3);
+        } else if (matchType.wav) {
+          $("audio").attr("type", format.wav);
+        } else if (matchType.ogg) {
+          $("audio").attr("type", format.ogg);
+        } else if (matchType.aac) {
+          $("audio").attr("type", format.aac);
+        } else {
+          $("audio").attr("type", format.mp3);
+        }
+      });
+  });
+  $("#prev").click(function(e) {
+   e.preventDefault();
+    if ($("#list div.play").hasClass("first")) {
+      $("#list div").last().addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+      $("#list div.play:first").removeClass("play").attr("id", "").css({"color": "#fafaff", "border-bottom": "1px solid transparent", "background": "", "pointerEvents": "auto"});
+      $("#list").animate({scrollTop: 10000}, 600);
+      $(window.location).attr("href", "#active");
+      $("audio").attr("src", $("#list div.play").attr("url"));
+     var cover = $("#list div.play").attr("cover");
+      $(".coverAlbum").attr("src", cover);
+      $("body").css({
+        "background": `url('${cover}')`,
+        "background-repeat": "no-repeat",
+        "background-size": "cover",
+        "background-position": "center"
+      });
+      $(".artist").html($("#list div.play").attr("artist"));
+      $(".song").html($("#list div.play").attr("song"));
+        $("#pause").hide();
+        $("#play").show();
+        $("audio").trigger("pause");
+      var source = $("#list div.play").attr("url");
+      if (source === "") {
+        $("#pause").hide();
+        $("#play").show();
+        $("audio").trigger("pause");
+        return false;
+      } else {
+        setTimeout(function() {
+          $("#pause").show();
+          $("#play").hide();
+          $("audio").trigger("play");
+        }, 1000);
+        return true;
+      }
+    } else {
+      $("#list div.play").prev().addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+      $("#list div.play:last").removeClass("play").attr("id", "").css({"color": "#fafaff", "border-bottom": "1px solid transparent", "background": "", "pointerEvents": "auto"});
+      $(window.location).attr("href", "#active");
+      $("audio").attr("src", $("#list div.play").attr("url"));
+     var cover = $("#list div.play").attr("cover");
+       $(".coverAlbum").attr("src", cover);
+       $("body").css({
+         "background": `url('${cover}')`,
+         "background-repeat": "no-repeat",
+         "background-size": "cover",
+         "background-position": "center"
+       });
+       $(".artist").html($("#list div.play").attr("artist"));
+       $(".song").html($("#list div.play").attr("song"));
+         $("#pause").hide();
+         $("#play").show();
+         $("audio").trigger("pause");
+       var source = $("#list div.play").attr("url");
+       if (source === "") {
+         $("#pause").hide();
+         $("#play").show();
+         $("audio").trigger("pause");
+         return false;
+       } else {
+         setTimeout(function() {
+           $("#pause").show();
+           $("#play").hide();
+           $("audio").trigger("play");
+         }, 1000);
+         return true;
+       }
+     }
+       $("#list div").each(function() {
+         var type = $(this).attr("url");
+         var matchType = {mp3: type.match(".mp3"), wav: type.match(".wav"), ogg: type.match(".ogg"), aac: type.match(".aac")}
+         var format = {mp3: "audio/mpeg", wav: "audio/wav", ogg: "audio/ogg", aac: "audio/aac"}
+         if (matchType.mp3) {
+           $("audio").attr("type", format.mp3);
+         } else if (matchType.wav) {
+           $("audio").attr("type", format.wav);
+         } else if (matchType.ogg) {
+           $("audio").attr("type", format.ogg);
+         } else if (matchType.aac) {
+           $("audio").attr("type", format.aac);
+         } else {
+           $("audio").attr("type", format.mp3);
+         }
+       });
+  });
+
+  $("#list div").click(function(e) {
+    e.preventDefault();
+      $("#list div").removeClass("play").attr("id", "").css({"color": "#fafaff", "border-bottom": "1px solid transparent", "background": "", "pointerEvents": "auto"});
+      $(this).addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+      $(window.location).attr("href", "#active");
+     var cover = $(this).attr("cover");
+      $(".coverAlbum").attr("src", cover);
+      $("body").css({
+        "background": `url('${cover}')`,
+        "background-repeat": "no-repeat",
+        "background-size": "cover",
+        "background-position": "center"
+      });
+      $(".artist").html($(this).attr("artist"));
+      $(".song").html($(this).attr("song"));
+        $("#pause").hide();
+        $("#play").show();
+        $("audio").trigger("pause");
+      var source = $(this).attr("url");
+      if (source === "") {
+        $("#pause").hide();
+        $("#play").show();
+        $("audio").trigger("pause");
+        return false;
+      } else {
+        $("audio").attr("src", source);
+        setTimeout(function() {
+          $("#pause").show();
+          $("#play").hide();
+          $("audio").trigger("play");
+        }, 1000);
+        return true;
+      }
+      $("#list div").each(function() {
+        var type = $(this).attr("url");
+        var matchType = {mp3: type.match(".mp3"), wav: type.match(".wav"), ogg: type.match(".ogg"), aac: type.match(".aac")}
+        var format = {mp3: "audio/mpeg", wav: "audio/wav", ogg: "audio/ogg", aac: "audio/aac"}
+        if (matchType.mp3) {
+          $("audio").attr("type", format.mp3);
+        } else if (matchType.wav) {
+          $("audio").attr("type", format.wav);
+        } else if (matchType.ogg) {
+          $("audio").attr("type", format.ogg);
+        } else if (matchType.aac) {
+          $("audio").attr("type", format.aac);
+        } else {
+          $("audio").attr("type", format.mp3);
+        }
+      });
+  });
+
+  $("audio").on("ended", function() {
+   if ($("#list .plList.play").hasClass("last")) {
+     $("#list .plList").first().addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+     $("#list .plList.play:last").removeClass("play").attr("id", "").css({"color": "#fafaff", "border-bottom": "1px solid transparent", "background": "", "pointerEvents": "auto"});
+     $("#list").animate({scrollTop: 0}, 150);
+     $(window.location).attr("href", "#active");
+     $("audio").attr("src", $("#list .plList.play").attr("url"));
+    var cover = $("#list .plList.play").attr("cover");
+     $(".coverAlbum").attr("src", cover);
+     $("body").css({
+       "background": `url('${cover}')`,
+       "background-repeat": "no-repeat",
+       "background-size": "cover",
+       "background-position": "center"
+     });
+     $(".artist").html($("#list .plList.play").attr("artist"));
+     $(".song").html($("#list .plList.play").attr("song"));
+       $("#pause").hide();
+       $("#play").show();
+       $("audio").trigger("pause");
+     var source = $("#list .plList.play").attr("url");
+     if (source === "") {
+       $("#pause").hide();
+       $("#play").show();
+       $("audio").trigger("pause");
+       return false;
+     } else {
+       setTimeout(function() {
+         $("#pause").show();
+         $("#play").hide();
+         $("audio").trigger("play");
+       }, 1000);
+       return true;
+     }
+   } else {
+     $("#list .plList.play").next().addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+     $("#list .plList.play:first").removeClass("play").attr("id", "").css({"color": "#fafaff", "border-bottom": "1px solid transparent", "background": "", "pointerEvents": "auto"});
+     $("audio").attr("src", $("#list .plList.play").attr("url"));
+     $(window.location).attr("href", "#active");
+    var cover = $("#list .plList.play").attr("cover");
+     $(".coverAlbum").attr("src", cover);
+     $("body").css({
+      "background": `url('${cover}')`,
+      "background-repeat": "no-repeat",
+      "background-size": "cover",
+      "background-position": "center"
+     });
+     $(".artist").html($("#list .plList.play").attr("artist"));
+     $(".song").html($("#list .plList.play").attr("song"));
+       $("#pause").hide();
+       $("#play").show();
+       $("audio").trigger("pause");
+     var source = $("#list .plList.play").attr("url");
+     if (source === "") {
+       $("#pause").hide();
+       $("#play").show();
+       $("audio").trigger("pause");
+       return false;
+     } else {
+       setTimeout(function() {
+         $("#pause").show();
+         $("#play").hide();
+         $("audio").trigger("play");
+       }, 1000);
+         return true;
+     }
+   }
+     $("#list .plList").each(function() {
+       var type = $(this).attr("url");
+       var matchType = {mp3: type.match(".mp3"), wav: type.match(".wav"), ogg: type.match(".ogg"), aac: type.match(".aac")}
+       var format = {mp3: "audio/mpeg", wav: "audio/wav", ogg: "audio/ogg", aac: "audio/aac"}
+       if (matchType.mp3) {
+         $("audio").attr("type", format.mp3);
+       } else if (matchType.wav) {
+         $("audio").attr("type", format.wav);
+       } else if (matchType.ogg) {
+         $("audio").attr("type", format.ogg);
+       } else if (matchType.aac) {
+         $("audio").attr("type", format.aac);
+       } else {
+         $("audio").attr("type", format.mp3);
+       }
+     });
+  });
+
+  $("#openList").click(function(e) {
+    e.preventDefault();
+     $("#list").fadeIn(100).addClass("open");
+     $(".control #prev").removeClass("clickPrev").addClass("prev").html('<i class="bi bi-chevron-up"></i>').hide();
+     $(".control #next").removeClass("clickNext").addClass("next").html('<i class="bi bi-chevron-down"></i>').hide();
+     $(this).hide();
+     $("#closeList").fadeIn(50);
+     $(".audio-progress").fadeOut(100);
+     setTimeout(function() {
+       $(".control #prev").fadeIn(0);
+       $(".control #next").fadeIn(0);
+     }, 300);
+     $(window.location).attr("href", "#active");
+  });
+  $("#closeList").click(function(e) {
+    e.preventDefault();
+     $("#list").fadeOut(100).removeClass("open");
+     $(".control #prev").removeClass("prev").addClass("clickPrev").html('<i class="bi bi-chevron-left"></i>').hide();
+     $(".control #next").removeClass("next").addClass("clickNext").html('<i class="bi bi-chevron-right"></i>').hide();
+     $(this).hide();
+     $("#openList").fadeIn(50);
+     $(".audio-progress").fadeIn(100);
+     setTimeout(function() {
+       $(".control #prev").fadeIn(0);
+       $(".control #next").fadeIn(0);
+     }, 300);
+  });
+
+  function count() {
+    const count = $("#list div").find("b").length;
+     setTimeout(function() {
+       $("#openList").append(`<span class="list-count">${count}</span>`);
+       $(".list-count").css({
+         "color": "rgb(250,250,255)",
+         "font-size": "x-small",
+         "font-weight": "400"
+       });
+     }, 1000);
+  }
+  document.addEventListener("DOMContentLoaded", count());
+
+  $("#play").click(function(e) {
+    e.preventDefault();
+     $(this).hide();
+     $("#pause").show();
+     $("audio").trigger("play");
+     $(window.location).attr("href", "#active");
+  });
+  $("#pause").click(function(e) {
+    e.preventDefault();
+     $(this).hide();
+     $("#play").show();
+     $("audio").trigger("pause");
+  });
+
+  document.ondblclick =()=> {
+    var ad = document.querySelector("audio");
+    if (ad.paused === false) {
+      $("#play").show();
+      $("#pause").hide();
+      $("audio").trigger("pause");
+    } else {
+      $("#pause").show();
+      $("#play").hide();
+      $("audio").trigger("play");
     }
   }
-  $("#scrollTop").click(function() {
-    $(document.body).animate({scrollTop: 0});
-    $(document.documentElement).animate({scrollTop: 0});
+
+  $("audio").on("playing", function() {
+     $("#play").hide();
+     $("#pause").show();
+  }).on("pause", function() {
+     $("#play").show();
+     $("#pause").hide();
+  }).on("error", function(err) {
+    if (err) {
+      $("#play").show();
+      $("#pause").hide();
+      $("audio").trigger("pause");
+    }
+  });
+
+  $("#volDown").click(function(e) {
+    e.preventDefault();
+     $(this).hide();
+     $("#volUp").show();
+     $("#mute").fadeIn(100);
+      setTimeout(function() {
+        $("#mute").fadeOut(200);
+      }, 1500);
+      $("audio").prop("muted", true);
+      if (navigator.vibrate) {
+        navigator.vibrate(180);
+        navigator.vibrate([180, 30]);
+      }
+  });
+  $("#volUp").click(function(e) {
+    e.preventDefault();
+     $(this).hide();
+     $("#volDown").show();
+     $("#unmute").fadeIn(100);
+      setTimeout(function() {
+        $("#unmute").fadeOut(200);
+      }, 1500);
+      $("audio").prop("muted", false);
+  });
+  
+  $(".coverAlbum").on("contextmenu", function(e) {
+    e.preventDefault();
+     $(this).css("pointerEvents", "none");
+     return false;
+  });
+
+  $("#list").after(
+    '<button id="open-asses"><i class="bi bi-three-dots-vertical"></i></button>'+
+    '<div class="file-asses">'+
+    '<span id="add-color"><i class="bi bi-palette-fill"></i>Theme Color</span>'+
+    '</div>'+
+    '<fieldset class="add-color">'+
+    '<span class="add-label">Change Theme Color</span>'+
+    '<span class="cur-color">Color</span>'+
+    '<div data-color="#F0F8FF" themeColor="AliceBlue"></div>'+
+    '<div data-color="#FAEBD7" themeColor="AntiqueWhite"></div>'+
+    '<div data-color="#00FFFF" themeColor="Aqua"></div>'+
+    '<div data-color="#7FFFD4" themeColor="Aquamarine"></div>'+
+    '<div data-color="#F0FFFF" themeColor="Azure"></div>'+
+    '<div data-color="#FFE4C4" themeColor="Bisque"></div>'+
+    '<div data-color="#FFEBCD" themeColor="BlanchedAlmond"></div>'+
+    '<div data-color="#0000FF" themeColor="Blue"></div>'+
+    '<div data-color="#8A2BE2" themeColor="BlueViolet"></div>'+
+    '<div data-color="#A52A2A" themeColor="Brown"></div>'+
+    '<div data-color="#DEB887" themeColor="BurlyWood"></div>'+
+    '<div data-color="#5F9EA0" themeColor="CadetBlue"></div>'+
+    '<div data-color="#7FFF00" themeColor="Chartreuse"></div>'+
+    '<div data-color="#D2691E" themeColor="Chocolate"></div>'+
+    '<div data-color="#FF7F50" themeColor="Coral"></div>'+
+    '<div data-color="#6495ED" themeColor="CornflowerBlue"></div>'+
+    '<div data-color="#DC143C" themeColor="Crimson"></div>'+
+    '<div data-color="#FFF8DC" themeColor="Cornsilk"></div>'+
+    '<div data-color="#00008B" themeColor="DarkBlue"></div>'+
+    '<div data-color="#008B8B" themeColor="DarkCyan"></div>'+
+    '<div data-color="#B8860B" themeColor="DarkGoldenRod"></div>'+
+    '<div data-color="#A9A9A9" themeColor="DarkGrey"></div>'+
+    '<div data-color="#006400" themeColor="DarkGreen"></div>'+
+    '<div data-color="#BDB76B" themeColor="DarkKhaki"></div>'+
+    '<div data-color="#8B008B" themeColor="DarkMagenta"></div>'+
+    '<div data-color="#556B2F" themeColor="DarkOliveGreen"></div>'+
+    '<div data-color="#FF8C00" themeColor="DarkOrange"></div>'+
+    '<div data-color="#9932CC" themeColor="DarkOrchid"></div>'+
+    '<div data-color="#8B0000" themeColor="DarkRed"></div>'+
+    '<div data-color="#E9967A" themeColor="DarkSalmon"></div>'+
+    '<div data-color="#8FBC8F" themeColor="DarkSeaGreen"></div>'+
+    '<div data-color="#483D8B" themeColor="DarkSlateBlue"></div>'+
+    '<div data-color="#2F4F4F" themeColor="DarkSlateGrey"></div>'+
+    '<div data-color="#00CED1" themeColor="DarkTurquoise"></div>'+
+    '<div data-color="#9400D3" themeColor="DarkViolet"></div>'+
+    '<div data-color="#FF1493" themeColor="DeepPink"></div>'+
+    '<div data-color="#00BFFF" themeColor="DeepSkyBlue"></div>'+
+    '<div data-color="#696969" themeColor="DimGrey"></div>'+
+    '<div data-color="#1E90FF" themeColor="DodgerBlue"></div>'+
+    '<div data-color="#B22222" themeColor="FireBrick"></div>'+
+    '<div data-color="#FFFAF0" themeColor="FloralWhite"></div>'+
+    '<div data-color="#228B22" themeColor="ForestGreen"></div>'+
+    '<div data-color="#FF00FF" themeColor="Fuchsia"></div>'+
+    '<div data-color="#DCDCDC" themeColor="Gainsboro"></div>'+
+    '<div data-color="#F8F8FF" themeColor="GhostWhite"></div>'+
+    '<div data-color="#FFD700" themeColor="Gold"></div>'+
+    '<div data-color="#DAA520" themeColor="GoldenRod"></div>'+
+    '<div data-color="#008000" themeColor="Green"></div>'+
+    '<div data-color="#ADFF2F" themeColor="GreenYellow"></div>'+
+    '<div data-color="#F0FFF0" themeColor="HoneyDew"></div>'+
+    '<div data-color="#FF69B4" themeColor="HotPink"></div>'+
+    '<div data-color="#CD5C5C" themeColor="IndianRed"></div>'+
+    '<div data-color="#4B0082" themeColor="Indigo"></div>'+
+    '<div data-color="#FFFFF0" themeColor="Ivory"></div>'+
+    '<div data-color="#F0E68C" themeColor="Khaki"></div>'+
+    '<div data-color="#E6E6FA" themeColor="Lavender"></div>'+
+    '<div data-color="#FFF0F5" themeColor="LavenderBlush"></div>'+
+    '<div data-color="#7CFC00" themeColor="LawnGreen"></div>'+
+    '<div data-color="#FFFACD" themeColor="LemonChiffon"></div>'+
+    '<div data-color="#ADD8E6" themeColor="LightBlue"></div>'+
+    '<div data-color="#F08080" themeColor="LightCoral"></div>'+
+    '<div data-color="#E0FFFF" themeColor="LightCyan"></div>'+
+    '<div data-color="#FAFAD2" themeColor="LightGoldenRodYellow"></div>'+
+    '<div data-color="#D3D3D3" themeColor="LightGrey"></div>'+
+    '<div data-color="#90EE90" themeColor="LightGreen"></div>'+
+    '<div data-color="#FFB6C1" themeColor="LightPink"></div>'+
+    '<div data-color="#FFA07A" themeColor="LightSalmon"></div>'+
+    '<div data-color="#20B2AA" themeColor="LightSeaGreen"></div>'+
+    '<div data-color="#87CEFA" themeColor="LightSkyBlue"></div>'+
+    '<div data-color="#778899" themeColor="LightSlateGrey"></div>'+
+    '<div data-color="#B0C4DE" themeColor="LightSteelBlue"></div>'+
+    '<div data-color="#FFFFE0" themeColor="LightYellow"></div>'+
+    '<div data-color="#00FF00" themeColor="Lime"></div>'+
+    '<div data-color="#32CD32" themeColor="LimeGreen"></div>'+
+    '<div data-color="#FAF0E6" themeColor="Linen"></div>'+
+    '<div data-color="#FF00FF" themeColor="Magenta"></div>'+
+    '<div data-color="#800000" themeColor="Maroon"></div>'+
+    '<div data-color="#66CDAA" themeColor="MediumAquaMarine"></div>'+
+    '<div data-color="#0000CD" themeColor="MediumBlue"></div>'+
+    '<div data-color="#BA55D3" themeColor="MediumOrchid"></div>'+
+    '<div data-color="#9370DB" themeColor="MediumPurple"></div>'+
+    '<div data-color="#3CB371" themeColor="MediumSeaGreen"></div>'+
+    '<div data-color="#7B68EE" themeColor="MediumSlateBlue"></div>'+
+    '<div data-color="#00FA9A" themeColor="MediumSpringGreen"></div>'+
+    '<div data-color="#48D1CC" themeColor="MediumTurquoise"></div>'+
+    '<div data-color="#C71585" themeColor="MediumVioletRed"></div>'+
+    '<div data-color="#191970" themeColor="MidnightBlue"></div>'+
+    '<div data-color="#F5FFFA" themeColor="MintCream"></div>'+
+    '<div data-color="#FFE4E1" themeColor="MistyRose"></div>'+
+    '<div data-color="#FFE4B5" themeColor="Moccasin"></div>'+
+    '<div data-color="#FFDEAD" themeColor="NavajoWhite"></div>'+
+    '<div data-color="#000080" themeColor="Navy"></div>'+
+    '<div data-color="#FDF5E6" themeColor="Olive"></div>'+
+    '<div data-color="#6B8E23" themeColor="OliveDrab"></div>'+
+    '<div data-color="#FFA500" themeColor="Orange"></div>'+
+    '<div data-color="#FF4500" themeColor="OrangeRed"></div>'+
+    '<div data-color="#DA70D6" themeColor="Orchid"></div>'+
+    '<div data-color="#EEE8AA" themeColor="PaleGoldenRod"></div>'+
+    '<div data-color="#98FB98" themeColor="PaleGreen"></div>'+
+    '<div data-color="#AFEEEE" themeColor="PaleTurquoise"></div>'+
+    '<div data-color="#DB7093" themeColor="PaleVioletRed"></div>'+
+    '<div data-color="#FFEFD5" themeColor="PapayaWhip"></div>'+
+    '<div data-color="#FFDAB9" themeColor="PeachPuff"></div>'+
+    '<div data-color="#CD853F" themeColor="Peru"></div>'+
+    '<div data-color="#FFC0CB" themeColor="Pink"></div>'+
+    '<div data-color="#DDA0DD" themeColor="Plum"></div>'+
+    '<div data-color="#B0E0E6" themeColor="PowderBlue"></div>'+
+    '<div data-color="#800080" themeColor="Purple"></div>'+
+    '<div data-color="#663399" themeColor="RebeccaPurple"></div>'+
+    '<div data-color="#FF0000" themeColor="Red"></div>'+
+    '<div data-color="#BC8F8F" themeColor="RosyBrown"></div>'+
+    '<div data-color="#4169E1" themeColor="RoyalBlue"></div>'+
+    '<div data-color="#8B4513" themeColor="SaddleBrown"></div>'+
+    '<div data-color="#FA8072" themeColor="Salmon"></div>'+
+    '<div data-color="#F4A460" themeColor="SandyBrown"></div>'+
+    '<div data-color="#2E8B57" themeColor="SeaGreen"></div>'+
+    '<div data-color="#FFF5EE" themeColor="SeaShell"></div>'+
+    '<div data-color="#A0522D" themeColor="Sienna"></div>'+
+    '<div data-color="#C0C0C0" themeColor="Silver"></div>'+
+    '<div data-color="#87CEEB" themeColor="SkyBlue"></div>'+
+    '<div data-color="#6A5ACD" themeColor="SlateBlue"></div>'+
+    '<div data-color="#708090" themeColor="SlateGrey"></div>'+
+    '<div data-color="#FFFAFA" themeColor="Snow"></div>'+
+    '<div data-color="#00FF7F" themeColor="SpringGreen"></div>'+
+    '<div data-color="#4682B4" themeColor="SteelBlue"></div>'+
+    '<div data-color="#D2B48C" themeColor="Tan"></div>'+
+    '<div data-color="#008080" themeColor="Teal"></div>'+
+    '<div data-color="#D8BFD8" themeColor="Thistle"></div>'+
+    '<div data-color="#FF6347" themeColor="Tomato"></div>'+
+    '<div data-color="#40E0D0" themeColor="Turquoise"></div>'+
+    '<div data-color="#EE82EE" themeColor="Violet"></div>'+
+    '<div data-color="#F5DEB3" themeColor="Wheat"></div>'+
+    '<div data-color="#FFFFFF" themeColor="White"></div>'+
+    '<div data-color="#F5F5F5" themeColor="WhiteSmoke"></div>'+
+    '<div data-color="#FFFF00" themeColor="Yellow"></div>'+
+    '<div data-color="#9ACD32" themeColor="YellowGreen"></div>'+
+    '<button id="cancel">Back</button>'+
+    '<button id="save">Save</button>'+
+    '</fieldset>'+
+    '<div class="file-msg">'+
+    '<b id="label-msg"></b>'+
+    '<span id="text-msg"></span>'+
+    '<button id="close-msg">OK</button>'+
+    '</div>'+
+    '<button id="open-search"><i class="bi bi-search"></i></button>'+
+    '<div id="cont-search"><input type="search" id="search" placeholder="&#xF52A;&nbsp; Track songs.."><div id="list-search"></div></div>'
+  );
+
+  $(".file-asses").hide();
+  $(".add-color").hide();
+  $(".file-msg").hide();
+  $("#cont-search").hide();
+  
+  $("#open-asses").click(function() {
+     $(".file-asses").fadeIn(100);
+  });
+  
+  const colorSave1 = localStorage.getItem("color-save-1");
+  const colorSave2 = localStorage.getItem("color-save-2");
+  const data = $("html").attr("data-set-plyr");
+  
+  function setColor() {
+   const theme = $(".add-color div");
+   const set = {color: data}
+   if (colorSave1) {
+     $(theme).each(function() {
+      var clr = $(this).attr("data-color");
+      if (clr === colorSave1) {
+       var theme1 = $(this).attr("themeColor");
+         $("html").attr("data-theme", theme1);
+         $(":root").css("--primary-color", colorSave1);
+         $(".cur-color").html(theme1);
+      }
+     });
+    } else if (colorSave2) {
+      $(theme).each(function() {
+       var clr = $(this).attr("data-color");
+       if (clr === colorSave2) {
+        var theme2 = $(this).attr("themeColor");
+          $("html").attr("data-theme", theme2);
+          $(":root").css("--primary-color", colorSave2);
+          $(".cur-color").html(theme2);
+       }
+     });
+    }
+      $("body").attr("data-access-plyr", set.color);
+  }
+  document.addEventListener("DOMContentLoaded", setColor());
+
+  $(".add-color div").each(function() {
+   var setColor = $(this).attr("data-color");
+  	$(this).css("background", setColor);
+  });
+
+  $("#add-color").click(function() {
+    $(".add-color").fadeIn(200);
+    $(".add-color").animate({scrollTop: 0},400);
+  });
+  
+  $(".add-color div").click(function(e) {
+   e.preventDefault();
+    var dataColor = $(this).attr("data-color");
+    var themeColor = $(this).attr("themeColor");
+     $(":root").css("--primary-color", dataColor);
+     $(".cur-color").html(themeColor);
+     $(".add-color div").removeClass("select-color");
+     $(this).addClass("select-color");
+  });
+  
+  $("#save").click(function(e) {
+   e.preventDefault();
+    const getClass = $(".add-color div");
+    var selectColor = $(getClass).hasClass("select-color");
+    var getColor = $(".add-color div.select-color");
+    var color = $(getColor).attr("data-color");
+    if (selectColor) {
+      if (colorSave1) {
+        localStorage.removeItem("color-save-1");
+        localStorage.setItem("color-save-2", color);
+      } else if (colorSave2) {
+        localStorage.removeItem("color-save-2");
+        localStorage.setItem("color-save-1", color);
+      } else {
+        localStorage.setItem("color-save-1", color);
+    }
+      $(".file-msg").fadeIn(60);
+      $("#label-msg").html("CHANGE THEME SUCCESSFULLY");
+      $("#text-msg").html(`Theme <b style='color:${color}'>Colors</b> have been changed.`);
+      $("#close-msg").addClass("success");
+    } else {
+      $(".file-msg").fadeIn(60);
+      $("#label-msg").html("FAILED TO CHANGE THEME");
+      $("#text-msg").html("Please select at least one <b>Color</b> before Save.");
+      $("#close-msg").removeClass("success");
+    }
+  });
+  
+  $("#close-msg").click(function() {
+    if ($(this).hasClass("success")) {
+      $(window.location).attr("href", location.pathname);
+    } else {
+      $(".file-msg").fadeOut(80);
+    }
+  });
+  
+  $("#cancel").click(function() {
+   const curTheme = $(".add-color div");
+    if (colorSave1) {
+      $(":root").css("--primary-color", colorSave1);
+      $(curTheme).each(function() {
+        var clr = $(this).attr("data-color");
+        if (clr === colorSave1) {
+        var theme1 = $(this).attr("themeColor");
+          $(".cur-color").html(theme1);
+        }
+      });
+     } else if (colorSave2) {
+       $(":root").css("--primary-color", colorSave2);
+       $(curTheme).each(function() {
+        var clr = $(this).attr("data-color");
+        if (clr === colorSave1) {
+        var theme1 = $(this).attr("themeColor");
+          $(".cur-color").html(theme2);
+        }
+       });
+   	  } else {
+    	$(":root").css("--primary-color", "#00FFFF");
+        $(".cur-color").html("color");
+      }
+        $(".add-color div").removeClass("select-color");
+        $(".add-color").fadeOut(200);
+  });
+     
+  $("#list div").each(function() {
+    var url = $(this).attr("url");
+    var artist = $(this).attr("artist");
+    var song = $(this).attr("song");
+    var cover = $(this).attr("cover");
+    if (url) {
+      $("#list-search").append(`<span class="ls" url="${url}" artist="${artist}" song="${song}" cover="${cover}"><b>${artist}</b> &nbsp; <small>${song}</small></span>`);
+      $("#list-search .ls").hide();
+    } else {
+      $("#list-search").append();
+    }
+  });
+  
+  $("#open-search").click(function(e) {
+    e.preventDefault();
+    $("#cont-search").fadeIn(100);
+  });
+  
+  $("#cont-search #search").on("keyup", function() {
+    const val = $(this).val().toLowerCase().trim();
+    if (val.length === 0) {
+      $("#list-search .ls").fadeOut(0);
+      $(this).removeClass("keyup");
+      $("#open-asses").css("pointerEvents", "auto");
+      $("#openList").css("pointerEvents", "auto");
+    } else {
+      $("#list-search .ls").fadeIn(0).filter(function() {
+        return $(this).text().toLowerCase().trim().indexOf(val) == -1;
+      }).fadeOut(0);
+      $(this).addClass("keyup");
+      $("#open-asses").css("pointerEvents", "none");
+      $("#openList").css("pointerEvents", "none");
+    }
+  }).on("change", function() {
+     if ($(this).val() === "") {
+       $("#list-search .ls").fadeOut(0);
+       $(this).removeClass("keyup");
+       $("#open-asses").css("pointerEvents", "auto");
+       $("#openList").css("pointerEvents", "auto");
+     }
+  }).on("search", function() { 
+     if ($(this).val() === "") {
+       $("#list-search .ls").fadeOut(0);
+       $(this).removeClass("keyup");
+       $("#open-asses").css("pointerEvents", "auto");
+       $("#openList").css("pointerEvents", "auto");
+     }
+  }).on("input", function() { 
+     if ($(this).val() === "") {
+       $("#list-search .ls").fadeOut(0);
+       $(this).removeClass("keyup");
+       $("#open-asses").css("pointerEvents", "auto");
+       $("#openList").css("pointerEvents", "auto");
+     }
+  });
+
+  $("#list-search .ls").click(function(e) {
+    e.preventDefault();
+    const tx = $(this).find("b").text();
+     $("#list div").each(function() {
+       var pl = $(this).find("b").text();
+       if (pl.match(tx)) {
+         $("#list div").removeClass("play").attr("id", "").css({"color": "#fafaff", "border-bottom": "1px solid transparent", "background": "", "pointerEvents": "auto"});
+         $(this).addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+         $(window.location).attr("href", "#active");
+       }
+     });
+    var cover = $(this).attr("cover");
+     $(".coverAlbum").attr("src", cover);
+     $("body").css({
+       "background": `url('${cover}')`,
+       "background-repeat": "no-repeat",
+       "background-size": "cover",
+       "background-position": "center"
+     });
+     $(".artist").html($(this).attr("artist"));
+     $(".song").html($(this).attr("song"));
+     $("#pause").hide();
+     $("#play").show();
+     $("audio").trigger("pause");
+    var source = $(this).attr("url");
+    if (source === "") {
+      $("#pause").hide();
+      $("#play").show();
+      $("audio").trigger("pause");
+      return false;
+    } else {
+      $("audio").attr("src", source);
+       setTimeout(function() {
+         $("#pause").show();
+         $("#play").hide();
+         $("audio").trigger("play");
+       }, 1000);
+      return true;
+    }
+    $("#list-search .ls").each(function() {
+      var type = $(this).attr("url");
+      var matchType = {mp3: type.match(".mp3"), wav: type.match(".wav"), ogg: type.match(".ogg"), aac: type.match(".aac")}
+      var format = {mp3: "audio/mpeg", wav: "audio/wav", ogg: "audio/ogg", aac: "audio/aac"}
+      if (matchType.mp3) {
+        $("audio").attr("type", format.mp3);
+      } else if (matchType.wav) {
+        $("audio").attr("type", format.wav);
+      } else if (matchType.ogg) {
+        $("audio").attr("type", format.ogg);
+      } else if (matchType.aac) {
+        $("audio").attr("type", format.aac);
+      } else {
+        $("audio").attr("type", format.mp3);
+      }
+    });
+  });
+
+  $(document).click(function(e) {
+    var target = e.target;    
+    var fa = document.querySelector(".file-asses");
+    var oa = document.getElementById("open-asses");
+    var cs = document.getElementById("cont-search");
+    var os = document.getElementById("open-search");
+    var sc = document.querySelector("#search");
+    if (target !== fa && !fa.contains(target) && target !== oa && !oa.contains(target) && target !== cs && !cs.contains(target) && target !== os && !os.contains(target)) {
+      if ($(sc).hasClass("keyup")) {
+        $(cs).fadeIn(0);
+      } else {
+        $(fa).fadeOut(100);
+        $(cs).fadeOut(100);
+      }
+    }
+  });
+  
+  function ready(setVer) {
+    if (document.body.readyState !== "loading") {
+      setVer();
+    } else {
+      document.addEventListener("DOMContentLoaded", setVer);
+    }
+  }
+  ready(() => {
+   let getData = $("body").attr("data-access-plyr");
+    if (getData === data) {
+      $("body").fadeIn();
+      console.log("Player Version ID: " + getData);
+    } else {
+      $("body").fadeOut();
+      console.error("ERROR: No version detected on this player. \nPlease do not modify any JS code if you want to use this player.");
+    }
   });
 
 });
 
-  var primaryContent = document.querySelector(":root"),
-     color = "--primary-color",
-    primaryFont = document.querySelector(":root"),
-   fontFamily = "--primary-font",
-  docElement = document.querySelector("title");
+  window.addEventListener("load", function() { 
+   const swipe = new SwipeEventDispatcher(document.body);
+
+    swipe.on("SWIPE_RIGHT", function() {
+      if ($("#list div.play").hasClass("first")) {
+        $("#list div").last().addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+        $("#list div.play:first").removeClass("play").attr("id", "").css({"color": "#fafaff", "border-bottom": "1px solid transparent", "background": "", "pointerEvents": "auto"});
+        $("#list").animate({scrollTop: 10000}, 600);
+        $("audio").attr("src", $("#list div.play").attr("url"));
+        $(window.location).attr("href", "#active");
+       var cover = $("#list div.play").attr("cover");
+        $(".coverAlbum").attr("src", cover);
+        $("body").css({
+          "background": `url('${cover}')`,
+          "background-repeat": "no-repeat",
+          "background-size": "cover",
+          "background-position": "center"
+        });
+        $(".artist").html($("#list div.play").attr("artist"));
+        $(".song").html($("#list div.play").attr("song"));
+          $("#pause").hide();
+          $("#play").show();
+          $("audio").trigger("pause");
+        var source = $("#list div.play").attr("url");
+        if (source === "") {
+          $("#pause").hide();
+          $("#play").show();
+          $("audio").trigger("pause");
+          return false;
+        } else {
+          setTimeout(function() {
+            $("#pause").show();
+            $("#play").hide();
+            $("audio").trigger("play");
+          }, 1000);
+          return true;
+        }
+      } else {
+        $("#list div.play").prev().addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+        $("#list div.play:last").removeClass("play").attr("id", "").css({"color": "#fafaff", "border-bottom": "1px solid transparent", "background": "", "pointerEvents": "auto"});
+        $("audio").attr("src", $("#list div.play").attr("url"));
+        $(window.location).attr("href", "#active");
+       var cover = $("#list div.play").attr("cover");
+        $(".coverAlbum").attr("src", cover);
+        $("body").css({
+          "background": `url('${cover}')`,
+          "background-repeat": "no-repeat",
+          "background-size": "cover",
+          "background-position": "center"
+        });
+        $(".artist").html($("#list div.play").attr("artist"));
+        $(".song").html($("#list div.play").attr("song"));
+          $("#pause").hide();
+          $("#play").show();
+          $("audio").trigger("pause");
+        var source = $("#list div.play").attr("url");
+        if (source === "") {
+          $("#pause").hide();
+          $("#play").show();
+          $("audio").trigger("pause");
+          return false;
+        } else {
+          setTimeout(function() {
+            $("#pause").show();
+            $("#play").hide();
+            $("audio").trigger("play");
+          }, 1000);
+          return true;
+        }
+      }
+        $("#list div").each(function() {
+          var type = $(this).attr("url");
+          var matchType = {mp3: type.match(".mp3"), wav: type.match(".wav"), ogg: type.match(".ogg"), aac: type.match(".aac")}
+          var format = {mp3: "audio/mpeg", wav: "audio/wav", ogg: "audio/ogg", aac: "audio/aac"}
+          if (matchType.mp3) {
+            $("audio").attr("type", format.mp3);
+          } else if (matchType.wav) {
+            $("audio").attr("type", format.wav);
+          } else if (matchType.ogg) {
+            $("audio").attr("type", format.ogg);
+          } else if (matchType.aac) {
+            $("audio").attr("type", format.aac);
+          } else {
+            $("audio").attr("type", format.mp3);
+          }
+        });
+    });
+    swipe.on("SWIPE_LEFT", function() {
+      if ($("#list div.play").hasClass("last")) {
+        $("#list div").first().addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+        $("#list div.play:last").removeClass("play").attr("id", "").css({"color": "#fafaff", "border-bottom": "1px solid transparent", "background": "", "pointerEvents": "auto"});
+        $("#list").animate({scrollTop: 0}, 150);
+        $("audio").attr("src", $("#list div.play").attr("url"));
+        $(window.location).attr("href", "#active");
+      var cover = $("#list div.play").attr("cover");
+        $(".coverAlbum").attr("src", cover);
+        $("body").css({
+          "background": `url('${cover}')`,
+          "background-repeat": "no-repeat",
+          "background-size": "cover",
+          "background-position": "center"
+        });
+        $(".artist").html($("#list div.play").attr("artist"));
+        $(".song").html($("#list div.play").attr("song"));
+          $("#pause").hide();
+          $("#play").show();
+          $("audio").trigger("pause");
+        var source = $("#list div.play").attr("url");
+        if (source === "") {
+          $("#pause").hide();
+          $("#play").show();
+          $("audio").trigger("pause");
+          return false;
+        } else {
+          setTimeout(function() {
+            $("#pause").show();
+            $("#play").hide();
+            $("audio").trigger("play");
+          }, 1000);
+          return true;
+        }
+      } else {
+        $("#list div.play").next().addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
+        $("#list div.play:first").removeClass("play").attr("id", "").css({"color": "#fafaff", "border-bottom": "1px solid transparent", "background": "", "pointerEvents": "auto"});
+        $("audio").attr("src", $("#list div.play").attr("url"));
+        $(window.location).attr("href", "#active");
+      var cover = $("#list div.play").attr("cover");
+        $(".coverAlbum").attr("src", cover);
+        $("body").css({
+          "background": `url('${cover}')`,
+          "background-repeat": "no-repeat",
+          "background-size": "cover",
+          "background-position": "center"
+        });
+        $(".artist").html($("#list div.play").attr("artist"));
+        $(".song").html($("#list div.play").attr("song"));
+          $("#pause").hide();
+          $("#play").show();
+          $("audio").trigger("pause");
+        var source = $("#list div.play").attr("url");
+        if (source === "") {
+          $("#pause").hide();
+          $("#play").show();
+          $("audio").trigger("pause");
+          return false;
+        } else {
+          setTimeout(function() {
+            $("#pause").show();
+            $("#play").hide();
+            $("audio").trigger("play");
+          }, 1000);
+          return true;
+        }
+      }
+        $("#list div").each(function() {
+          var type = $(this).attr("url");
+          var matchType = {mp3: type.match(".mp3"), wav: type.match(".wav"), ogg: type.match(".ogg"), aac: type.match(".acc")}
+          var format = {mp3: "audio/mpeg", wav: "audio/wav", ogg: "audio/ogg", aac: "audio/aac"}
+          if (matchType.mp3) {
+            $("audio").attr("type", format.mp3);
+          } else if (matchType.wav) {
+            $("audio").attr("type", format.wav);
+          } else if (matchType.ogg) {
+            $("audio").attr("type", format.ogg);
+          } else if (matchType.aac) {
+            $("audio").attr("type", format.aac);
+          } else {
+            $("audio").attr("type", format.mp3);
+          }
+        });
+    });
+  });
+
+  class SwipeEventDispatcher {
+   constructor(element, options = {}) {
+     this.evtMap = {
+       SWIPE_LEFT: [],
+       SWIPE_RIGHT: [],
+       SWIPE_UP: [],
+       SWIPE_DOWN: []
+    };
+     this.xDown = null;
+     this.yDown = null;
+     this.element = element;
+     this.isMouseDown = false;
+     this.listenForMouseEvents = true;
+     this.options = Object.assign({ 
+       triggerPercent: 0.3 
+    }, options);
+
+     element.addEventListener('touchstart', evt => this.handleTouchStart(evt), false);
+     element.addEventListener('touchend', evt => this.handleTouchEnd(evt), false);
+     element.addEventListener('mousedown', evt => this.handleMouseDown(evt), false);
+     element.addEventListener('mouseup', evt => this.handleMouseUp(evt), false);
+   }
+    on(evt, cb) {
+      this.evtMap[evt].push(cb);
+    }
+    off(evt, lcb) {
+      this.evtMap[evt] = this.evtMap[evt].filter(cb => cb !== lcb);
+    }
+    trigger(evt, data) {
+      this.evtMap[evt].map(handler => handler(data));
+    }
+    handleTouchStart(evt) {
+      this.xDown = evt.touches[0].clientX;
+      this.yDown = evt.touches[0].clientY;
+    }
+    handleMouseDown(evt) {
+     if (this.listenForMouseEvents==false) return;
+       this.xDown = evt.clientX;
+       this.yDown = evt.clientY;
+       this.isMouseDown = true;
+    }
+    handleMouseUp(evt) {
+     if (this.isMouseDown == false) return;
+      const deltaX = evt.clientX - this.xDown;
+      const deltaY = evt.clientY - this.yDown;
+      const distMoved = Math.abs(Math.abs(deltaX) > Math.abs(deltaY) ? deltaX : deltaY);
+      const activePct = distMoved / this.element.offsetWidth;
+      if (activePct > this.options.triggerPercent) {
+       if (Math.abs(deltaX) > Math.abs(deltaY)) {
+         deltaX < 0 ? this.trigger('SWIPE_LEFT') : this.trigger('SWIPE_RIGHT');
+       } else {
+         deltaY > 0 ? this.trigger('SWIPE_UP') : this.trigger('SWIPE_DOWN');
+       }
+      }
+    }
+    handleTouchEnd(evt) {
+     const deltaX = evt.changedTouches[0].clientX - this.xDown;
+     const deltaY = evt.changedTouches[0].clientY - this.yDown;
+     const distMoved = Math.abs(Math.abs(deltaX) > Math.abs(deltaY) ? deltaX : deltaY);
+     const activePct = distMoved / this.element.offsetWidth;
+     if (activePct > this.options.triggerPercent) {
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        deltaX < 0 ? this.trigger('SWIPE_LEFT') : this.trigger('SWIPE_RIGHT');
+      } else {
+        deltaY > 0 ? this.trigger('SWIPE_UP') : this.trigger('SWIPE_DOWN');
+      }
+     }
+    }
+  }
+
+  const timeElapsed = document.getElementById("time-elapsed");
+  const duration = document.getElementById("duration");
+  const audio = document.querySelector("audio");
+  
+  function formatTime(timeInSeconds) {
+   const result = new Date(timeInSeconds * 1000).toISOString().substr(11, 8);
+     return {
+       minutes: result.substr(3, 2),
+       seconds: result.substr(6, 2),
+     }
+  }
+
+  function initializeAudio() {
+   const audioDuration = Math.round(audio.duration);
+   const time = formatTime(audioDuration);
+    duration.innerText = `${time.minutes}:${time.seconds}`;
+    duration.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`);
+  }
+  audio.addEventListener('loadedmetadata', initializeAudio);
+  
+  function updateTimeElapsed() {
+   const time = formatTime(Math.round(audio.currentTime));
+    timeElapsed.innerText = `${time.minutes}:${time.seconds}`;
+    timeElapsed.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`);
+  }
+  audio.addEventListener('timeupdate', updateTimeElapsed);
+  
+  const progressBar = document.getElementById('progress-bar');
+  const seek = document.getElementById('seek');
+  
+  function initializeAudio() {
+   const audioDuration = Math.round(audio.duration);
+    seek.setAttribute('max', audioDuration);
+    progressBar.setAttribute('max', audioDuration);
+   const time = formatTime(audioDuration);
+    duration.innerText = `${time.minutes}:${time.seconds}`;
+    duration.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`);
+  }
+
+  function updateProgress() {
+    seek.value = Math.floor(audio.currentTime);
+    progressBar.value = Math.floor(audio.currentTime);
+  }
+  audio.addEventListener('timeupdate', updateProgress);
+  
+  function updateSeek(event) {
+   const skipTo = Math.round((event.offsetX / event.target.clientWidth) * parseInt(event.target.getAttribute('max'), 10));
+    seek.setAttribute('data-seek', skipTo);
+  }
+  seek.addEventListener('mousemove', updateSeek);
+  
+  function skipAhead(event) {
+   const skipTo = event.target.dataset.seek ? event.target.dataset.seek : event.target.value;
+    audio.currentTime = skipTo;
+    progressBar.value = skipTo;
+    seek.value = skipTo;
+  }
+  seek.addEventListener('input', skipAhead);
+
+  const primaryContent = document.querySelector(":root"),
+       color = "--primary-color",
+      primaryFont = document.querySelector(":root"),
+     fontFamily = "--primary-font",
+    docElement = document.querySelector("title");
