@@ -3,6 +3,13 @@
  * Music Player
  * JS code
 **/
+   
+  function setVer() {
+    $("html").attr("data-set-plyr", "eR-uIpkMl_Joz");
+  }
+   window.addEventListener("load", setVer());
+
+  $("title").after('<link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/bootstrap-icons/1.10.5/icons.min.css">');
 
   $("#list").before(
     '<div class="wrap-contain" id="content">'+
@@ -38,11 +45,6 @@
    $("#list div").last().addClass("last");
    $("#list div").addClass("plList");
    $("img").attr("alt", "");
-  
-  function setVer() {
-    eval(function(p,a,c,k,e,r){e=String;if(!''.replace(/^/,String)){while(c--)r[c]=k[c]||c;k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$("0").1("2-3-4","5-6");',7,7,'html|attr|data|set|plyr|eR|uIpkMl_Joz'.split('|'),0,{}));
-  }
-  window.addEventListener("load", setVer());
 
 $(document).ready(function() {
 
@@ -58,18 +60,7 @@ $(document).ready(function() {
 
   $("#list div:first").addClass("play").attr("id", "active").css({"color": "var(--primary-color)", "border-bottom": "1px solid var(--primary-color)", "background": "rgba(0,0,0,0.5)", "pointerEvents": "none"});
   $("audio").attr("src", $("#list div.first").attr("url"));
-  $("audio").on("loadedmetadata", function(ready) {
-    var audio = this;
-     if (ready) {
-       audio.play();
-       if (audio.paused === true) {
-         $("#play").hide();
-         $("#pause").show();
-       }
-     } else {
-       return false;
-     }
-  });
+  
   var cover = $("#list div:first").attr("cover");
     $(".coverAlbum").attr("src", cover);
     $("body").css({
@@ -681,7 +672,6 @@ $(document).ready(function() {
          $("html").attr("data-theme", theme1);
          $(":root").css("--primary-color", colorSave1);
          $(".cur-color").html(theme1);
-        console.log("Theme Color: " + theme1);
       }
      });
     } else if (colorSave2) {
@@ -692,7 +682,6 @@ $(document).ready(function() {
           $("html").attr("data-theme", theme2);
           $(":root").css("--primary-color", colorSave2);
           $(".cur-color").html(theme2);
-         console.log("Theme Color: " + theme2);
        }
      });
     }
@@ -913,11 +902,24 @@ $(document).ready(function() {
       }
     }
   });
-
-  function loadVer() {
-    eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$("0").j(r(){9 1=$("0").g("2-s-8");3(1===2){$("0").a();4.c("d e f 5. \\n»» 5 h: "+1)}i{$("0").D();4.k("l: m o p q 6 7. \\t u v w x y z 3 A B C b 6 7.")}});',40,40,'body|getData|data|if|console|Version|this|player|plyr|let|fadeIn|use|log|Load|the|Player|attr|ID|else|ready|error|Error|No||version|detected|on|function|access|nPlease|do|not|modify|any|JS|code|you|want|to|fadeOut'.split('|'),0,{}));
+  
+  function ready(setVer) {
+    if (document.body.readyState !== "loading") {
+      setVer();
+    } else {
+      document.addEventListener("DOMContentLoaded", setVer);
+    }
   }
-  document.addEventListener("DOMContentLoaded", loadVer());
+  ready(() => {
+   let getData = $("body").attr("data-access-plyr");
+    if (getData === data) {
+      $("body").fadeIn();
+      console.log("Player Version ID: " + getData);
+    } else {
+      $("body").fadeOut();
+      console.error("ERROR: No version detected on this player. \nPlease do not modify any JS code if you want to use this player.");
+    }
+  });
 
 });
 
@@ -1223,6 +1225,8 @@ $(document).ready(function() {
   }
   seek.addEventListener('input', skipAhead);
 
-  const primaryFont = document.querySelector(":root"),
-       fontFamily = "--primary-font",
-      docElement = document.querySelector("title");
+  const primaryContent = document.querySelector(":root"),
+       color = "--primary-color",
+      primaryFont = document.querySelector(":root"),
+     fontFamily = "--primary-font",
+    docElement = document.querySelector("title");
