@@ -598,7 +598,7 @@ Put a video title or leave it blank.
 
 `title="My Video"`
 
-2. Video description
+4. Video description
 
 Put a video description or leave it blank.
 
@@ -698,7 +698,7 @@ Template for _Video Playlist_.
 
 <br>
 
-**`<div>` element content:**
+**Element content:** `<div>`
 
 ```html
 <div url="" type="" title="" vod=""></div>
@@ -914,15 +914,15 @@ Template for _Movie App_.
 
 `title="The Name of the Movie"`
 
-2. Movie description.
+4. Movie description.
 
 `desc="Movie description/synopsis/topic"`
 
-3. The Year of the movie.
+5. The Year of the movie.
 
 `year="2023"`
 
-4. Current movie ratings.
+6. Current movie ratings.
 
 Star _rating_ number.
 
@@ -1090,7 +1090,7 @@ Template for _Music Player_.
 
 `song="One Dance"`
 
-2. Album cover song.
+4. Album cover song.
 
 `cover="http://cover-image.jpg"`
 
