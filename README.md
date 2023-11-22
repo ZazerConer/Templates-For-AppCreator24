@@ -902,7 +902,7 @@ Template for _Movie App_.
 
 <br>
 
-1. Image URL
+1. Image URL.
 
 `src="http://movie-poster.jpg"`
 
@@ -914,15 +914,15 @@ Template for _Movie App_.
 
 `title="The Name of the Movie"`
 
-2. Movie description
+2. Movie description.
 
 `desc="Movie description/synopsis/topic"`
 
-3. The Year of the movie
+3. The Year of the movie.
 
 `year="2023"`
 
-4. Current movie ratings
+4. Current movie ratings.
 
 Star _rating_ number.
 
@@ -993,6 +993,106 @@ Box Office Mojo: Latest popular movies - Top hits and similarities.
 Please see the **[Demo](https://zazerconer.github.io/Templates-For-AppCreator24/template/app/demo/movie-template/)** if you'r still confused or you can open this **[HTML](https://github.com/ZazerConer/Templates-For-AppCreator24/blob/main/template/app/demo/movie-template/index.html)** code and read the code I made, find the part you'r having problems with.
 
 <br>
+</details>
+
+<br>
+<hr>
+<br>
+
+### Music Player
+
+Template for _Music Player_.
+
+<br>
+
+<details>
+<summary><b>Expand</b></summary>
+
+<br>
+
+`HTML`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Content Title</title>
+
+  <link rel="stylesheet" href="https://ac24.zazerconer.workers.dev/template/app/build/music-player/assets/style.min.css">
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+  <div id="list">
+   <div url="" artist="" song="" cover=""></div>
+   <div url="" artist="" song="" cover=""></div>
+   <div url="" artist="" song="" cover=""></div>
+   <div url="" artist="" song="" cover=""></div>
+   <div url="" artist="" song="" cover=""></div>
+  </div>
+  
+  <!--
+   • Add more songs to the list.
+  -->
+
+  <script src="https://ac24.zazerconer.workers.dev/template/app/build/music-player/assets/script.min.js"></script>
+
+<script>
+/* Set color for the primary content */
+  $(primaryContent).css(color, "#00BCD4");
+
+/* Change the primary font */
+  const fontface = {
+    load: "https://fonts.cdnfonts.com/css/lt-bump"
+  }
+  $(primaryFont).css(fontFamily, "LT Bump, sans-serif");
+  $(docElement).after(`<link rel="stylesheet" href="${fontface.load}">`);
+</script>
+```
+
+- **[DEMO](https://zazerconer.github.io/Templates-For-AppCreator24/template/app/demo/music-player/)**
+
+<br>
+
+<div align="center"><strong>Use of Music Player</strong></div>
+
+<br>
+
+**Element content:** `<div>`
+
+```html
+<div url="" artist="" song="" cover=""></div>
+```
+
+<br>
+
+| Attribute | Value |
+| --- | ---|
+| url | `audio.mp3` |
+| artist | _required_ |
+| song | _required_ |
+| cover | `image.jpg` |
+
+<br>
+
+1. Song URL.
+
+`url="http://song-music.mp3"`
+
+2. Artist name.
+
+`artist="Drake"`
+
+3. Song title.
+
+`song="One Dance"`
+
+2. Album cover song.
+
+`cover="http://cover-image.jpg"`
 
 </details>
 
