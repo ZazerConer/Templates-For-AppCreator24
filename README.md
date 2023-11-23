@@ -990,7 +990,7 @@ Box Office Mojo: Latest popular movies - Top hits and similarities.
 
 #### Solution if you have problems:
 
-Please see the **[Demo](https://zazerconer.github.io/Templates-For-AppCreator24/template/app/demo/movie-template/)** if you'r still confused or you can open this **[HTML](https://github.com/ZazerConer/Templates-For-AppCreator24/blob/main/template/app/demo/movie-template/index.html)** code and read the code I made, find the part you'r having problems with.
+Please see the **[Demo](https://zazerconer.github.io/Templates-For-AppCreator24/template/app/demo/movie-template/)** if you're still confused or you can open this **[HTML](https://github.com/ZazerConer/Templates-For-AppCreator24/blob/main/template/app/demo/movie-template/index.html)** code and read the code I made, find the part you're having problems with.
 
 <br>
 </details>
@@ -1093,6 +1093,24 @@ Template for _Music Player_.
 4. Album cover song.
 
 `cover="http://cover-image.jpg"`
+
+<br>
+
+#### Additional functions
+
+Plays the next song automatically after the end of the current song and will continue to play the music of the next song **continuously** and **non-stop**.
+
+<br>
+
+- **Swipe the screen.**
+
+Swipe _Right_ to _Left_: `Go to the Next song`
+
+Swipe _Left_ to _Right_: `Go to the Previous song`
+
+- **Tap the screen.**
+
+Double Tap: `Play / Pause`
 
 </details>
 
