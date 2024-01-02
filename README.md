@@ -1263,4 +1263,4 @@ For this Demo app preview it may not work well or it may not be adapted in brows
 <br>
 <br>
 
-<div align="center"><strong>© 2023 Templates for AppCreator24 • ZazerConer's</strong></div>
+<div align="center"><strong>© 2024 Templates for AppCreator24 • ZazerConer's</strong></div>
