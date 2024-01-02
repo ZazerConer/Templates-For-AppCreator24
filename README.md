@@ -1090,9 +1090,9 @@ Template for _Music Player_.
 
 `song="One Dance"`
 
-4. Album cover song.
+4. Album art image.
 
-`cover="http://cover-image.jpg"`
+`cover="http://image.jpg"`
 
 <br>
 
@@ -1111,6 +1111,143 @@ Swipe _Left_ to _Right_: `Go to the Previous song`
 - **Tap the screen.**
 
 Double Tap: `Play / Pause`
+
+</details>
+
+<br>
+<hr>
+<br>
+
+### Night Mode Clock
+
+<details>
+<summary><b>Expand</b></summary>
+
+<br>
+
+`HTML`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Night Mode Clock</title>
+ 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  text-align: center;
+  background: #000;
+  opacity: 0.9;
+  overflow: hidden;
+}
+.container {
+  width: 20rem;
+  height: 6rem;
+  color: #fafaff;
+}
+.container #clock {
+  font-size: 2.5em;
+}
+.container #date {
+  margin-top: 3.5em
+}
+.container #clock, #date {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: block;
+  margin: auto;
+  letter-spacing: 4px;
+}
+.container #date {
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+#state {
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  color: #fafaff;
+  font-size: 0.7em;
+  letter-spacing: 1px;
+}
+</style>
+
+</head>
+<body>
+
+ <div class="container">
+  <div id="clock"></div>
+  <div id="date"></div>
+ </div>
+  
+ <div id="state"></div>
+
+<script>
+ setInterval(function() {
+   let time = new Date();
+   let min = time.getMinutes();
+   let hr = time.getHours();
+   let day = 'AM';
+   
+   if (hr > 12) {day = 'PM'; hr = hr - 12}
+   if (hr == 0) {hr = 12}
+   if (min < 10) {min = '0' + min}
+   if (hr < 10) {hr = '0' + hr}
+   
+   const clock = document.getElementById("clock");
+   clock.innerHTML = `${hr}<span>:</span>${min} <small>${day}</small>`;
+ });
+
+ function showDate() {
+   var now = new Date();
+   var days = new Array('Sun','Mon','Tues','Weds','Thurs','Fri','Sat');
+   var months = new Array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+   var date = ((now.getDate() < 10) ? "0" : "") + now.getDate();
+ 
+   function fourdigits(number) {
+     return (number < 1000) ? number + 1900 : number;
+   }
+
+   hour = now.getHours();
+   min = now.getMinutes();
+   if (min <= 9) {min = "0" + min}
+   if (hour < 10) {hour = "0" + hour}
+   today = days[now.getDay()] + ", " + date + " " + months[now.getMonth()] + ", " + (fourdigits(now.getYear()));
+
+   document.getElementById("date").innerHTML = today;
+ }
+  setInterval("showDate()", 1000);
+
+ fetch('https://ipinfo.io', {
+   method: 'GET',
+   headers: {'Accept': 'application/json'},
+ })
+ .then(response => response.json())
+ .then(response => document.getElementById("state").innerHTML = `<span> ${response.city} <span>&nbsp;</span> ${response.country} </span>`);
+</script>
+
+</body>
+</html>
+```
+
+- **[DEMO](https://zazerconer.github.io/Templates-For-AppCreator24/template/app/demo/night-mode-clock/)**
 
 </details>
 
