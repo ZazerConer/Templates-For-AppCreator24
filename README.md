@@ -6,25 +6,13 @@
 
 Custom templates on your design.
 
-## About AppCreator24
+<br>
 
-Many app makers want to create their own android apps, but don’t have an interesting idea or design on their apps. 
+### AppCreator24
 
-But not on this **AppCreator24**, it makes it easy for you to create your own applications without programming code that is very difficult for you to remember. 
+<br>
 
-## Advantages of applications you can create : 
-
-- _Blog_
-
-- _Website_
-
-- _Music_ 
-
-- _Video_
-
-- _And much more.._
-
-#### Go here : https://www.appcreator24.com
+- **[appcreator24.com](https://www.appcreator24.com)**
 
 <hr>
 
@@ -32,16 +20,17 @@ But not on this **AppCreator24**, it makes it easy for you to create your own ap
 
 Yes, you can use this template without any hesitation.
 
-You can place this template on the _HTML code section_ (AppCreator24).
+You can paste this **Template** on **HTML code** section (AppCreator24).
 
-Using HTML code is easier and more interesting because you can create things you like to create on your app with your own design.
+With HTML code it's easier because you can create what you like to do on your App with your own design.
 
-Feel free to change the html code with your own design to make it look more attractive.
+Feel free to modify the HTML code with your own creations to make it look more interesting.
 
-If you want more templates for your app **[Here](https://www.w3schools.com/w3css/w3css_templates.asp)**
+If you want more templates for your App **[Here](https://www.w3schools.com/w3css/w3css_templates.asp)**
 
-You can edit and preview the html source code : **[Online HTML Editor](https://www.tutorialspoint.com/online_html_editor.php)**
+Edit and preview HTML code **[Online HTML Editor](https://www.tutorialspoint.com/online_html_editor.php)**
 
+<br>
 <hr>
 
 ## Build your App with HTML
@@ -1255,8 +1244,113 @@ body {
 <hr>
 <br>
 
+### Splash Screen
+
+<details>
+<summary><b>Expand</b></summary>
+
+<br>
+
+`HTML`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splash Screen</title>
+
+</head>
+<body>
+
+  <!-- 
+   • Add a website link (URL) 
+   • or use a link reference (go:)
+   • open="go:MySite"
+  -->
+  <div id="page" open="https://">
+    
+    <!-- 
+     • Logo app
+     • Recommended resolution logo (512x512) 
+    -->
+    <img src="//logo.png" alt="Logo" class="splash">
+    
+    <!-- App Title or Description / optional -->
+    <h3>
+      My App
+    </h3>
+    
+  </div>
+
+<script>
+ document.head.insertAdjacentHTML("beforeend", `
+   <style>
+    body {
+      margin:0; padding:0; box-sizig:border-box; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; color:#fff; background:#121212; pointer-events:none; overflow:hidden;
+    }
+    #page {
+      position:fixed; top:0; left:0; right:0; bottom:0; display:flex; justify-content:center; align-items:center; width:100vw; height:100vh; margin:auto; visibility:visible; opacity:1; z-index:1000;
+    }
+    #page.hidden {
+      visibility:hidden; opacity:0; z-index:0;
+      transition:all .5s ease-in-out
+    }
+    .splash {
+      width:15vw;
+      opacity:0;
+      animation:fadeIn 4s ease-in forwards;
+    }
+    #page h3 {
+      position:absolute; bottom:5%;
+      font-weight:500;
+      animation:fadeIn 4s ease-in forwards;
+    }
+    @keyframes fadeIn {
+     from {
+       opacity:0;
+     }
+     to {
+       opacity:1;
+     }
+    }
+    @media screen and (max-width:600px) {
+      .splash {
+        width:25vw;
+      }
+    }
+   </style>
+ `);
+
+ document.addEventListener("DOMContentLoaded", function() {
+   const page = document.querySelector("#page");
+   const url = page.getAttribute("open");
+  
+   setTimeout(function() {
+     page.classList.add("hidden");
+   }, 7000);
+
+   setTimeout(function() {
+     window.location.href = url;
+   }, 7300);
+ });
+</script>
+
+</body>
+</html>
+```
+
+- **[DEMO](https://zazerconer.github.io/Templates-For-AppCreator24/template/app/demo/splash-screen/)**
+
+</details>
+
+<br>
+<hr>
+<br>
+
 **Please note:** 
-For this Demo app preview it may not work well or it may not be adapted in browser like CSS or JS, so please open and use the **Template** on real tester in App.
+For this Demo App **Preview** it may not work well or it may not be adapted in browser like CSS or JS, so please open and use the **Template** on real tester in App.
 
 <br>
 <hr>
